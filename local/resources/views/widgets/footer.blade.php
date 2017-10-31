@@ -66,5 +66,5 @@
 	</div>
 	<div class="footer-copy">
 		<div class="container">
-			<p class="animated wow zoomIn" data-wow-delay=".5s">Made by <a href="https://www.facebook.com/dyan.709"> Dy An</a></p>
+			<p class="animated wow zoomIn" data-wow-delay=".5s">Made by <a href="#"> TML</a></p>
 		</div>

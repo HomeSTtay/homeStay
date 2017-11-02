@@ -16,3 +16,5 @@ Route::get('/','MyFirstController@getIndex');
 Route::get('/signUp','MyFirstController@getSignup');
 
 Route::get('/logIn','MyFirstController@getLogin');
+
+Route::get('/detail','MyFirstController@getDetail');

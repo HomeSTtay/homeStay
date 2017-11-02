@@ -3,7 +3,7 @@
 @section('main')
 <!--header-top-->
 	<div class="banner">
-		@include('module.banner')
+		@include('module.baner-detail')
 	</div>
 	@include('module.banner-bottom')
 	<!--//xontent-->

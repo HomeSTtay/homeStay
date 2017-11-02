@@ -15,4 +15,4 @@ Route::get('/','MyFirstController@getIndex');
 
 Route::get('/signUp','MyFirstController@getSignup');
 
-Route::get('/signIn','MyFirstController@getLogin');
+Route::get('/logIn','MyFirstController@getLogin');

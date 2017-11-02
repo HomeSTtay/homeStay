@@ -1,7 +1,7 @@
 </!DOCTYPE html>
 <html>
 <head>
-	@include('widgets.head_signup')
+	@include('widgets.header')
 </head>
 <body>
 @include('module.login-cont')

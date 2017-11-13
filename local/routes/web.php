@@ -15,4 +15,12 @@ Route::get('/','MyFirstController@getIndex');
 
 Route::get('/signUp','MyFirstController@getSignup');
 
-Route::get('/signIn','MyFirstController@getLogin');
+Route::get('/logIn','MyFirstController@getLogin');
+
+Route::get('/detail', 'MyFirstController@getDetail');
+
+Auth::routes();
+
+Route::post('/logintest','TestLogin@postLogin');
+
+Route::post('/registertest', 'TestLogin@postRegister');

@@ -34,9 +34,10 @@
 						</div>
 						
 					</div>
-								<form action="#" method="post">
-									<input type="text" name="name" class="name" placeholder="First Name" required="">
-									<input type="text" name="name" class="name" placeholder="Last Name" required="">
+								<form action="{{ url('/registertest') }}" method="post">
+									{{ csrf_field() }}
+									<input type="text" name="firstname" class="name" placeholder="First Name" required="">
+									<input type="text" name="lastname" class="name" placeholder="Last Name" required="">
 									<input type="text" name="email" class="email" placeholder="Your Email" required="">	
 									<input type="password" name="password" class="password" placeholder="Password" required="">
 									<input type="password" name="password" class="password" placeholder="Confirm Password" required="">	
@@ -53,9 +54,6 @@
 		
 		</div>	
 	<div class="clear"></div>
-     <div class="copy-right w3l-agile">
-		<p>Made by <a href="https://www.facebook.com/dyan.709"> DyAn</a></p>
-	</div>
 	<div class="clear"></div>
 </div>
 </div>

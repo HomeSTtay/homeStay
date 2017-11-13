@@ -33,7 +33,8 @@
 						</div>
 						
 					</div>
-								<form action="#" method="post">
+								<form action="{{ url('/logintest') }}" method="post">
+									{{ csrf_field() }}
 									
 									<input type="text" name="email" class="email" placeholder="Your Email" required="">	
 									<input type="password" name="password" class="password" placeholder="Password" required="">
@@ -50,9 +51,6 @@
 		
 		</div>	
 	<div class="clear"></div>
-     <div class="copy-right w3l-agile">
-		<p>Made by <a href="https://www.facebook.com/dyan.709"> DyAn</a></p>
-	</div>
 	<div class="clear"></div>
 </div>
 </div>

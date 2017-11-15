@@ -1,6 +1,6 @@
 	<div class="container">
 			<div class="col-md-4 banner-bottom-slider-left animated wow slideInLeft" data-wow-delay=".5s">
-				<h3>Let's go on an <span>Adventurous Travel</span></h3>
+				<h3>Let's go on an <span>Top 10 homestay hot</span></h3>
 				<p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.</p>
 			</div>
 			<div class="col-md-8 banner-bottom-slider-right animated wow slideInRight" data-wow-delay=".5s">

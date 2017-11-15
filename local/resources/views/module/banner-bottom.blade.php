@@ -32,13 +32,14 @@
 				<figure class="effect-lexi effect-lexi1">
 					<img src="images/3.jpg" alt="" class="img-responsive" />
 					<figcaption class="lexifig">
-						<h4>Life is an adventure take <span>Risks</span></h4>
+						<h4> Homestay miền bắc </h4>
 						<p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it.</p>
 					</figcaption>			
 				</figure>
 			</div>
 			<h3 class="animated wow slideInUp" data-wow-delay=".5s">Certainly, travel is more than the seeing of sights; it is a change that goes on,
 				deep and permanent, in the ideas of living.</h3>
+
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -48,11 +49,13 @@
 				<figure class="effect-lexi">
 					<img src="images/2.jpg" alt="" class="img-responsive" />
 					<figcaption>
-						<h4>Collect moments not <span>things</span></h4>
+						<h4>Homestay miền Trung</h4>
 						<p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it.</p>
 					</figcaption>			
 				</figure>
 			</div>
+		
+			
 		</div>
 		<div class="col-md-4 banner-bottom-lft1 animated wow bounceInRight" data-wow-delay=".5s">
 			<h3>01 .</h3>
@@ -88,7 +91,7 @@
 				<figure class="effect-lexi effect-lexi1">
 					<img src="images/4.jpg" alt="" class="img-responsive" />
 					<figcaption class="lexifig">
-						<h4>Courage is found in unlikely <span>places</span></h4>
+						<h4>Homestay miền nam</h4>
 						<p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it.</p>
 					</figcaption>			
 				</figure>

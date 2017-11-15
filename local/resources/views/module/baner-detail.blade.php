@@ -22,23 +22,6 @@
 				<h3>Discover The Most Beautiful Places</h3>
 				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
 					eu fugiat nulla pariatur.</p>
-				<div class="more">
-					<a href="{{url("/")}}/detail" class="type-4">
-						<span> Read More... </span>
-						<span> Read More... </span>
-						<span> Read More... </span>
-						<span> Read More... </span>	
-						<span> Read More... </span>
-						<span> Read More... </span>
-					</a>
-				</div>
-				<div class="social-icons">
-					<ul>
-						<li><a href="#" class="twitter"></a></li>
-						<li><a href="#" class="facebook"></a></li>
-						<li><a href="#" class="google"></a></li>
-						<li><a href="#" class="p"></a></li>
-					</ul>
-				</div>
+				
 			</div>
 		</div>

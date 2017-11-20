@@ -24,3 +24,10 @@ Auth::routes();
 Route::post('/logintest','TestLogin@postLogin');
 
 Route::post('/registertest', 'TestLogin@postRegister');
+
+
+/* Admin */
+ 
+Route::get('/admin','AdminController@getAdminIndex');
+
+Route::get('/danh-sach-homestay','AdminController@getListHomestay');

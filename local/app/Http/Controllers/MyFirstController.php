@@ -23,6 +23,9 @@ class MyFirstController extends Controller
 		return view('pages.login');
 
 	}
+	public function getDetail(){
+		return view('pages.detail');
+	}
 }
 
 

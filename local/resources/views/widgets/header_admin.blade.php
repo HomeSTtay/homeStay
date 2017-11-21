@@ -3,7 +3,7 @@
 <!--logo start-->
 <div class="brand">
     <a href="index.html" class="logo">
-        TML
+        Walk
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -191,9 +191,7 @@
 <div class="top-nav clearfix">
     <!--search & user info start-->
     <ul class="nav pull-right top-menu">
-        <li>
-            <input type="text" class="form-control search" placeholder=" Search">
-        </li>
+        
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -202,9 +200,9 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="#"><i class=" fa fa-suitcase"></i>Thông tin cá nhân</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> Cài đặt</a></li>
+                <li><a href="{{url("/")}}/logIn"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->

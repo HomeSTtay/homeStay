@@ -1,7 +1,7 @@
 <div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Danh sách homestay
+      Danh sách người dùng
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-3">
@@ -14,7 +14,7 @@
          
         </div>
         <span class="input-group-btn">
-           <a  href="{{url("/")}}/them-homestay"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm homestay</i></button></a> 
+           <a  href="{{url("/")}}/signUp"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm người dùng</i></button></a> 
           </span>
       </div>
     </div>
@@ -27,27 +27,24 @@
                 <input type="checkbox" id="checkall">
               </label>
             </th>
-            <th>Mã homestay</th>
-            <th>Tên homestay</th>
-            <th>Phong cách</th>
-            <th>Địa điểm</th>
-            <th>Ngày đăng</th>
-            <th>Số bài đăng</th>
+            <th>Tên người dùng</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Ngày tạo</th>
+            <th>Phân quyền</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
         <tbody> 
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
-            <td>HS01</td>
-            <td>Home stay ABCD</td>
-             <td><span class="text-ellipsis">Vintage</span></td>
-            <td><span class="text-ellipsis">Đà Lạt</span></td>
-            <td><span class="text-ellipsis">2017-02-03</span></td>
-            <td><span class="text-ellipsis">20</span></td>
+            <td><span class="text-ellipsis">Trịnh Thu Phương Minh</span></td>
+            <td><span class="text-ellipsis">minhm9986@gmail.com</span></td>
+            <td><span class="text-ellipsis">0971961602</span></td>
+            <td><span class="text-ellipsis">2017</span></td>
+            <td><span class="text-ellipsis">1</span></td>
             <td>
               <a href="" class="active" ui-toggle-class="">
-              <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
               <i class="fa fa-times text-danger text" title="Xóa"></i>
               <i class="fa fa-edit text-info text" title="Chỉnh sửa"></i>
               </a>

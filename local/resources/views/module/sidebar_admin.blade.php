@@ -12,7 +12,7 @@
                 </li>
 
                  <li>
-                    <a  href="{{url("/")}}/">
+                    <a  href="{{url("/")}}/" target="_blank">
                         <i class="fa fa-bookmark"></i>
                         <span>Trang chính</span>
                     </a>
@@ -24,8 +24,10 @@
                         <span>Homestays</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="basic_table.html"><i class="fa fa-plus"></i>Thêm Homestay</a></li>
-                        <li><a href="{{url("/")}}/danh-sach-homestay"><i class="fa fa-list-ul"></i>Danh sách homestay</a></li>
+                        <li><a href="{{url("/")}}/them-homestay"><i class="fa fa-plus"></i>Thêm Homestay</a></li>
+                        <li><a href="{{url("/")}}/danh-sach-homestay"><i class="fa fa-list-ul"></i>Danh sách homestays</a></li>
+                        <li><a href="{{url("/")}}/danh-sach-loai-phong"><i class="fa fa-cog"></i>Quản lí loại phòng</a></li>
+                        <li><a href="{{url("/")}}/danh-sach-loai-phong"><i class="fa fa-cog"></i>Quản lí phong cách homestay</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -41,11 +43,18 @@
 
               
                 
-                <li>
-                    <a href="{{url("/")}}/logIn">
+                <li class="sub-menu">
+                    <a href="javascript:;">
                         <i class="fa fa-user"></i>
-                        <span>Login Page</span>
+                        <span>Người dùng</span>
                     </a>
+                    <ul class="sub">
+                 
+                    <li><a href="{{url("/")}}/logIn"><i class="fa fa-sign-out"></i>Đăng xuất</a></li>
+                    <li><a href="{{url("/")}}/danh-sach-nguoi-dung"><i class="fa fa-list-ul"></i>Danh sách người dùng</a></li>
+                    <li><a href="{{url("/")}}/signUp"><i class="fa fa-plus"></i>Thêm tài khoản</a></li>
+                    <li><a href="form_component.html"><i class="fa fa-cog"></i>Quản lí người dùng</a></li>
+                    </ul>
                 </li>
             </ul>            </div>
         <!-- sidebar menu end-->

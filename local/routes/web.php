@@ -31,3 +31,11 @@ Route::post('/registertest', 'TestLogin@postRegister');
 Route::get('/admin','AdminController@getAdminIndex');
 
 Route::get('/danh-sach-homestay','AdminController@getListHomestay');
+
+Route::get('/them-homestay','AdminController@getAddHomestay');
+
+Route::get('/danh-sach-nguoi-dung','AdminController@getListUser');
+
+Route::get('/danh-sach-loai-phong','AdminController@getListRoom');
+
+Route::get('/them-loai-phong','AdminController@getAddRoom');

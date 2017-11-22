@@ -50,10 +50,7 @@
 		
 		</div>	
 	<div class="clear"></div>
-     <div class="copy-right w3l-agile">
-		<p>Made by <a href="https://www.facebook.com/dyan.709"> DyAn</a></p>
-	</div>
-	<div class="clear"></div>
+ 
 </div>
 </div>
 

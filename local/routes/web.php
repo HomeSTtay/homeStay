@@ -18,3 +18,9 @@ Route::get('/signUp','MyFirstController@getSignup');
 Route::get('/logIn','MyFirstController@getLogin');
 
 Route::get('/detail','MyFirstController@getDetail');
+
+/* Admin */
+ 
+Route::get('/admin','AdminController@getAdminIndex');
+
+Route::get('/danh-sach-homestay','AdminController@getListHomestay');

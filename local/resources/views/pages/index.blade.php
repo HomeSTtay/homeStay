@@ -6,7 +6,7 @@
 		@include('module.baner-detail')
 	</div>
 	@include('module.banner-bottom')
-	<!--//xontent-->
+	<!--//content-->
 	<div class="banner-bottom-slider">
 	@include('module.banner-bottom-slider')
 	</div>

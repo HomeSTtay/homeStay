@@ -5,7 +5,7 @@
                 <div class="login-top left">
 			         <div class="social_icons">
 						<div class="w3-signup-head-top">
-							<h3>Signin with</h3>
+							<h3>Đăng nhập với</h3>
 						</div>
 						<!-- Facebook -->
 						<div class="slide-social w3l">
@@ -29,21 +29,21 @@
 							</a> 
 						</div>
 						<div class="w3-signup-head2-top">
-							<h3>OR</h3>
+							<h3>Hoặc</h3>
 						</div>
 						
 					</div>
 								<form action="{{ url('/logintest') }}" method="post">
 									{{ csrf_field() }}
 									
-									<input type="text" name="email" class="email" placeholder="Your Email" required="">	
-									<input type="password" name="password" class="password" placeholder="Password" required="">
+									<input type="text" name="email" class="email" placeholder=" Email" required="">	
+									<input type="password" name="password" class="password" placeholder="Mật khẩu" required="">
 								
 										
-									<input type="submit" value="SIGN IN">
+									<input type="submit" value="Đăng nhập">
 								</form>
 								<div class="w3-bottom-text" >
-								<h3><a href="" style="color: white;">Quên mật khẩu<span>?</span></a></h3>
+								<h3><a href="{{url("/")}}/thay-doi-mat-khau" style="color: white;">Quên mật khẩu<span>?</span></a></h3>
 								</div>
 								<div class="clear"></div>
 						</div>	

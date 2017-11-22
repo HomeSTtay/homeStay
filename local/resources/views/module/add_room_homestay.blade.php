@@ -8,7 +8,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Mã homestay</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control id-homestay" id="id-homestay" name="id-homestay" disabled="" value="HS01">
+                            <input type="text" class="form-control id-homestay" id="id-homestay" name="id-homestay" value="HS01">
                         </div>
                     </div>
                      <div class="form-group">

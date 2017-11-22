@@ -26,6 +26,9 @@ class MyFirstController extends Controller
 	public function getDetail(){
 		return view('pages.detail');
 	}
+	public function getChangePass(){
+		return view('pages.change_pass');
+	}
 }
 
 

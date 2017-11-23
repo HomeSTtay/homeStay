@@ -10,7 +10,7 @@
 						@if(Session::has('user'))
 						<li><a href="{{url("/")}}/">Đăng bài</a></li>
 						<li><a href="{{url("/")}}/">Thông tin cá nhân</a></li>
-						<li><a href="{{url("/")}}/">Đăng xuất</a></li>
+						<li><a href="{{url("/")}}/logOut">Đăng xuất</a></li>
 						@else
 						<li><a href="{{url("/signUp")}}/">Đăng kí </a></li>
 						<li><a href="{{url("/logIn")}}/">Đăng nhập</a></li>

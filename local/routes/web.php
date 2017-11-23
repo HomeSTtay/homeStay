@@ -23,6 +23,8 @@ Route::get('/form-send-mail','MyFirstController@getMail');
 
 Route::get('/form-change-pass','MyFirstController@getChangePass');
 
+Route::get('/logOut','TestLogin@getLogout');
+
 Auth::routes();
 
 Route::post('/logintest','TestLogin@postLogin');

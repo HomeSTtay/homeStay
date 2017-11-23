@@ -94,4 +94,9 @@ class TestLogin extends Controller
         $thongbao ='Bạn vui lòng kiểm tra mail để thay đổi mật khẩu';   
           return view('pages.mail_change_pass')->with('thongbao',$thongbao);
     }
+    public function getLogout(){
+         Session::forget('user');
+        return redirect('/logIn');
+
+    }
 }

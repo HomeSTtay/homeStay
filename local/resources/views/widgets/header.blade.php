@@ -20,7 +20,7 @@
 	button {
 		font-family: 'Arimo', sans-serif !important;
 	}
-	.typing-br,.w3-agile-signup-top{
+	.typing-br,.typing-br-o{
 		height: 520px;
 	}
 	.title-m{

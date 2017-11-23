@@ -86,7 +86,7 @@ class TestLogin extends Controller
     }
     public function postSendMail(Request $request){
         $email =  $request->input('email');
-        
+        $getmail = DB::('users')->where('')
         Mail::send('pages.temp_mail_change_pass', array(), function($message) use ($email){   
         $message->to($email,'Walk')->subject('Welcome to Walk');
       

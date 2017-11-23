@@ -34,19 +34,32 @@
 						</div>
 						
 					</div>
+						@if(count($errors)>0)
+								<div class="alert alert-danger">
+								@foreach($errors->all() as $err)
+									<p style="color:red">{{$err}}</p><br>
+								@endforeach
+								</div>
+							@endif
+
+							@if(session('thongbao'))
+								<div class="alert alert-danger">
+									<p style="color:red">{{session('thongbao')}}</p>
+								</div>
+								@endif
 								<form action="{{ url('/registertest') }}" method="post">
 									{{ csrf_field() }}
-									<input type="text" name="firstname" class="name" placeholder="First Name" required="">
-									<input type="text" name="lastname" class="name" placeholder="Last Name" required="">
-									<input type="text" name="email" class="email" placeholder="Your Email" required="">	
-									<input type="password" name="password" class="password" placeholder="Password" required="">
-									<input type="password" name="password" class="password" placeholder="Confirm Password" required="">	
+									<input type="text" name="firstname" class="name" placeholder="First Name">
+									<input type="text" name="lastname" class="name" placeholder="Last Name">
+									<input type="text" name="email" class="email" placeholder="Your Email" >	
+									<input type="password" name="password" class="password" placeholder="Password">
+									<input type="password" name="password" class="password" placeholder="Confirm Password">	
 										
 									<input type="submit" value="SIGN UP">
 								</form>
 								<div class="w3-bottom-text">
-								<h3>Already Have an account<span>?</span></h3>
-								<h4><a href="#">Login</a></h4>
+								<h3>Đã có tài khoản<span>?</span></h3>
+								<h4><a href="{{url("/")}}/logIn">Đăng nhập</a></h4>
 								</div>
 								<div class="clear"></div>
 						</div>	

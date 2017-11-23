@@ -32,12 +32,13 @@ class TestLogin extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
 
-        $checkLogin = DB::table('users')->where(['email'=>$email, 'password'=>$password])->get();
+        $checkLogin = DB::table('users')->where(['email'=>$email, 'password'=>$password])->first();
 
         if(count($checkLogin) >0){
-        
+        $name = $checkLogin->lastname;
+        Session::put('user.name',$name);
         Session::put('user.email',$email);
-        Session::put('user.pass',$pass);
+        Session::put('user.pass',$password);
      // Tạo session 
         $ss = Session::get('user'); 
 

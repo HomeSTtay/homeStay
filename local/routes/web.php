@@ -19,15 +19,17 @@ Route::get('/logIn','MyFirstController@getLogin');
 
 Route::get('/detail', 'MyFirstController@getDetail');
 
-Route::get('/thay-doi-mat-khau','MyFirstController@getChangePass');
+Route::get('/form-send-mail','MyFirstController@getMail');
 
-Route::get('/mail','MyFirstController@getMail');
+Route::get('/form-change-pass','MyFirstController@getChangePass');
 
 Auth::routes();
 
 Route::post('/logintest','TestLogin@postLogin');
 
 Route::post('/registertest', 'TestLogin@postRegister');
+
+Route::post('/send-mail', 'TestLogin@postSendMail');
  
 
 /* Admin */

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Mail;
 
 class TestLogin extends Controller
 {
@@ -25,12 +26,20 @@ class TestLogin extends Controller
     public function postRegister(Request $request){
     	
     	$user = new User();
-    	$user->firstname = $request->firstname;
+        $email =  $request->input('email');
+        $name =  $request->input('lastname');
+        $user->firstname = $request->firstname;
     	$user->lastname = $request->lastname;
     	$user->email = $request->email;
     	$user->password = $request->password;
     	$user->save();
-    	return redirect('/signUp')->with('thongbao','Đăng ký thành công');
+       
+    
+    Mail::send('pages.mail', array('lastname'=>$request->lastname), function($message) use ($email, $name){
+
+        $message->to($email,$name)->subject('Welcome to Walk');
+    });
+    	return redirect('/logIn');
 
     }
 }

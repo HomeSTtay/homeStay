@@ -21,6 +21,8 @@ Route::get('/detail', 'MyFirstController@getDetail');
 
 Route::get('/thay-doi-mat-khau','MyFirstController@getChangePass');
 
+Route::get('/mail','MyFirstController@getMail');
+
 Auth::routes();
 
 Route::post('/logintest','TestLogin@postLogin');

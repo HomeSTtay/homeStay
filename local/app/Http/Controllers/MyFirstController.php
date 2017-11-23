@@ -29,6 +29,9 @@ class MyFirstController extends Controller
 	public function getChangePass(){
 		return view('pages.change_pass');
 	}
+	public function getMail(){
+		return view('pages.form');
+	}
 }
 
 

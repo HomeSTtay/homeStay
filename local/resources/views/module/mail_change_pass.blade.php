@@ -1,6 +1,6 @@
-<div style="margin-top:7em;" data-vide-bg="videos/typing">
+<div class="typing-br" data-vide-bg="videos/typing">
 	 <div class="w3-agile-signup-top">
-	 <h1>Nhập email </h1>
+	 <h1 class="title-m">Nhập email </h1>
 		<div class="main">
                 <div class="login-top left">
 			       

@@ -1,5 +1,5 @@
 <title>@yield('title')</title>
-<link href="css/signup.css" rel='stylesheet' type='text/css' />
+<link href="{{asset('css/signup.css')}}" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -21,7 +21,7 @@
 		font-family: 'Arimo', sans-serif !important;
 	}
 	.typing-br,.typing-br-o{
-		height: 520px;
+		height: 550px;
 	}
 	.title-m{
 		margin-top:2em;

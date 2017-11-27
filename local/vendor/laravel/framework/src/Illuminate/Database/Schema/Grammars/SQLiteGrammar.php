@@ -2,6 +2,7 @@
 
 namespace Illuminate\Database\Schema\Grammars;
 
+use RuntimeException;
 use Illuminate\Support\Fluent;
 use Illuminate\Database\Connection;
 use Illuminate\Database\Schema\Blueprint;
@@ -172,6 +173,18 @@ class SQLiteGrammar extends Grammar
     }
 
     /**
+     * Compile a spatial index key command.
+     *
+     * @param  \Illuminate\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @throws \RuntimeException
+     */
+    public function compileSpatialIndex(Blueprint $blueprint, Fluent $command)
+    {
+        throw new RuntimeException('The database driver in use does not support spatial indexes.');
+    }
+
+    /**
      * Compile a foreign key command.
      *
      * @param  \Illuminate\Database\Schema\Blueprint  $blueprint
@@ -266,6 +279,18 @@ class SQLiteGrammar extends Grammar
         $index = $this->wrap($command->index);
 
         return "drop index {$index}";
+    }
+
+    /**
+     * Compile a drop spatial index command.
+     *
+     * @param  \Illuminate\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @throws \RuntimeException
+     */
+    public function compileDropSpatialIndex(Blueprint $blueprint, Fluent $command)
+    {
+        throw new RuntimeException('The database driver in use does not support spatial indexes.');
     }
 
     /**
@@ -639,6 +664,94 @@ class SQLiteGrammar extends Grammar
     protected function typeMacAddress(Fluent $column)
     {
         return 'varchar';
+    }
+
+    /**
+     * Create the column definition for a spatial Geometry type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    public function typeGeometry(Fluent $column)
+    {
+        return 'geometry';
+    }
+
+    /**
+     * Create the column definition for a spatial Point type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    public function typePoint(Fluent $column)
+    {
+        return 'point';
+    }
+
+    /**
+     * Create the column definition for a spatial LineString type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    public function typeLineString(Fluent $column)
+    {
+        return 'linestring';
+    }
+
+    /**
+     * Create the column definition for a spatial Polygon type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    public function typePolygon(Fluent $column)
+    {
+        return 'polygon';
+    }
+
+    /**
+     * Create the column definition for a spatial GeometryCollection type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    public function typeGeometryCollection(Fluent $column)
+    {
+        return 'geometrycollection';
+    }
+
+    /**
+     * Create the column definition for a spatial MultiPoint type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    public function typeMultiPoint(Fluent $column)
+    {
+        return 'multipoint';
+    }
+
+    /**
+     * Create the column definition for a spatial MultiLineString type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    public function typeMultiLineString(Fluent $column)
+    {
+        return 'multilinestring';
+    }
+
+    /**
+     * Create the column definition for a spatial MultiPolygon type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    public function typeMultiPolygon(Fluent $column)
+    {
+        return 'multipolygon';
     }
 
     /**

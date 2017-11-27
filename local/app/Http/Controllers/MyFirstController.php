@@ -29,6 +29,11 @@ class MyFirstController extends Controller
 	public function getChangePass(){
 		return view('pages.change_pass');
 	}
+	public function getMail(){
+		$thongbao="";
+		return view('pages.mail_change_pass')->with('thongbao',$thongbao);
+	}
+
 }
 
 

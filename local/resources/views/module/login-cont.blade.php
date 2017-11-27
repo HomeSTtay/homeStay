@@ -33,12 +33,13 @@
 						</div>
 						
 					</div>
-							
 								<form action="{{ url('/logintest') }}" method="post">
 									{{ csrf_field() }}
 									
-									<input type="text" name="email" class="email" placeholder=" Email" >	
-									<input type="password" name="password" class="password" placeholder="Mật khẩu" >
+									<input type="text" name="email" class="email" placeholder=" Email *" >	
+									
+									<input type="password" name="password" class="password" placeholder="Mật khẩu *">
+								
 								@if(count($errors)>0)
 								<div class="alert alert-danger">
 								@foreach($errors->all() as $err)
@@ -51,8 +52,7 @@
 								<div class="alert alert-danger">
 									<p style="color:red">{{session('thongbao')}}</p>
 								</div>
-								@endif
-										
+								@endif	
 									<input type="submit" value="Đăng nhập">
 								</form>
 								<div class="w3-bottom-text" >

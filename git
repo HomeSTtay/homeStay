@@ -1,0 +1,118 @@
+[33mcommit ab996aee6d9fdb25b5f04d56921b395b3d5f9849[m[33m ([m[1;36mHEAD -> [m[1;32mtung[m[33m)[m
+Author: votung1711 <votung1711@gmail.com>
+Date:   Fri Nov 24 01:47:45 2017 +0700
+
+    update login signup
+    
+    update validate login signup
+
+[33mcommit afe7248c045b8457718ad00b2a780feb974e04f6[m
+Author: minhminh <minhm9986@gmail.com>
+Date:   Wed Nov 22 23:36:25 2017 +0700
+
+    add page change pass
+
+[33mcommit 599fb14e5b4b5678842f4ccb2a7b027c84be7bf1[m
+Author: minhminh <minhm9986@gmail.com>
+Date:   Tue Nov 21 18:03:48 2017 +0700
+
+    same post on fb
+
+[33mcommit a998ae1ca38da1d3c7e02ea963035e66ccb258ce[m
+Author: minhminh <minhm9986@gmail.com>
+Date:   Tue Nov 21 12:41:53 2017 +0700
+
+    add font , image , js admin page
+
+[33mcommit 6fdc95d190a1904239ade9d5ea955c1a5849700a[m
+Author: minhminh <minhm9986@gmail.com>
+Date:   Mon Nov 20 21:39:54 2017 +0700
+
+    add admin
+
+[33mcommit 2088ee646c9957703682c4e20136cbee2ad66288[m
+Author: minhminh <minhm9986@gmail.com>
+Date:   Wed Nov 15 15:06:02 2017 +0700
+
+    add push-sidebar
+    
+    add push-sidebar
+
+[33mcommit 23d7c6d0c596fe165e68f19e7e5b4dc77d52a72e[m
+Author: minhminh <minhm9986@gmail.com>
+Date:   Wed Nov 15 15:01:39 2017 +0700
+
+    change content page home
+    
+    change content page home
+
+[33mcommit 432dbf8d3d2aafa7cd3813ca8b662de8ac62492b[m
+Author: minhminh <minhm9986@gmail.com>
+Date:   Wed Nov 15 14:32:14 2017 +0700
+
+    add vendor and .env
+    
+    add vendor and .env
+
+[33mcommit bf767e1007a7fd399e542d4ad6a70cedbefdb697[m
+Author: votung <votung1711@gmail.com>
+Date:   Mon Nov 13 17:05:36 2017 +0700
+
+    update dang nhap authenticate va dang ky
+
+[33mcommit b16cc0000496b1081fd7dc38004be6ed7d8f9db4[m
+Author: votung <votung1711@gmail.com>
+Date:   Wed Nov 1 13:39:06 2017 +0700
+
+    xoa den oc cho
+
+[33mcommit cf50a66368282845edf771403e6e35db1ab95785[m
+Author: votung <votung1711@gmail.com>
+Date:   Wed Nov 1 13:35:30 2017 +0700
+
+    den oc
+
+[33mcommit c137c036f87098831a38eada40082cda259bbff0[m
+Author: votung <votung1711@gmail.com>
+Date:   Wed Nov 1 13:34:04 2017 +0700
+
+    den thui
+
+[33mcommit 63ba3586291525c11b7efd9f9c080e7e7724ce5e[m[33m ([m[1;31morigin/luân[m[33m, [m[1;31morigin/cường[m[33m)[m
+Author: My <phannuthoaimy.sb@gmail.com>
+Date:   Tue Oct 31 23:04:50 2017 +0700
+
+    Update .gitignore
+
+[33mcommit 1df7b4fe998626844d8a0e1ceebe641147a903ae[m
+Merge: 011611c 3ae6f0c
+Author: My <phannuthoaimy.sb@gmail.com>
+Date:   Tue Oct 31 22:16:58 2017 +0700
+
+    Merge branch 'master' into miyulmi
+
+[33mcommit 011611cb75a3e600802590120043da6f61cd6240[m
+Author: My <phannuthoaimy.sb@gmail.com>
+Date:   Tue Oct 31 22:16:44 2017 +0700
+
+    change footer
+
+[33mcommit 3ae6f0c66630bba7cf43c762133e6aff841dabe9[m
+Author: My <phannuthoaimy.sb@gmail.com>
+Date:   Tue Oct 31 22:15:56 2017 +0700
+
+    change footer
+
+[33mcommit 4e1246a0092cc673856a34a300dc578d7790d876[m
+Author: minhminh <minhm9986@gmail.com>
+Date:   Tue Oct 31 22:09:04 2017 +0700
+
+    add project
+    
+    add project
+
+[33mcommit 7029d441f7216deb8f2746e375d8c4dc94aa7b7e[m
+Author: minhminh1502 <minhm9986@gmail.com>
+Date:   Tue Oct 31 21:53:18 2017 +0700
+
+    Initial commit

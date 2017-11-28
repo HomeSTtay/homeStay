@@ -44,8 +44,12 @@ Route::get('/danh-sach-homestay','AdminController@getListHomestay');
 
 Route::get('/them-homestay','AdminController@getAddHomestay');
 
+Route::get('/edit-homestay','AdminController@getEditHomestay');
+
 Route::get('/danh-sach-nguoi-dung','AdminController@getListUser');
 
 Route::get('/danh-sach-loai-phong','AdminController@getListRoom');
 
 Route::get('/them-loai-phong','AdminController@getAddRoom');
+
+Route::get('/edit-loai-phong','AdminController@getEditRoom');

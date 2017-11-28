@@ -33,26 +33,20 @@
 						</div>
 						
 					</div>
+								@if($errors->has('errorlogin'))
+									<div class="alert alert-danger">{{$errors->first('errorlogin')}}</div>
+									@endif
 								<form action="{{ url('/logintest') }}" method="post">
 									{{ csrf_field() }}
+									@if($errors->has('email'))
+									<p style="color:white;">{{$errors->first('email')}}</p>
+									@endif
+									<input type="text" name="email" class="email" value="{{ old('email')}}" placeholder=" Email *" >	
+									@if($errors->has('password'))
+									<p style="color:white;">{{$errors->first('password')}}</p>
+									@endif
+									<input type="password" name="password" value="{{ old('password')}}" class="password" placeholder="Mật khẩu *">
 									
-									<input type="text" name="email" class="email" placeholder=" Email *" >	
-									
-									<input type="password" name="password" class="password" placeholder="Mật khẩu *">
-								
-								@if(count($errors)>0)
-								<div class="alert alert-danger">
-								@foreach($errors->all() as $err)
-									<p style="color:red">{{$err}}</p><br>
-								@endforeach
-								</div>
-							@endif
-
-							@if(session('thongbao'))
-								<div class="alert alert-danger">
-									<p style="color:red">{{session('thongbao')}}</p>
-								</div>
-								@endif	
 									<input type="submit" value="Đăng nhập">
 								</form>
 								<div class="w3-bottom-text" >

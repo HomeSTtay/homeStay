@@ -40,14 +40,15 @@ Route::post('/change-pass/{email}','TestLogin@postChangePass');
  
 Route::get('/admin','AdminController@getAdminIndex');
 
-Route::get('/danh-sach-homestay','AdminController@getListHomestay');
+Route::get('/list-homestay','AdminController@getListHomestay');
 
-Route::get('/them-homestay','AdminController@getAddHomestay');
+Route::get('/add-homestay','AdminController@getAddHomestay');
 
-Route::get('/danh-sach-nguoi-dung','AdminController@getListUser');
+Route::get('/list-user','AdminController@getListUser');
 
-Route::get('/danh-sach-loai-phong','AdminController@getListRoom');
+Route::get('/list-type-room','AdminController@getListRoom');
 
+<<<<<<< HEAD
 Route::get('/them-loai-phong','AdminController@getAddRoom');
 
 Route::get('/danh-sach-style-homestay','AdminController@getListStyleHomestay');
@@ -55,3 +56,10 @@ Route::get('/danh-sach-style-homestay','AdminController@getListStyleHomestay');
 Route::get('/them-style-homestay','AdminController@getAddStyleHomestay');
 
 Route::get('/sua-style-homestay','AdminController@getEditStyleHomestay');
+=======
+Route::get('/add-type-room','AdminController@getAddRoom');
+
+Route::get('/add-post','AdminController@getAddPost');
+
+Route::get('/list-post','AdminController@getListPost');
+>>>>>>> 97e260630674b0eeafa727e5527b5e6f3ecdd9ff

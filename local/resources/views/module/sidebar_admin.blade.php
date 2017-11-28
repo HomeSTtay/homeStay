@@ -27,7 +27,7 @@
                         <li><a href="{{url("/")}}/add-homestay"><i class="fa fa-plus"></i>Thêm Homestay</a></li>
                         <li><a href="{{url("/")}}/list-homestay"><i class="fa fa-list-ul"></i>Danh sách homestays</a></li>
                         <li><a href="{{url("/")}}/list-type-room"><i class="fa fa-cog"></i>Quản lí loại phòng</a></li>
-                        <li><a href="{{url("/")}}/list-type-room"><i class="fa fa-cog"></i>Quản lí phong cách homestay</a></li>
+                        <li><a href="{{url("/")}}/danh-sach-style-homestay"><i class="fa fa-cog"></i>Quản lí phong cách homestay</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">

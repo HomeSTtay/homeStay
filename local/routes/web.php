@@ -48,6 +48,12 @@ Route::get('/list-user','AdminController@getListUser');
 
 Route::get('/list-type-room','AdminController@getListRoom');
 
+Route::get('/danh-sach-style-homestay','AdminController@getListStyleHomestay');
+
+Route::get('/them-style-homestay','AdminController@getAddStyleHomestay');
+
+Route::get('/sua-style-homestay','AdminController@getEditStyleHomestay');
+
 Route::get('/add-type-room','AdminController@getAddRoom');
 
 Route::get('/add-post','AdminController@getAddPost');

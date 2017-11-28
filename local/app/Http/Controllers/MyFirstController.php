@@ -24,10 +24,23 @@ class MyFirstController extends Controller
 
 	}
 	public function getDetail(){
+<<<<<<< HEAD
 
 		return view('pages.detail');
 
 	}
+=======
+		return view('pages.detail');
+	}
+	public function getChangePass(){
+		return view('pages.change_pass');
+	}
+	public function getMail(){
+		$thongbao="";
+		return view('pages.mail_change_pass')->with('thongbao',$thongbao);
+	}
+
+>>>>>>> master
 }
 
 

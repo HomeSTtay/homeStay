@@ -16,7 +16,7 @@
 				<p>"But I must explain to you how all this mistaken idea of denouncing pleasure and 
 					praising pain was born and I will give you a complete account of the system.</p>
 				<div class="more m1">
-					<a href="single.html" class="type-4">
+					<a href="{{url("/")}}/detail" class="type-4">
 						<span> Read More... </span>
 						<span> Read More... </span>
 						<span> Read More... </span>

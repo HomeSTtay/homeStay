@@ -26,6 +26,8 @@
                     <ul class="sub">
                         <li><a href="{{url("/")}}/them-homestay"><i class="fa fa-plus"></i>Thêm Homestay</a></li>
                         <li><a href="{{url("/")}}/danh-sach-homestay"><i class="fa fa-list-ul"></i>Danh sách homestays</a></li>
+                        <li><a href="{{url("/")}}/them-style-homestay"><i class="fa fa-plus"></i>Thêm Style Homestay</a></li>
+                        <li><a href="{{url("/")}}/danh-sach-style-homestay"><i class="fa fa-list-ul"></i>Danh sách style homestays</a></li>
                         <li><a href="{{url("/")}}/danh-sach-loai-phong"><i class="fa fa-cog"></i>Quản lí loại phòng</a></li>
                         <li><a href="{{url("/")}}/danh-sach-loai-phong"><i class="fa fa-cog"></i>Quản lí phong cách homestay</a></li>
                     </ul>

@@ -32,6 +32,17 @@ class AdminController extends Controller
 	public function getAddRoom(){
 		return view('pages.add_room_homestay');
 	}
+
+	public function getListStyleHomestay(){
+		return view('pages.admin_list_style_homestay');
+	}
+
+	public function getAddStyleHomestay(){
+		return view('pages.admin_add_style_homestay');
+	}
+	public function getEditStyleHomestay(){
+		return view('pages.admin_edit_style_homestay');
+	}
 }
 
 

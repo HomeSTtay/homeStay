@@ -12,7 +12,7 @@
           </span>         
         </div>
         <span class="input-group-btn">
-           <a  href="{{url("/")}}/them-style-homestay"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm style</i></button></a> 
+           <a  href="{{url("/")}}/add-style-homestay"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm style</i></button></a> 
           </span>
       </div>
     </div>
@@ -43,7 +43,7 @@
               <a href="" class="active" ui-toggle-class="">
               <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
               <i class="fa fa-times text-danger text" title="Xóa"></i>
-              <a href="{{url("/")}}/sua-style-homestay"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
+              <a href="{{url("/")}}/edit-style-homestay"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
               </a>
             </td>
           </tr>

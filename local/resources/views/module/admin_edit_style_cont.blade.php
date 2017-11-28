@@ -6,21 +6,21 @@
             <div class="panel-body">
                 <form class="form-horizontal bucket-form" method="post">
                 <div class="form-group">
-                        <label class="col-sm-3 control-label">Mã style</label>
-                        <div class="col-sm-6">
+                        <label class="col-sm-2 control-label">Mã style</label>
+                        <div class="col-sm-10">
                             <input type="text" class="form-control id-style-homestay" id="id-style-homestay" name="id-style-homestay" disabled="" value = "S01"  >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Tên style</label>
-                        <div class="col-sm-6">
+                        <label class="col-sm-2 control-label">Tên style</label>
+                        <div class="col-sm-10">
                         <input type="text" class="form-control name-style-homestay" id="name-style-homestay" name="name-style-homestay"  >
                         </div>
                     </div>  
                      <div class="form-group">
-                        <label class="col-sm-3 control-label">Mô tả</label>
-                        <div class="col-sm-6">
-                        <textarea rows="4" cols="68" name="descrip_style" form="form-control" ></textarea>
+                        <label class="col-sm-2 control-label">Mô tả</label>
+                        <div class="col-sm-10">
+                        <textarea class="ckeditor" name="descrip_style" form="form-control" ></textarea>
                         </div>
                     </div>
                      <div class="form-group">

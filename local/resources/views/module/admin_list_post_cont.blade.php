@@ -50,7 +50,7 @@
               <a href="" class="active" ui-toggle-class="">
               <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
               <i class="fa fa-times text-danger text" title="Xóa"></i>
-              <i class="fa fa-edit text-info text" title="Chỉnh sửa"></i>
+            <a href="{{url("/")}}/edit-post"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
               </a>
             </td>
           </tr>

@@ -6,7 +6,7 @@
 	<!--main content start-->
 	<section id="main-content">
 		<section class="wrapper">
-			@include('module.list_user_cont')
+			@include('module.admin_list_user_cont')
 			
 		</section>
 	</section>

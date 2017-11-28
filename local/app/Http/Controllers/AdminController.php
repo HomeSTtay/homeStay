@@ -16,21 +16,21 @@ class AdminController extends Controller
 	
 
 	public function getListHomestay(){
-		return view('pages.list_homestay');
+		return view('pages.admin_list_homestay');
 	}	
 	
 	public function getAddHomestay(){
-		return view('pages.add_homestay');
+		return view('pages.admin_add_homestay');
 	}
 	public function getListUser(){
-		return view('pages.list_user');
+		return view('pages.admin_list_user');
 	}
 	public function getListRoom(){
-		return view('pages.list_room_homestay');
+		return view('pages.admin_list_room_homestay');
 
 	}
 	public function getAddRoom(){
-		return view('pages.add_room_homestay');
+		return view('pages.admin_add_room_homestay');
 	}
 
 	public function getListStyleHomestay(){
@@ -44,11 +44,14 @@ class AdminController extends Controller
 		return view('pages.admin_edit_style_homestay');
 	}
 		public function getAddPost(){
-		return view('pages.add_post');
+		return view('pages.admin_add_post');
 	}
 	
 	public function getListPost(){
-		return view('pages.list_post');
+		return view('pages.admin_list_post');
+	}
+	public function getEditPost(){
+		return view('pages.admin_edit_post');
 	}
 }
 

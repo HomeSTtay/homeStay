@@ -40,12 +40,16 @@ Route::post('/change-pass/{email}','TestLogin@postChangePass');
  
 Route::get('/admin','AdminController@getAdminIndex');
 
-Route::get('/danh-sach-homestay','AdminController@getListHomestay');
+Route::get('/list-homestay','AdminController@getListHomestay');
 
-Route::get('/them-homestay','AdminController@getAddHomestay');
+Route::get('/add-homestay','AdminController@getAddHomestay');
 
-Route::get('/danh-sach-nguoi-dung','AdminController@getListUser');
+Route::get('/list-user','AdminController@getListUser');
 
-Route::get('/danh-sach-loai-phong','AdminController@getListRoom');
+Route::get('/list-type-room','AdminController@getListRoom');
 
-Route::get('/them-loai-phong','AdminController@getAddRoom');
+Route::get('/add-type-room','AdminController@getAddRoom');
+
+Route::get('/add-post','AdminController@getAddPost');
+
+Route::get('/list-post','AdminController@getListPost');

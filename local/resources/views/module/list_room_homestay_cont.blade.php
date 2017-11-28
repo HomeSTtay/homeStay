@@ -14,7 +14,7 @@
          
         </div>
         <span class="input-group-btn">
-           <a  href="{{url("/")}}/them-loai-phong"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm loại phòng</i></button></a> 
+           <a  href="{{url("/")}}/add-type-room"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm loại phòng</i></button></a> 
           </span>
       </div>
     </div>

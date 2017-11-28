@@ -14,7 +14,7 @@
          
         </div>
         <span class="input-group-btn">
-           <a  href="{{url("/")}}/them-homestay"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm homestay</i></button></a> 
+           <a  href="{{url("/")}}/add-homestay"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm homestay</i></button></a> 
           </span>
       </div>
     </div>

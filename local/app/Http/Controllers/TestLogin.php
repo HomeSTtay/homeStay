@@ -9,7 +9,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Mail;
-use Illuminate\Contracts\Validation\Validator;
+use Validator;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Session;
 
@@ -19,63 +19,46 @@ class TestLogin extends Controller
 
     public function postLogin(Request $request)
     {
-<<<<<<< HEAD
-        
-=======
-    	
->>>>>>> 9c5d8ee659d54253fadb85d5533f3ee74b0b2bd5
-       $this->validate($request,[
+      $rules = [
         'email'=>'required|email',
         'password'=>'required',
-        ],
+        ];
 
-        [
+     $message = [
         'email.required'=>'Vui lòng nhập email',
-        'email.email'=>'Vui lòng nhập đúng định dạng email',
-        'password.required'=>'Vui lòng nhập mật khẩu',
-        
-        ]);
+        'email.email'=>'Vui lòng nhập đúng  email',
+        'password.required'=>'Vui lòng nhập mật khẩu',       
+        ];
 
-        
         $email = $request->input('email');
         $password = $request->input('password');
 
-        $checkLogin = DB::table('users')->where('email',$email)->first();
-
-        if(count($checkLogin) >0){
-             $pass = $checkLogin->password;
-             if($password == $pass){
-              $name = $checkLogin->lastname;
-             Session::put('user.name',$name);
-             Session::put('user.email',$email);
-                Session::put('user.pass',$password);
-             // Tạo session 
-              $ss = Session::get('user'); 
-
-              return redirect('/')->with($ss);
-            }else{
-                   return redirect('/logIn')->with('thongbao','Mật khẩu không đúng');
-
-             }
-
+        $validation = Validator::make($request->all(), $rules, $message);
+        if($validation->fails()){
+            return redirect()->back()->withErrors($validation)->withInput();
         }
         else{
-             return redirect('/logIn')->with('thongbao','Email không đúng');
+        $checkLogin = DB::table('users')->where(['email'=>$email, 'password'=>$password])->first();
+
+        if(count($checkLogin) >0){
+       
+        Session::put('user.email',$email);
+        Session::put('user.password',$password);
+     // Tạo session 
+       $ss = Session::get('user'); 
+
+       return redirect('/')->with($ss);
+        }else{
+            return redirect('/logIn')->with('thongbao','Đăng nhập thất bại');
+        }
         }
         
-<<<<<<< HEAD
-        
-    }
 
-    public function postRegister(Request $request){
-        
-=======
-    	
     }
 
     public function postRegister(Request $request){
     	
->>>>>>> 9c5d8ee659d54253fadb85d5533f3ee74b0b2bd5
+
          $this->validate($request,[
         'firstname'=>'required',
         'lastname'=>'required',
@@ -118,12 +101,6 @@ class TestLogin extends Controller
 
         return redirect('/')->with($ss);
        
-<<<<<<< HEAD
-        
-=======
-    	
->>>>>>> 9c5d8ee659d54253fadb85d5533f3ee74b0b2bd5
-
     }
     public function getChangePass(){
         return view('pages.change_pass_cont');

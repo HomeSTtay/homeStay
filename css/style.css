@@ -7,14 +7,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
     font-size: 100%;
 	background:	#fff;
-	font-family: 'Arimo', sans-serif; 
-
+	font-family: 'Open Sans', sans-serif;
+}
 p{
 	margin:0;
 }
 h1,h2,h3,h4,h5,h6,a{
-	font-family: 'Arimo', sans-serif;
-
+	font-family: 'Bad Script', cursive;
 	font-weight:100;
 	margin:0;
 }
@@ -159,7 +158,7 @@ body a:hover{
     text-decoration: none;
     padding:13px 10px;
     display: block;
-	font-family: 'Arimo', sans-serif !important;
+	font-family: 'Open Sans', sans-serif;
 }
 .top-nav ul li a:hover{
 	background:#3598dc;
@@ -440,7 +439,7 @@ ul.nav1 {
     font-size: 3em;
     font-weight: 600;
     text-transform: capitalize;
-    font-family: 'Arimo', sans-serif !important;
+    font-family: 'Open Sans', sans-serif;
 }
 .banner-bottom-left1-grid h3 span{
 	font-size: .3em;
@@ -469,7 +468,7 @@ ul.nav1 {
     margin: 0;
     line-height: 1.6em;
     position: relative;
-  font-family: 'Arimo', sans-serif !important;
+    font-family: 'Open Sans', sans-serif;
 	font-weight:400;
 }
 .banner-bottom-left2 h3:before{
@@ -662,7 +661,7 @@ figure.effect-lexi:hover p {
     margin: 1em 0 0em;
     font-weight: 400;
     line-height: 1.5em;
-   font-family: 'Arimo', sans-serif !important;
+    font-family: 'Open Sans', sans-serif;
 }
 .progress2 {
     margin:1em 0 0;
@@ -696,7 +695,7 @@ p.exercise{
     color: #eb6f63;
     font-weight: 600;
     margin: .3em 0 0.5em;
-   font-family: 'Arimo', sans-serif !important;
+    font-family: 'Open Sans', sans-serif;
 }
 .banner-bottom-slider-left p{
 	margin:0;
@@ -1384,7 +1383,7 @@ p.dummy-text{
     color: #999;
     margin: 0;
     line-height: 1.8em;
-   font-family: 'Arimo', sans-serif !important;
+    font-family: 'Open Sans', sans-serif;
 }
 /*-- //about ---*/
 /*--Typography--*/
@@ -1764,7 +1763,7 @@ h2.typoh2{
     padding-left: 1.5em;
     line-height: 1.8em;
     position: relative;
-   font-family: 'Arimo', sans-serif !important;
+    font-family: 'Open Sans', sans-serif;
 }
 .single-left h3:before{
 	position: absolute;

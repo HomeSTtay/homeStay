@@ -10,13 +10,9 @@
                         <span>Trang chủ Admin</span>
                     </a>
                 </li>
-
                  <li>
-<<<<<<< HEAD
-                    <a  href="{{url("/")}}/">
-=======
                     <a  href="{{url("/")}}/" target="_blank">
->>>>>>> master
+
                         <i class="fa fa-bookmark"></i>
                         <span>Trang chính</span>
                     </a>
@@ -28,17 +24,17 @@
                         <span>Homestays</span>
                     </a>
                     <ul class="sub">
-<<<<<<< HEAD
+
                         <li><a href="basic_table.html"><i class="fa fa-plus"></i>Thêm Homestay</a></li>
                         <li><a href="{{url("/")}}/danh-sach-homestay"><i class="fa fa-list-ul"></i>Danh sách homestay</a></li>
-=======
+
                         <li><a href="{{url("/")}}/them-homestay"><i class="fa fa-plus"></i>Thêm Homestay</a></li>
                         <li><a href="{{url("/")}}/danh-sach-homestay"><i class="fa fa-list-ul"></i>Danh sách homestays</a></li>
-                        <li><a href="{{url("/")}}/them-style-homestay"><i class="fa fa-plus"></i>Thêm Style Homestay</a></li>
+                        <li><a href="{{url("/")}}/form-them-style-homestay"><i class="fa fa-plus"></i>Thêm Style Homestay</a></li>
                         <li><a href="{{url("/")}}/danh-sach-style-homestay"><i class="fa fa-list-ul"></i>Danh sách style homestays</a></li>
                         <li><a href="{{url("/")}}/danh-sach-loai-phong"><i class="fa fa-cog"></i>Quản lí loại phòng</a></li>
                         <li><a href="{{url("/")}}/danh-sach-loai-phong"><i class="fa fa-cog"></i>Quản lí phong cách homestay</a></li>
->>>>>>> master
+
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -54,13 +50,13 @@
 
               
                 
-<<<<<<< HEAD
+
                 <li>
                     <a href="{{url("/")}}/logIn">
                         <i class="fa fa-user"></i>
                         <span>Login Page</span>
                     </a>
-=======
+
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-user"></i>
@@ -73,7 +69,7 @@
                     <li><a href="{{url("/")}}/signUp"><i class="fa fa-plus"></i>Thêm tài khoản</a></li>
                     <li><a href="form_component.html"><i class="fa fa-cog"></i>Quản lí người dùng</a></li>
                     </ul>
->>>>>>> master
+
                 </li>
             </ul>            </div>
         <!-- sidebar menu end-->

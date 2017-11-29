@@ -4,7 +4,7 @@
 		<div class="main">
                 <div class="login-top left">
 			       
-								<form action="{{ url('/change-pass/$email') }}" method="post">
+								<form action="{{ url('/them-style-homestay') }}" method="post">
 									{{ csrf_field() }}
 								
 									

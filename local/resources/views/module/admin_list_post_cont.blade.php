@@ -40,7 +40,7 @@
         <tbody> 
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
-            <td>HS01</td>
+            <td>P01</td>
             <td>Home stay ABCD</td>
              <td><span class="text-ellipsis">Đẹp, chất chơi người dơi</span></td>
             <td><span class="text-ellipsis"></span></td>

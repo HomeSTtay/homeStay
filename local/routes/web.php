@@ -44,9 +44,7 @@ Route::get('/list-homestay','AdminController@getListHomestay');
 
 Route::get('/add-homestay','AdminController@getAddHomestay');
 
-Route::get('/list-user','AdminController@getListUser');
-
-Route::get('/list-type-room','AdminController@getListRoom');
+Route::get('/edit-homestay','AdminController@getEditHomestay');
 
 Route::get('/list-style-homestay','AdminController@getListStyleHomestay');
 
@@ -54,11 +52,17 @@ Route::get('/add-style-homestay','AdminController@getAddStyleHomestay');
 
 Route::get('/edit-style-homestay','AdminController@getEditStyleHomestay');
 
+Route::get('/list-type-room','AdminController@getListRoom');
+
 Route::get('/add-type-room','AdminController@getAddRoom');
+
+Route::get('/edit-type-room','AdminController@getEditRoom');
 
 Route::get('/add-post','AdminController@getAddPost');
 
 Route::get('/list-post','AdminController@getListPost');
 
 Route::get('/edit-post','AdminController@getEditPost');
+
+Route::get('/list-user','AdminController@getListUser');
 

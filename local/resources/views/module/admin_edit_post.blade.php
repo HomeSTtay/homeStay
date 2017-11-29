@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Mã homestay</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control id-homestay" id="name-homestay" name="name-homestay">
+                            <input type="text" class="form-control id-homestay" id="name-homestay" name="name-homestay" value="Home stay ABCD">
                         </div>
                     </div>
                     
@@ -22,8 +22,8 @@
                          <label class="col-sm-2 control-label">Loại phòng</label>
                          <div class="col-sm-10">
                         <select multiple   class="form-control m-bot15 type-room">
-                                <option value="Vintage">Vintage</option>
-                                <option value="Vintage">Vintage</option>
+                                <option selected value="Vintage">Vintage</option>
+                                <option selected value="Vintage">Hiện đại</option>
                                 <option value="Vintage">Vintage</option>
                                 <option value="Vintage">Vintage</option>
                                 <option value="Vintage">Vintage</option>
@@ -35,7 +35,7 @@
                       <div class="form-group">
                         <label class="col-sm-2 control-label">Mô tả</label>
                         <div class="col-sm-10">
-                            <textarea name="desc-post" class="ckeditor desc-post form-control"></textarea>
+                            <textarea name="desc-post" class="ckeditor desc-post form-control">Đẹp, chất chơi người dơi</textarea>
                         </div>
                     </div>      
                       <div class="form-group">

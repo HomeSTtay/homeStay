@@ -17,6 +17,8 @@ Route::get('/signUp','MyFirstController@getSignup');
 
 Route::get('/logIn','MyFirstController@getLogin');
 
+Route::get('/detail','MyFirstController@getDetail');
+
 Route::get('/detail', 'MyFirstController@getDetail');
 
 Route::get('/form-send-mail/','MyFirstController@getMail');
@@ -36,13 +38,20 @@ Route::post('/send-mail', 'TestLogin@postSendMail');
 Route::post('/change-pass/{email}','TestLogin@postChangePass');
  
 
+
 /* Admin */
  
 Route::get('/admin','AdminController@getAdminIndex');
 
 Route::get('/list-homestay','AdminController@getListHomestay');
 
+<<<<<<< HEAD
 Route::get('/add-homestay','AdminController@getAddHomestay');
+=======
+Route::get('/danh-sach-homestay','AdminController@getListHomestay');
+
+Route::get('/them-homestay','AdminController@getAddHomestay');
+>>>>>>> LuanNguyen
 
 Route::get('/edit-homestay','AdminController@getEditHomestay');
 
@@ -52,7 +61,12 @@ Route::get('/add-style-homestay','AdminController@getAddStyleHomestay');
 
 Route::get('/edit-style-homestay','AdminController@getEditStyleHomestay');
 
+<<<<<<< HEAD
 Route::get('/list-type-room','AdminController@getListRoom');
+=======
+<<<<<<< HEAD
+Route::get('/danh-sach-style-homestay','AdminController@getListStyleHomestay');
+>>>>>>> LuanNguyen
 
 Route::get('/add-type-room','AdminController@getAddRoom');
 
@@ -66,3 +80,11 @@ Route::get('/edit-post','AdminController@getEditPost');
 
 Route::get('/list-user','AdminController@getListUser');
 
+<<<<<<< HEAD
+=======
+Route::get('/sua-style-homestay','AdminController@getEditStyleHomestay');
+
+=======
+Route::get('/edit-loai-phong','AdminController@getEditRoom');
+>>>>>>> origin/LuanNguyen
+>>>>>>> LuanNguyen

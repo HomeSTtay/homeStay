@@ -38,6 +38,11 @@ class AdminController extends Controller
 	public function getEditRoom(){
 	 	return view('pages.admin_edit_room_homestay');
 	}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> LuanNguyen
 	public function getListStyleHomestay(){
 		return view('pages.admin_list_style_homestay');
 	}
@@ -48,6 +53,7 @@ class AdminController extends Controller
 	public function getEditStyleHomestay(){
 		return view('pages.admin_edit_style_homestay');
 	}
+<<<<<<< HEAD
 		public function getAddPost(){
 		return view('pages.admin_add_post');
 	}
@@ -59,6 +65,14 @@ class AdminController extends Controller
 		return view('pages.admin_edit_post');
 	}
 	
+=======
+
+=======
+	 public function getEditRoom(){
+	 	return view('pages.edit_room_homestay');
+	 }
+>>>>>>> origin/LuanNguyen
+>>>>>>> LuanNguyen
 }
 
 

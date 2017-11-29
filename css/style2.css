@@ -951,7 +951,11 @@ div#graph1,div#graph4,div#graph5,div#graph6,div#graph7,div#graph8,div#graph9 {
     border-bottom: 1px solid #e9e9e9 ! important;
 }
 .progress.progress-right {
+<<<<<<< HEAD
+    width: 50%;
+=======
     width: 25%;
+>>>>>>> master
     float: right;
     height: 8px;
     margin-bottom: 0;
@@ -1481,7 +1485,13 @@ li.list-group-item1 {
 }
 .input-group {
 	margin-bottom: 20px;
+<<<<<<< HEAD
+    
 }
+
+=======
+}
+>>>>>>> master
 .in-gp-tl{
 	padding:0;
 }
@@ -3143,8 +3153,11 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
 .chart_agile_bottom {
     padding: 0;
 }
+<<<<<<< HEAD
+=======
 }
 .btn-add-homestay{
    float: right;
   
+>>>>>>> master
 }

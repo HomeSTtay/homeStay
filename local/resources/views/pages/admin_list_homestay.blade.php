@@ -1,5 +1,9 @@
 @extends('templates.admin')
+<<<<<<< HEAD
+@section('title','Trang chủ Admin')
+=======
 @section('title','Danh sách homestay')
+>>>>>>> master
 @section('main_admin')
 	@include('module.sidebar_admin')
 

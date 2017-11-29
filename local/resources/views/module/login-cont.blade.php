@@ -62,6 +62,30 @@
 <div class="clear"></div>
 <div class="clear"></div>
 
+<<<<<<< HEAD
+=======
+							@if(session('thongbao'))
+								<div class="alert alert-danger">
+									<p style="color:red">{{session('thongbao')}}</p>
+								</div>
+								@endif	
+									<input type="submit" value="Đăng nhập">
+								</form>
+								<div class="w3-bottom-text" >
+								<h3><a href="{{url("/")}}/form-send-mail" style="color: white;">Quên mật khẩu<span>?</span></a></h3>
+								</div>
+								<div class="clear"></div>
+						</div>	
+							
+		
+		</div>	
+	<div class="clear"></div>
+<<<<<<< HEAD
+ 
+=======
+	<div class="clear"></div>
+>>>>>>> master
+>>>>>>> LuanNguyen
 </div>
 </div>
 

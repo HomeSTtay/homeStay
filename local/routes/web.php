@@ -55,6 +55,9 @@ Route::get('/add-style-homestay','AdminController@getAddStyleHomestay');
 
 Route::get('/edit-style-homestay','AdminController@getEditStyleHomestay');
 
+Route::get('/form-add-style-homestay','AdminController@getAddStyleHomestay');
+
+Route::get('/delete-style/{id}','AdminController@getDeleteStyleHomestay');
 
 Route::get('/list-type-room','AdminController@getListRoom');
 

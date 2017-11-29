@@ -10,7 +10,6 @@
                         <span>Trang chủ Admin</span>
                     </a>
                 </li>
-
                  <li>
                     <a  href="{{url("/")}}/" target="_blank">
                         <i class="fa fa-bookmark"></i>

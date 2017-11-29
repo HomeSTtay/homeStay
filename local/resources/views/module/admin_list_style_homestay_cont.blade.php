@@ -12,7 +12,7 @@
           </span>         
         </div>
         <span class="input-group-btn">
-           <a  href="{{url("/")}}/add-style-homestay"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm style</i></button></a> 
+           <a  href="{{url("/")}}/form-add-style-homestay"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm style</i></button></a> 
           </span>
       </div>
     </div>
@@ -34,39 +34,27 @@
           </tr>
         </thead>
         <tbody> 
+        @foreach($list as $l)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
-            <td>S01</td>
-            <td>Vintage</td>
-            <td><span class="text-ellipsis">Phong cách cổ điển và xưa cũ..</span></td>
+            <td>{{$l->id}}</td>
+            <td>{{$l->name}}</td>
+            <td><span class="text-ellipsis">{{$l->description}}</span></td>
             <td>
               <a href="" class="active" ui-toggle-class="">
-              <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
-              <i class="fa fa-times text-danger text" title="Xóa"></i>
+             <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
+             <a href="{{url("/")}}/delete-style/{{$l->id}}" > <i class="fa fa-times text-danger text" title="Xóa"></i></a>
               <a href="{{url("/")}}/edit-style-homestay"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
               </a>
             </td>
           </tr>
-          
+          @endforeach
          
           
         </tbody>
       </table>
+      {{$list->links()}}
     </div>
-    <footer class="panel-footer">
-      <div class="row">
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
   </div>
 </div>
 

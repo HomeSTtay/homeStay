@@ -35,7 +35,7 @@ class AdminController extends Controller
 	public function getAddRoom(){
 		return view('pages.add_room_homestay');
 	}
-<<<<<<< HEAD
+
 
 	public function getListStyleHomestay(){
 		return view('pages.admin_list_style_homestay');
@@ -48,11 +48,10 @@ class AdminController extends Controller
 		return view('pages.admin_edit_style_homestay');
 	}
 
-=======
 	 public function getEditRoom(){
 	 	return view('pages.edit_room_homestay');
 	 }
->>>>>>> origin/LuanNguyen
+
 }
 
 

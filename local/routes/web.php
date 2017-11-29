@@ -57,13 +57,12 @@ Route::get('/danh-sach-loai-phong','AdminController@getListRoom');
 
 Route::get('/them-loai-phong','AdminController@getAddRoom');
 
-<<<<<<< HEAD
+
 Route::get('/danh-sach-style-homestay','AdminController@getListStyleHomestay');
 
 Route::get('/them-style-homestay','AdminController@getAddStyleHomestay');
 
 Route::get('/sua-style-homestay','AdminController@getEditStyleHomestay');
 
-=======
 Route::get('/edit-loai-phong','AdminController@getEditRoom');
->>>>>>> origin/LuanNguyen
+

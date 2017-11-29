@@ -52,6 +52,7 @@
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <td>Idrawfast prototype design prototype design prototype design prototype design prototype design</td>
             <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
             <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
@@ -88,6 +89,9 @@
           </tr>
 =======
             <td>HS01</td>
+=======
+            <td>HS0ss1</td>
+>>>>>>> origin/LuanNguyen
             <td>Home stay ABCD</td>
              <td><span class="text-ellipsis">Vintage</span></td>
             <td><span class="text-ellipsis">Đà Lạt</span></td>
@@ -97,7 +101,7 @@
               <a href="" class="active" ui-toggle-class="">
               <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
               <i class="fa fa-times text-danger text" title="Xóa"></i>
-              <i class="fa fa-edit text-info text" title="Chỉnh sửa"></i>
+              <i href="{{url("/")}}/edit-homestay" class="fa fa-edit text-info text" title="Chỉnh sửa"></i>
               </a>
             </td>
           </tr>

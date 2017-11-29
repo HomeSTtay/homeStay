@@ -19,11 +19,7 @@ class TestLogin extends Controller
 
     public function postLogin(Request $request)
     {
-<<<<<<< HEAD
         
-=======
-    	
->>>>>>> 9c5d8ee659d54253fadb85d5533f3ee74b0b2bd5
        $this->validate($request,[
         'email'=>'required|email',
         'password'=>'required',
@@ -63,19 +59,11 @@ class TestLogin extends Controller
              return redirect('/logIn')->with('thongbao','Email không đúng');
         }
         
-<<<<<<< HEAD
         
     }
 
     public function postRegister(Request $request){
         
-=======
-    	
-    }
-
-    public function postRegister(Request $request){
-    	
->>>>>>> 9c5d8ee659d54253fadb85d5533f3ee74b0b2bd5
          $this->validate($request,[
         'firstname'=>'required',
         'lastname'=>'required',
@@ -118,11 +106,7 @@ class TestLogin extends Controller
 
         return redirect('/')->with($ss);
        
-<<<<<<< HEAD
         
-=======
-    	
->>>>>>> 9c5d8ee659d54253fadb85d5533f3ee74b0b2bd5
 
     }
     public function getChangePass(){

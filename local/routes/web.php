@@ -17,9 +17,8 @@ Route::get('/signUp','MyFirstController@getSignup');
 
 Route::get('/logIn','MyFirstController@getLogin');
 
-<<<<<<< HEAD
 Route::get('/detail','MyFirstController@getDetail');
-=======
+
 Route::get('/detail', 'MyFirstController@getDetail');
 
 Route::get('/form-send-mail/','MyFirstController@getMail');
@@ -38,15 +37,14 @@ Route::post('/send-mail', 'TestLogin@postSendMail');
 
 Route::post('/change-pass/{email}','TestLogin@postChangePass');
  
->>>>>>> master
+
 
 /* Admin */
  
 Route::get('/admin','AdminController@getAdminIndex');
 
-<<<<<<< HEAD
 Route::get('/danh-sach-homestay','AdminController@getListHomestay');
-=======
+
 Route::get('/danh-sach-homestay','AdminController@getListHomestay');
 
 Route::get('/them-homestay','AdminController@getAddHomestay');
@@ -62,4 +60,4 @@ Route::get('/danh-sach-style-homestay','AdminController@getListStyleHomestay');
 Route::get('/them-style-homestay','AdminController@getAddStyleHomestay');
 
 Route::get('/sua-style-homestay','AdminController@getEditStyleHomestay');
->>>>>>> master
+

@@ -1,5 +1,4 @@
 <div data-vide-bg="videos/typing">
-<<<<<<< HEAD
 <div class="w3-agile-signup-top">
 <h1>Đăng nhập</h1>
    <div class="main">
@@ -24,7 +23,7 @@
 				   <a href="#">
 					   <div class="twitter icon"> <i class="twitter"></i></div>
 					   <div class="twitter slide">
-						   <p>Twitter</p>
+						   <p>Twitter</p>	
 					   </div>
 					   <div class="clear"></div>
 					   </a> 
@@ -34,9 +33,7 @@
 				   </div>
 				   
 			   </div>
-						   @if($errors->has('errorlogin'))
-							   <div class="alert alert-danger">{{$errors->first('errorlogin')}}</div>
-							   @endif
+						  
 						   <form action="{{ url('/logintest') }}" method="post">
 							   {{ csrf_field() }}
 							   
@@ -48,6 +45,9 @@
 							   <input type="password" name="password" value="{{ old('password')}}" class="password" placeholder="Mật khẩu *">
 							   @if($errors->has('password'))
 							   <p style="color:white;">{{$errors->first('password')}}</p>
+							   @endif
+							   @if($errors->has('errorlogin'))
+							   <p style="color:white;">{{$errors->first('errorlogin')}}</p>
 							   @endif
 							   <input type="submit" value="Đăng nhập">
 						   </form>
@@ -61,31 +61,6 @@
    </div>	
 <div class="clear"></div>
 <div class="clear"></div>
-
-<<<<<<< HEAD
-=======
-							@if(session('thongbao'))
-								<div class="alert alert-danger">
-									<p style="color:red">{{session('thongbao')}}</p>
-								</div>
-								@endif	
-									<input type="submit" value="Đăng nhập">
-								</form>
-								<div class="w3-bottom-text" >
-								<h3><a href="{{url("/")}}/form-send-mail" style="color: white;">Quên mật khẩu<span>?</span></a></h3>
-								</div>
-								<div class="clear"></div>
-						</div>	
-							
-		
-		</div>	
-	<div class="clear"></div>
-<<<<<<< HEAD
- 
-=======
-	<div class="clear"></div>
->>>>>>> master
->>>>>>> LuanNguyen
 </div>
 </div>
 

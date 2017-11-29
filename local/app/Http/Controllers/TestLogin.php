@@ -9,7 +9,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Mail;
-use Illuminate\Contracts\Validation\Validator;
+use Validator;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Session;
 
@@ -19,81 +19,89 @@ class TestLogin extends Controller
 
     public function postLogin(Request $request)
     {
-        
-       $this->validate($request,[
+    	
+     $rule = [
         'email'=>'required|email',
         'password'=>'required',
-        ],
+        ];
 
-        [
+     $message = [
         'email.required'=>'Vui lòng nhập email',
-        'email.email'=>'Vui lòng nhập đúng định dạng email',
-        'password.required'=>'Vui lòng nhập mật khẩu',
-        
-        ]);
+        'email.email'=>'Vui lòng nhập đúng  email',
+        'password.required'=>'Vui lòng nhập mật khẩu',       
+        ];
 
-        
         $email = $request->input('email');
-        $password = $request->input('password');
+        $password = md5($request->input('password'));
 
-        $checkLogin = DB::table('users')->where('email',$email)->first();
-
-        if(count($checkLogin) >0){
-             $pass = $checkLogin->password;
-             if($password == $pass){
-              $name = $checkLogin->lastname;
-             Session::put('user.name',$name);
-             Session::put('user.email',$email);
-                Session::put('user.pass',$password);
-             // Tạo session 
-              $ss = Session::get('user'); 
-
-              return redirect('/')->with($ss);
-            }else{
-                   return redirect('/logIn')->with('thongbao','Mật khẩu không đúng');
-
-             }
-
+        $validation = Validator::make($request->all(), $rule, $message);
+        if($validation->fails()){
+            return redirect()->back()->withErrors($validation)->withInput();
         }
         else{
-             return redirect('/logIn')->with('thongbao','Email không đúng');
+        $checkLogin = DB::table('users')->where(['email'=>$email, 'password'=>$password])->first();
+
+        if(count($checkLogin) >0){
+       
+        Session::put('user.email',$email);
+        Session::put('user.password',$password);
+     // Tạo session 
+       $ss = Session::get('user'); 
+
+       return redirect('/')->with($ss);
+        }else{
+             $errorlogin = new MessageBag(['errorlogin'=>'Email hoặc mật khẩu không đúng']);
+            return redirect()->back()->withErrors($errorlogin)->withInput();
         }
-        
+        }
+
         
     }
 
     public function postRegister(Request $request){
-        
-         $this->validate($request,[
+    	
+        $rules = [
         'firstname'=>'required',
         'lastname'=>'required',
-        'email'=>'required|email',
+        'email'=>'required|email|unique:users,email',
         'password'=>'required|min:6|max:50',
-        ],
+        'confirmpassword'=>'required',
+        ];
 
-        [
+        $messages = [
         'firstname.required'=>'Vui lòng nhập tên',
         'lastname.required'=>'Vui lòng nhập họ',
         'email.required'=>'Vui lòng nhập email',
         'email.email'=>'Vui lòng nhập đúng kiểu email',
+        'email.unique'=>'Email này đã tồn tại',
         'password.required'=>'Vui lòng nhập mật khẩu',
         'password.min'=>'Mật khẩu phải có ít nhất 6 kí tự',
-        'password.max'=>'Mật khẩu chỉ được tối đa 50 kí tự',
-        ]);
-         
+        'password.max'=>'Mật khẩu chỉ được tối đa 50 kí tự',       
+        ];
+        
+        $validation = Validator::make($request->all(), $rules, $messages);
+        if($validation->fails()){
+            return redirect()->back()->withErrors($validation)->withInput();
+        }
+        else{
+
         $user = new User();
         $email =  $request->input('email');
         $name =  $request->input('lastname');
         $pass = $request->input('password');
+        $confirmpass = $request->input('confirmpassword');
+          if($pass != $confirmpass){
+            $errorsignup = new MessageBag(['errorsignup'=>'Xác nhận mật khẩu không đúng']);
+            return redirect()->back()->withErrors($errorsignup)->withInput();
+        }
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = md5($request->password);
         $user->typeuser_id = 1;
         $user->status = "";
         $user->save();
-       
-    
+             
      Mail::send('pages.mail', array('lastname'=>$request->lastname), function($message) use ($email, $name){
 
         $message->to($email,$name)->subject('Chúc mừng đăng kí thành công');
@@ -106,7 +114,7 @@ class TestLogin extends Controller
 
         return redirect('/')->with($ss);
        
-        
+    	}
 
     }
     public function getChangePass(){

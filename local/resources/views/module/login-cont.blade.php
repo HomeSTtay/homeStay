@@ -1,4 +1,5 @@
 <div data-vide-bg="videos/typing">
+<<<<<<< HEAD
 <div class="w3-agile-signup-top">
 <h1>Đăng nhập</h1>
    <div class="main">
@@ -60,6 +61,7 @@
    </div>	
 <div class="clear"></div>
 <div class="clear"></div>
+
 </div>
 </div>
 

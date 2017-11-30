@@ -51,7 +51,7 @@ Route::get('/edit-homestay','AdminController@getEditHomestay');
 
 Route::get('/list-style-homestay','AdminController@getListStyleHomestay');
 
-Route::get('/add-style-homestay','AdminController@getAddStyleHomestay');
+Route::get('/add-style-homestay','AdminController@postAddStyleHomestay');
 
 Route::get('/edit-style-homestay','AdminController@getEditStyleHomestay');
 

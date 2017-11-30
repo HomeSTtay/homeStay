@@ -1,5 +1,5 @@
 @extends('templates.admin')
-@section('title','Thêm homestay')
+@section('title','Thêm Loại phòng')
 @section('main_admin')
 	@include('module.sidebar_admin')
 

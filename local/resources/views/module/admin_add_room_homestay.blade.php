@@ -11,16 +11,11 @@
                             <input type="text" class="form-control id-homestay" id="id-homestay" name="id-homestay" value="HS01">
                         </div>
                     </div>
-                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Mã loại phòng</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control id-room" id="id-homestay" name="id-room" disabled="" value="HSR01">
-                        </div>
-                    </div>
+                     
                      <div class="form-group">
                          <label class="col-sm-2 control-label">Phong cách</label>
                          <div class="col-sm-10">
-                        <select  name="styletyr"class="form-control m-bot15 type-room">
+                        <select  name="styletyr"class="form-control m-bot15 style">
                                 <option value="Cổ điển">Cổ điển</option>
                                 <option value="Hiện đại">Hiện đại</option>
                                 <option value="Vintage">Vintage</option>
@@ -30,9 +25,9 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Tên loại phòng</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control name-room" id="name-room" name="name-homestay" >
-                            @if($errors->has('name-homestay'))
-                            <p style="color: red;">{{$errors->first('name-homestay')}}</p>
+                            <input type="text" class="form-control name-room" id="name-room" name="name-room" >
+                            @if($errors->has('name-room'))
+                            <p style="color: red;">{{$errors->first('name-room')}}</p>
                             @endif
                         </div>
                     </div>

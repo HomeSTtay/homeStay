@@ -105,9 +105,8 @@ class AdminController extends Controller
 	public function postAddStyleHomestay(Request $request){
 		$count = DB::table('style_homestay')->count();
 		$name_style = $request->input('name_style_homestay');
-		$descript = $request -> input('desc_style');
-		$style_homestay = DB::insert('insert into style_homestay(id,name,description) values(?,?,?)',[$count,$name_style,$descript]);
-		
+		$descript = $request->input('desc_style');
+		$style_homestay = DB::insert('insert into style_homestay(id,name,description) values(?,?,?)',[$count+1,$name_style,$descript]);
 		return redirect('/list-style-homestay');
 			}
 		

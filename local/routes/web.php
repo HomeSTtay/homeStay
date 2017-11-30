@@ -61,10 +61,13 @@ Route::get('/delete-style/{id}','AdminController@getDeleteStyleHomestay');
 
 Route::get('/list-type-room','AdminController@getListRoom');
 
-
 Route::get('/add-type-room','AdminController@getAddRoom');
 
 Route::get('/edit-type-room','AdminController@getEditRoom');
+
+Route::post ('add-type-room','AdminController@postCheckAddRoom');
+
+Route::get ('delete-type-room/id={id}','AdminController@getCheckDeleteRoom');
 
 Route::get('/add-post','AdminController@getAddPost');
 

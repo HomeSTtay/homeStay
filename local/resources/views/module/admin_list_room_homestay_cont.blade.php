@@ -38,25 +38,24 @@
           </tr>
         </thead>
         <tbody> 
+          @foreach($type_room as $tyr)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
-            <td>HS01</td>
-            <td>HSR01</td>
-            <td>Phòng hoàn hảo</td>
-            <td><span class="text-ellipsis">Ở đây cực ấm cực mát ...</span></td>
-            <td><span class="text-ellipsis">2</span></td>
-            <td><span class="text-ellipsis">Còn nhiều lắm bay</span> </td>
+            <td>{{$tyr->id}}</td>
+            <td>{{$tyr->id}}</td>
+            <td>{{$tyr->name}}</td>
+            <td><span class="text-ellipsis"></span>{{$tyr->description}}</td>
+            <td><span class="text-ellipsis"></span>{{$tyr->id}}</td>
+            <td><span class="text-ellipsis"></span>{{$tyr->status}} </td>
             <td>
               <a href="" class="active" ui-toggle-class="">
               <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
-              <i class="fa fa-times text-danger text" title="Xóa"></i>
+              <a href="{{url("/")}}/delete-type-room/id={{$tyr->id}}" method="post"><i class="fa fa-times text-danger text" title="Xóa"></i></a>
              <a href="{{url("/")}}/edit-type-room"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
               </a>
             </td>
           </tr>
-          
-         
-          
+          @endforeach
         </tbody>
       </table>
     </div>

@@ -49,3 +49,17 @@ Route::get('/danh-sach-nguoi-dung','AdminController@getListUser');
 Route::get('/danh-sach-loai-phong','AdminController@getListRoom');
 
 Route::get('/them-loai-phong','AdminController@getAddRoom');
+	
+Route::get('/danh-sach-style-homestay','AdminController@getListStyleHomestay');
+
+Route::get('/form-add-style-homestay','AdminController@getAddStyleHomestay');
+
+Route::post('/form-add-style-homestay','AdminController@postAddStyleHomestay');
+
+Route::get('/edit-style-homestay','AdminController@getEditStyleHomestay');
+
+Route::post('/edit-style-homestay','AdminController@postEditStyleHomestay');
+
+Route::get('/delete-style/{id}','AdminController@getDeleteStyleHomestay');
+
+Route::get('/add-post', 'AdminController@getAddPost');

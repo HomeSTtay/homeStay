@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 use DB;
-<<<<<<< HEAD
 use Validator;
 use Illuminate\Support\MessageBag;
-
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-=======
 use App\Http\Controllers\Input;
-use Illuminate\Http\Request;
->>>>>>> origin/tung1
+
 /**
 * 
 */
@@ -39,19 +36,13 @@ class AdminController extends Controller
 	}
 
 	public function getListRoom(){
-<<<<<<< HEAD
-		$type_room = DB::table('type_room')->select()->paginate(5);
-		return view('pages.admin_list_room_homestay')->with('type_room',$type_room);
-=======
 		return view('pages.admin_list_room_homestay');
->>>>>>> origin/tung1
 
 	}
 	public function getAddRoom(){
 		return view('pages.admin_add_room_homestay');
 	}
 
-<<<<<<< HEAD
 	public function postCheckAddRoom(Request $request){
 		$rules_tyr=
 		[
@@ -101,12 +92,12 @@ class AdminController extends Controller
 	public function getEditRoom(){
 	 	return view('pages.admin_edit_room_homestay');
 	}
-
+	// List Style Homestay
 	public function getListStyleHomestay(){
 		$list = DB::table('style_homestay')->select()->paginate(5);
 		return view('pages.admin_list_style_homestay')->with('list',$list);
 	 }
-		 
+	//Add Style Homestay	 
 	 public function getAddStyleHomestay(){
 		$thongbao = "";
 		return view('pages.admin_add_style_homestay')->with('thong_bao',$thongbao);
@@ -120,75 +111,45 @@ class AdminController extends Controller
 		return redirect('/list-style-homestay');
 			}
 		
+	//Delete Style Homestay
 	public function getDeleteStyleHomestay($id){
 		$del = DB::delete('delete from style_homestay where id = ?',[$id]);
 		return redirect('/list-style-homestay');
 	}
-	public function getEditStyleHomestay(){
-		return view('pages.admin_edit_style_homestay');
-	}
-		public function getAddPost(){
-		return view('pages.admin_add_post');
-	}
-=======
-	public function getListStyleHomestay(){
-		$list = DB::table('style_homestay')->select()->paginate(5);
-		return view('pages.admin_list_style_homestay')->with('list', $list);
-	}
-
-	public function getAddStyleHomestay(){
-		$thongbao = "";
-		return view('pages.admin_add_style_homestay')->with('thong_bao', $thongbao);
-	}
 	
-	public function postAddStyleHomestay(Request $request){
-		$id_style = $request->input('id_style_homestay');
-		$name_style = $request->input('name_style_homestay');
-		$descript = $request->input('descript_style_homestay');
+	
 
-		$style_homestay = DB::insert('insert into style_homestay(id,name,description values(?,?,?)',[$id_style, $name_style, $descript]); 
-		return redirect('/list-style-homestay');
-	}
-
-	public function getDeleteStyleHomestay($id){
-		$del = DB::delete('delete from style_homestay where id = ? ', [$id]);
-		return redirect('/list-style-homestay');	
-	}
-
-	public function getEditStyleHomestay(){
-		return view('pages.admin_edit_style_homestay');
+	// Edit Style Homestay
+	public function getEditStyleHomestay($id){
+		$style = DB::table('style_homestay')->where(['id'=>$id])->first();
+		Session::put('st.id',$id);
+		return view('pages.admin_edit_style_homestay')->with('style',$style);
 	}
 
 	public function postEditStyleHomestay(Request $request){
+		$id = Session::get('st.id');
 		$name_style = $request->input('name-style-homestay');
-		$descript_style = $request->input('descrip_style');
-		$edit = DB::update('update style_homestay set name = ? , description = ? where id = ?', [$name_style, $descript_style]);
+		$descript = $request->input('desc_style');
+		$edit = DB::update('update style_homestay set name = ? , description = ? where id = ? ', [$name_style, $descript,$id]);
 		return redirect('/list-style-homestay');
 
 	}
+
 
 	public function getAddPost(){
 		return view('pages.admin_add_post');
 	}
->>>>>>> origin/tung1
-	
 	public function getListPost(){
 		return view('pages.admin_list_post');
 	}
-<<<<<<< HEAD
 	public function getEditPost(){
 		return view('pages.admin_edit_post');
 	}
 	
 }
-=======
 	
-	public function getEditPost(){
-		return view('pages.admin_edit_post');
-	}
 
-} 
->>>>>>> origin/tung1
+
 
 
 

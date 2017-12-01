@@ -53,7 +53,9 @@ Route::get('/list-style-homestay','AdminController@getListStyleHomestay');
 
 Route::post('/add-style-homestay','AdminController@postAddStyleHomestay');
 
-Route::get('/edit-style-homestay','AdminController@getEditStyleHomestay');
+Route::get('/form-edit-style-homestay/{id}','AdminController@getEditStyleHomestay');
+
+Route::post('/edit-style-homestay','AdminController@postEditStyleHomestay');
 
 Route::get('/form-add-style-homestay','AdminController@getAddStyleHomestay');
 
@@ -77,21 +79,8 @@ Route::get('/edit-post','AdminController@getEditPost');
 
 Route::get('/list-user','AdminController@getListUser');
 
-<<<<<<< HEAD
-=======
-Route::get('/them-loai-phong','AdminController@getAddRoom');
-	
-Route::get('/danh-sach-style-homestay','AdminController@getListStyleHomestay');
 
-Route::get('/form-add-style-homestay','AdminController@getAddStyleHomestay');
 
-Route::post('/form-add-style-homestay','AdminController@postAddStyleHomestay');
 
-Route::get('/edit-style-homestay','AdminController@getEditStyleHomestay');
 
-Route::post('/edit-style-homestay','AdminController@postEditStyleHomestay');
 
-Route::get('/delete-style/{id}','AdminController@getDeleteStyleHomestay');
-
-Route::get('/add-post', 'AdminController@getAddPost');
->>>>>>> origin/tung1

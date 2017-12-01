@@ -36,7 +36,9 @@ class AdminController extends Controller
 	}
 
 	public function getListRoom(){
-		return view('pages.admin_list_room_homestay');
+		$type_room = DB::table('type_room')->select()->paginate(5);
+		return view('pages.admin_list_room_homestay')->with('type_room',$type_room);
+
 
 	}
 	public function getAddRoom(){

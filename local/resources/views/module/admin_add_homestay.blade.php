@@ -4,7 +4,7 @@
                 Thêm homestay
             </header>
             <div class="panel-body">
-                <form class="form-horizontal bucket-form" method="post">
+                <form action="" class="form-horizontal bucket-form" method="post">
                 <div class="form-group">
                         <label class="col-sm-3 control-label">Mã homestay</label>
                         <div class="col-sm-6">

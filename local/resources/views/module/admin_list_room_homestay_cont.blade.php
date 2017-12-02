@@ -31,7 +31,7 @@
             <th>Mã loại phòng</th>
             <th>Tên loại phòng</th>
             <th>Miêu tả</th>
-            <th>Số phòng</th>
+            <th>Số lượng phòng</th>
             <th>Trạng thái</th>
             
             <th style="width:30px;"></th>
@@ -41,11 +41,11 @@
           @foreach($type_room as $tyr)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
-            <td>{{$tyr->homestay_id}}</td>
+            <td>HS0{{$tyr->homestay_id}}</td>
             <td>HS0{{$tyr->homestay_id}}R0{{$tyr->id}}</td>
             <td>{{$tyr->name}}</td>
             <td><span class="text-ellipsis"></span>{{$tyr->description}}</td>
-            <td><span class="text-ellipsis"></span>{{$tyr->id}}</td>
+            <td><span class="text-ellipsis"></span>{{$tyr->quantity}}</td>
             <td><span class="text-ellipsis"></span>{{$tyr->status}} </td>
             <td>
               <a href="" class="active" ui-toggle-class="">

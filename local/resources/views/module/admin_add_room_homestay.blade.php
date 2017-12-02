@@ -53,9 +53,9 @@
                         <label class="col-sm-2 control-label">Trạng thái</label>
                         <div class="col-sm-10">
                            <select name="status-room" class="form-control m-bot15" >
-                               <option value="het">Còn</option>
-                                <option value="con">Hết</option>
-                                <option value="sap het">Sắp hết</option>
+                               <option value="Còn">Còn</option>
+                                <option value="Hết">Hết</option>
+                                <option value="Sắp hết">Sắp hết</option>
                               
                            </select>
                         </div>

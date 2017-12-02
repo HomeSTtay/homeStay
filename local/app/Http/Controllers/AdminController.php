@@ -36,11 +36,6 @@ class AdminController extends Controller
 	}
 
 	public function getListRoom(){
-<<<<<<< HEAD
-=======
-		$type_room = DB::table('type_room')->select()->paginate(5);
-		return view('pages.admin_list_room_homestay')->with('type_room',$type_room);
->>>>>>> miyulmi
 
 		$type_room = DB::table('type_room')->select()->paginate(5);
 		return view('pages.admin_list_room_homestay')->with('type_room',$type_room);

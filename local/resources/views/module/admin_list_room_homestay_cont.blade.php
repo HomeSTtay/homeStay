@@ -27,9 +27,9 @@
                 <input type="checkbox" id="checkall">
               </label>
             </th>
-            <th>Mã homestay</th>
             <th>Mã loại phòng</th>
             <th>Tên loại phòng</th>
+            <th>Tên homestay</th>
             <th>Miêu tả</th>
             <th>Số lượng phòng</th>
             <th>Trạng thái</th>
@@ -41,17 +41,17 @@
           @foreach($type_room as $tyr)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
-            <td>HS0{{$tyr->homestay_id}}</td>
-            <td>HS0{{$tyr->homestay_id}}R0{{$tyr->id}}</td>
+            <td>{{$tyr->id}}</td>
             <td>{{$tyr->name}}</td>
+             <td>{{$tyr->homestay_name}}</td>
             <td><span class="text-ellipsis"></span>{{$tyr->description}}</td>
             <td><span class="text-ellipsis"></span>{{$tyr->quantity}}</td>
             <td><span class="text-ellipsis"></span>{{$tyr->status}} </td>
             <td>
               <a href="" class="active" ui-toggle-class="">
               <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
-              <a href="{{url("/")}}/delete-type-room/id={{$tyr->id}}" method="post"><i class="fa fa-times text-danger text" title="Xóa"></i></a>
-             <a href="{{url("/")}}/edit-type-room"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
+              <a href="{{url("/")}}/delete-type-room/id={{$tyr->id}}"><i class="fa fa-times text-danger text" title="Xóa"></i></a>
+             <a href="{{url("/")}}/edit-type-room/id={{$tyr->id}}"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
               </a>
             </td>
           </tr>

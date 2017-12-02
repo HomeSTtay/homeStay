@@ -6,23 +6,6 @@
             <div class="panel-body">
                 <form  action="{{url('add-type-room')}}" class="form-horizontal bucket-form" method="post">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Mã homestay</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control id-homestay" id="id-homestay" name="id-homestay" value="HS01">
-                        </div>
-                    </div>
-                     
-                     <div class="form-group">
-                         <label class="col-sm-2 control-label">Phong cách</label>
-                         <div class="col-sm-10">
-                        <select  name="styletyr"class="form-control m-bot15 style">
-                                <option value="Cổ điển">Cổ điển</option>
-                                <option value="Hiện đại">Hiện đại</option>
-                                <option value="Vintage">Vintage</option>
-                        </select>
-                         </div> 
-                     </div>  
-                    <div class="form-group">
                         <label class="col-sm-2 control-label">Tên loại phòng</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control name-room" id="name-room" name="name-room" >
@@ -31,6 +14,26 @@
                             @endif
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Tên homestay</label>
+                        <div class="col-sm-10">
+                             <select  name="homestay-name" class="form-control m-bot15 style">
+                                 @foreach ($homestay as $hts)
+                                <option value="{{$hts -> name}}">{{$hts -> name}}</option>
+                             @endforeach
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <label class="col-sm-2 control-label">Phong cách</label>
+                         <div class="col-sm-10">
+                        <select  name="styletyr"class="form-control m-bot15 style">
+                                <option value="Cổ điển">Cổ điển</option>
+                                <option value="Hiện đại">Hiện đại</option>
+                                <option value="Vintage">Vintage</option>
+                        </select>
+                         </div> 
+                    </div>  
                     <div class="form-group">
                          <label class="col-sm-2 control-label ">Miêu tả</label>
                          <div class="col-sm-10">
@@ -60,17 +63,14 @@
                            </select>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Hình ảnh</label>
                         <div class="col-sm-10">
-                            <input type="file" class="img-room" id="img-room" name="img-room">
+                            <input type="file" class="img-room" id="img-room" name="img-room"></input>
+                            <i> <h6>* Ghi chú: Nhấn giữ Ctrl để chọn nhiều mục</h6> </i>
                         </div>
-
                     </div>
-                      
-                          <i>* Ghi chú: Nhấn giữ Ctrl để chọn nhiều mục</i>
-                     <div class="form-group">
+                    <div class="form-group">
                         <div class="col-sm-6">
                         <button type="submit" class="btn btn-info btn-add-room" style="float:right;" id='submit'>Thêm</button>
                          </div>
@@ -78,7 +78,7 @@
                         <button type="reset" class="btn btn-danger ">Hủy</button>
                          </div>
                          </div> 
-                     </div> 
+                    </div> 
                 </form>
             </div>
         </section>

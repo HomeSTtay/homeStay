@@ -118,6 +118,15 @@ class AdminController extends Controller
 	public function getEditStyleHomestay(){
 		return view('pages.admin_edit_style_homestay');
 	}
+
+	public function postEditStyleHomestay(Request $request){
+		$id = $request->input('id-style-homestay');
+		$name_style = $request->input('name_style_homestay');
+		$description = $request->input('descrip_style');
+		// $editstyle = DB::table('update style_homestay set name=?, description=? where id=?', [$id]);
+		DB::table('style_homestay')->where('id',1)->update(['name' => $name_style, 'description'=>$description]);
+		return redirect('/list-style-homestay');
+	}
 		public function getAddPost(){
 		return view('pages.admin_add_post');
 	}

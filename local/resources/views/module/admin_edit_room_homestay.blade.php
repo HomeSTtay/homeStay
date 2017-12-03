@@ -5,6 +5,15 @@
             </header>
             <div class="panel-body">
                 <form  action="{{url('edit-type-room')}}" class="form-horizontal bucket-form" method="post">
+                    <div class="form-group" disable="">
+                        <label class="col-sm-2 control-label">Tên loại phòng</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control name-room" id="name-room" name="id-room" value="{{$edittyperoom->id}}" >
+                            @if($errors->has('name-room'))
+                            <p style="color: red;">{{$errors->first('name-room')}}</p>
+                            @endif
+                        </div>
+                    </div>
                    <div class="form-group">
                         <label class="col-sm-2 control-label">Tên loại phòng</label>
                         <div class="col-sm-10">

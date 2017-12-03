@@ -30,6 +30,7 @@
             <th>Mã loại phòng</th>
             <th>Tên loại phòng</th>
             <th>Tên homestay</th>
+            <th>Phong cách</th>
             <th>Miêu tả</th>
             <th>Số lượng phòng</th>
             <th>Trạng thái</th>
@@ -43,7 +44,8 @@
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
             <td>{{$tyr->id}}</td>
             <td>{{$tyr->name}}</td>
-             <td>{{$tyr->homestay_name}}</td>
+            <td>{{$tyr->homestay_name}}</td>
+            <td>{{$tyr->style}}</td>
             <td><span class="text-ellipsis"></span>{{$tyr->description}}</td>
             <td><span class="text-ellipsis"></span>{{$tyr->quantity}}</td>
             <td><span class="text-ellipsis"></span>{{$tyr->status}} </td>

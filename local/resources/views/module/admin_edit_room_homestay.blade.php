@@ -5,9 +5,9 @@
             </header>
             <div class="panel-body">
                 <form  action="{{url('edit-type-room')}}" class="form-horizontal bucket-form" method="post">
-                    <div class="form-group" disable="">
-                        <label class="col-sm-2 control-label">Tên loại phòng</label>
-                        <div class="col-sm-10">
+                    <div class="form-group" >
+                        <label class="col-sm-2 control-label" style="display: none">Tên loại phòng</label>
+                        <div class="col-sm-10" style="display: none">
                             <input type="text" class="form-control name-room" id="name-room" name="id-room" value="{{$edittyperoom->id}}" >
                             @if($errors->has('name-room'))
                             <p style="color: red;">{{$errors->first('name-room')}}</p>
@@ -67,10 +67,9 @@
                         <div class="col-sm-10">
                            <select name="status-room" class="form-control m-bot15" >
                                 <option value="{{$edittyperoom->status}}">{{$edittyperoom->status}}</option>
-                                <option value="Còn">Còn</option>
-                                <option value="Hết">Hết</option>
-                                <option value="Sắp hết">Sắp hết</option>
-                              
+                                <option value="Còn phòng">Còn phòng</option>
+                                <option value="Hết phòng">Hết phòng</option>
+                                <option value="Sắp hết phòng">Sắp hết phòng</option>
                            </select>
                         </div>
                     </div>

@@ -66,7 +66,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Hình ảnh</label>
                         <div class="col-sm-10">
-                            <input type="file" class="img-room" id="img-room" name="img-room"></input>
+                            <input type="file" class="img-room" id="img-room" name="img-room[]" multiple></input>
                             <i> <h6>* Ghi chú: Nhấn giữ Ctrl để chọn nhiều mục</h6> </i>
                         </div>
                     </div>

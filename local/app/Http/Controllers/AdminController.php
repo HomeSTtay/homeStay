@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Input;
+use Illuminate\Database\Query\Builder;
 
 /**
 * 
@@ -41,7 +42,7 @@ class AdminController extends Controller
 
 	}
 	public function getAddRoom(){
-		$homestay = DB::table('home_stay')->select()->get();
+		$homestay = DB::table('home_stay')->where('viewstatus_id','=',1)->select()->get();
 		return view('pages.admin_add_room_homestay')->with('homestay',$homestay);
 	}
 
@@ -76,10 +77,19 @@ class AdminController extends Controller
 				$descript = $request -> input('desc-room');
 				$quantity  = $request -> input ('quantity-room');
 				$status = $request -> input('status-room');
-				$img = $request -> input('img-room');
+				$img= $request -> input('img-room');
+				
 				$now = getdate(); 
 				$currentDate = $now["mday"] . $now["mon"] . $now["year"]; 
-				DB::table('type_room')->insertGetId(['id' => 'HR'.$currentDate.($count+1),'name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=>$img]);
+				DB::table('type_room')->insertGetId(['id' => 'HR'.$currentDate.($count+1),'name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=>'HR'.$currentDate.($count+1)]);
+
+				
+					foreach ($img as $key => $value) {
+						# code...
+					
+					DB::table('picture')-> insertGetId(['id' => 'HR'.$currentDate.($count+1), 'name'=> $value, 'link' => '../images/'.$value,'viewstatus_id'=>1]);
+				}
+				// Duyệt forr mảng Pictura ra. Add picture phía trên thành mã typerooom, add hình ảnh vào bảng Picture vs mã hình ảnh là mã typrroool. 
 				$errorAdd = new MessageBag(['errorBS'=>'Thêm thành công!']);
 				return redirect('/list-type-room');
 			}
@@ -132,6 +142,13 @@ class AdminController extends Controller
 				return redirect('/list-type-room');
 			}
 		}
+
+	public function getViewTypeRoom($id){
+		$homestay = DB::table('home_stay')->select()->get();
+		$picture = DB::table ('picture') -> where('id',$id)  -> select() -> get();
+		$viewtyperoom = DB::table('type_room')->where('id','=',$id) -> first();
+	 	return view('pages.admin_view_type_room')-> with('viewtyperoom',$viewtyperoom)-> with('homestay', $homestay)-> with('picture',$picture);
+	}
 	
 	// List Style Homestay
 	public function getListStyleHomestay(){

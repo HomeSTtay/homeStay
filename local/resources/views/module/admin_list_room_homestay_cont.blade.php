@@ -27,13 +27,14 @@
                 <input type="checkbox" id="checkall">
               </label>
             </th>
-            <th>Mã loại phòng</th>
-            <th>Tên loại phòng</th>
-            <th>Tên homestay</th>
-            <th>Phong cách</th>
-            <th>Miêu tả</th>
-            <th>Số lượng phòng</th>
-            <th>Trạng thái</th>
+            <th title="Mã loại phòng">Mã LP</th>
+            <th title="Tên loại phòng">Tên LP</th>
+            <th title="Loại phòng thuộc homestay">Tên homestay</th>
+            <th title="Phong cách của homestay">Phong cách</th>
+            <th title="Mô tả loại phòng">Mô tả</th>
+            <th title="Số lượng phòng của loại phòng">Số lượng phòng</th>
+            <th title="Hiện tại còn hay hết phòng">Trạng thái</th>
+            
             
             <th style="width:30px;"></th>
           </tr>
@@ -51,9 +52,9 @@
             <td><span class="text-ellipsis"></span>{{$tyr->status}} </td>
             <td>
               <a href="" class="active" ui-toggle-class="">
-              <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
+               <a href="{{url("/")}}/view-type-room/id={{$tyr->id}}"><i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i></a>
               <a href="{{url("/")}}/delete-type-room/id={{$tyr->id}}"><i class="fa fa-times text-danger text" title="Xóa"></i></a>
-             <a href="{{url("/")}}/edit-type-room/id={{$tyr->id}}"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
+              <a href="{{url("/")}}/edit-type-room/id={{$tyr->id}}"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
               </a>
             </td>
           </tr>

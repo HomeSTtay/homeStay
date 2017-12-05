@@ -93,6 +93,7 @@ class TestLogin extends Controller
           if($pass != $confirmpass){
             $errorsignup = new MessageBag(['errorsignup'=>'Xác nhận mật khẩu không đúng']);
             return redirect()->back()->withErrors($errorsignup)->withInput();
+            
         }
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;

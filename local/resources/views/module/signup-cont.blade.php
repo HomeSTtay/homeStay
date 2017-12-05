@@ -4,33 +4,36 @@
 	 <h1>Đăng ký tài khoản</h1>
 		<div class="main">
                 <div class="login-top left">
-			        			
+			        			@if($errors->has('errorsignup'))
+									<div class="alert alert-danger">{{$errors->first('errorsignup')}}</div>
+									@endif
 								<form action="{{ url('/registertest') }}" method="post">
 									{{ csrf_field() }}
+										
+									<input type="text" name="firstname" value="{{ old('firstname')}}" class="name" placeholder="Họ *" >
 									@if($errors->has('firstname'))
 									<p style="color:white;">{{$errors->first('firstname')}}</p>
-									@endif	
-									<input type="text" name="firstname" value="{{ old('firstname')}}" class="name" placeholder="Họ *" >
+									@endif
+									
+									<input type="text" name="lastname" value="{{ old('lastname')}}" class="name" placeholder="Tên *" >
 									@if($errors->has('lastname'))
 									<p style="color:white;">{{$errors->first('lastname')}}</p>
 									@endif
-									<input type="text" name="lastname" value="{{ old('lastname')}}" class="name" placeholder="Tên *" >
+						
+									<input type="text" name="email" value="{{ old('email')}}" class="email" placeholder="Email *" >	
 									@if($errors->has('email'))
 									<p style="color:white;">{{$errors->first('email')}}</p>
 									@endif
-									<input type="text" name="email" value="{{ old('email')}}" class="email" placeholder="Email *" >	
-									@if($errors->has('password'))
-									<p style="color:white;">{{$errors->first('password')}}</p>
-									@endif
+									
 									<input type="password" name="password" value="{{ old('password')}}" class="password" placeholder="Mật khẩu *" >
 									@if($errors->has('password'))
 									<p style="color:white;">{{$errors->first('password')}}</p>
 									@endif
-									<input type="password" name="confirmpassword" value="{{ old('confirmpassword')}}" class="password" placeholder="Nhập lại mật khẩu *" >
-									@if($errors->has('errorsignup'))
-									<p style="color: white">{{$errors->first('errorsignup')}}</p>
-									@endif
 									
+									<input type="password" name="password" value="{{ old('password')}}" class="password" placeholder="Nhập lại mật khẩu *" >
+									@if($errors->has('password'))
+									<p style="color:white;">{{$errors->first('password')}}</p>
+									@endif
 									<p class="note-signup" style="color: white; "> Ghi chú :* các trường bắt buộc nhập</p>
 									<input type="submit" value="Đăng ký">
 

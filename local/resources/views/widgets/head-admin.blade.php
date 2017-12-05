@@ -18,6 +18,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="{{asset('css/morris.css')}}" type="text/css"/>
 
 <!-- Hide side bar-->
+<script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
 <script src="{{asset('js/jquery2.0.3.min.js')}}"></script>
 <script src="{{asset ('js/scripts.js')}}"></script>
 <script src="{{asset ('js/jquery.nicescroll.js')}}"></script>

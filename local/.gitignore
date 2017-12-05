@@ -2,10 +2,15 @@
 /public/hot
 /public/storage
 /storage/*.key
+<<<<<<< HEAD
+=======
+
+>>>>>>> minhminh1502
 /.idea
 /.vagrant
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+/vendor
 

@@ -17,6 +17,8 @@ Route::get('/signUp','MyFirstController@getSignup');
 
 Route::get('/logIn','MyFirstController@getLogin');
 
+Route::get('/detail','MyFirstController@getDetail');
+
 Route::get('/detail', 'MyFirstController@getDetail');
 
 Route::get('/form-send-mail/','MyFirstController@getMail');
@@ -36,18 +38,46 @@ Route::post('/send-mail', 'TestLogin@postSendMail');
 Route::post('/change-pass/{email}','TestLogin@postChangePass');
  
 
+
 /* Admin */
  
 Route::get('/admin','AdminController@getAdminIndex');
 
-Route::get('/danh-sach-homestay','AdminController@getListHomestay');
+Route::get('/list-homestay','AdminController@getListHomestay');
 
-Route::get('/them-homestay','AdminController@getAddHomestay');
+Route::get('/add-homestay','AdminController@getAddHomestay');
 
-Route::get('/danh-sach-nguoi-dung','AdminController@getListUser');
+Route::get('/edit-homestay','AdminController@getEditHomestay');
 
-Route::get('/danh-sach-loai-phong','AdminController@getListRoom');
+Route::get('/list-style-homestay','AdminController@getListStyleHomestay');
 
+Route::get('/add-style-homestay','AdminController@postAddStyleHomestay');
+
+Route::get('/edit-style-homestay','AdminController@getEditStyleHomestay');
+
+Route::get('/form-add-style-homestay','AdminController@getAddStyleHomestay');
+
+Route::get('/delete-style/{id}','AdminController@getDeleteStyleHomestay');
+
+Route::get('/list-type-room','AdminController@getListRoom');
+
+Route::get('/add-type-room','AdminController@getAddRoom');
+
+Route::get('/edit-type-room','AdminController@getEditRoom');
+
+Route::post ('add-type-room','AdminController@postCheckAddRoom');
+
+Route::get ('delete-type-room/id={id}','AdminController@getCheckDeleteRoom');
+
+Route::get('/add-post','AdminController@getAddPost');
+
+Route::get('/list-post','AdminController@getListPost');
+
+Route::get('/edit-post','AdminController@getEditPost');
+
+Route::get('/list-user','AdminController@getListUser');
+
+<<<<<<< HEAD
 Route::get('/them-loai-phong','AdminController@getAddRoom');
 	
 Route::get('/danh-sach-style-homestay','AdminController@getListStyleHomestay');
@@ -63,3 +93,5 @@ Route::post('/edit-style-homestay','AdminController@postEditStyleHomestay');
 Route::get('/delete-style/{id}','AdminController@getDeleteStyleHomestay');
 
 Route::get('/add-post', 'AdminController@getAddPost');
+=======
+>>>>>>> master

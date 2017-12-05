@@ -4,7 +4,7 @@
                 Thêm style homestay
             </header>
             <div class="panel-body">
-                <form action="{{url("/")}}/add-style-homestay" class="form-horizontal bucket-form" method="post">
+                <form action="{{ url('/add-style-homestay') }}" class="form-horizontal bucket-form" method="post">
                 {{ csrf_field() }}
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Tên style</label>

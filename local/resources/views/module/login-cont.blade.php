@@ -51,10 +51,15 @@
 							   @endif
 							   <input type="submit" value="Đăng nhập">
 						   </form>
+						  
 						   <div class="w3-bottom-text" >
+						  
 						   <h3><a href="{{url("/")}}/form-send-mail" style="color: white;">Quên mật khẩu<span>?</span></a></h3>
+						   <h4><a href="{{url("/")}}/signUp">Đăng ký</a></h4>
 						   </div>
+
 						   <div class="clear"></div>
+						  
 				   </div>	
 					   
    

@@ -34,14 +34,14 @@ Route::get('/detail', 'MyFirstController@getDetail');
 
 //Mail
 
-Route::get('/form-send-mail/','MyFirstController@getMail');
+Route::get('/form-send-mail','MyFirstController@getMail');
 
 
 Route::post('/send-mail', 'TestLogin@postSendMail');
 
 //Change pass:
 
-Route::get('/form-change-pass/{email}','MyFirstController@getChangePass');
+Route::get('/form-change-pass/{email}/{r}','MyFirstController@getChangePass');
 
 Route::post('/change-pass/{email}','TestLogin@postChangePass');
 
@@ -58,17 +58,17 @@ Route::get('/admin','AdminController@getAdminIndex');
 
 //Style homestay: 
 
-Route::get('/list-style-homestay','AdminController@getListStyleHomestay');
+Route::get('/list-style-homestay','Admin_stylehomestayController@getListStyleHomestay');
 
-Route::post('/add-style-homestay','AdminController@postAddStyleHomestay');
+Route::post('/add-style-homestay','Admin_stylehomestayController@postAddStyleHomestay');
 
-Route::get('/form-add-style-homestay','AdminController@getAddStyleHomestay');
+Route::get('/form-add-style-homestay','Admin_stylehomestayController@getAddStyleHomestay');
 
-Route::post('/edit-style-homestay','AdminController@postEditStyleHomestay');
+Route::post('/edit-style-homestay','Admin_stylehomestayController@postEditStyleHomestay');
 
-Route::get('/form-edit-style-homestay/{id}','AdminController@getEditStyleHomestay');
+Route::get('/form-edit-style-homestay/{id}','Admin_stylehomestayController@getEditStyleHomestay');
 
-Route::get('/delete-style/{id}','AdminController@getDeleteStyleHomestay');
+Route::get('/delete-style/{id}','Admin_stylehomestayController@getDeleteStyleHomestay');
 
 // Homestay:
 Route::get('/list-homestay','AdminController@getListHomestay');

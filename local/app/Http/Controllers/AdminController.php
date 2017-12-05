@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 use DB;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Controllers\Input;
 use Illuminate\Http\Request;
 =======
+=======
+>>>>>>> master
 use Validator;
 use Illuminate\Support\MessageBag;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 /**
 * 
@@ -40,7 +46,12 @@ class AdminController extends Controller
 
 	public function getListRoom(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return view('pages.admin_list_room_homestay');
+=======
+		$type_room = DB::table('type_room')->select()->paginate(5);
+		return view('pages.admin_list_room_homestay')->with('type_room',$type_room);
+>>>>>>> master
 =======
 		$type_room = DB::table('type_room')->select()->paginate(5);
 		return view('pages.admin_list_room_homestay')->with('type_room',$type_room);
@@ -51,6 +62,7 @@ class AdminController extends Controller
 		return view('pages.admin_add_room_homestay');
 	}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	public function getListStyleHomestay(){
 		$list = DB::table('style_homestay')->select()->paginate(5);
@@ -141,6 +153,57 @@ class AdminController extends Controller
 	public function getEditRoom(){
 	 	return view('pages.admin_edit_room_homestay');
 	}
+=======
+	public function postCheckAddRoom(Request $request){
+		$rules_tyr=
+		[
+			'name-room'=>'required',
+			'desc-room' => 'required',
+			'quantity-room' => 'required',
+		];
+		$messages_tyr=
+		[
+			'name-room.required'=>'Vui lòng nhập tên loại phòng!',
+			'desc-room.required' => 'Vui lòng mô tả loại phòng!',
+			'quantity-room.required'=> 'Vui lòng nhập số lượng phòng!'
+		];
+		$validation = Validator::make($request->all(),$rules_tyr,$messages_tyr);
+		if($validation->fails()){
+			return redirect()->back()->withErrors($validation)->withInput();
+		}
+		else{
+			$tyr = DB::table('type_room')->where("name",$request->get('name-room'))->count();
+			if($tyr==1){
+				$errorAdd = new MessageBag(['errorBS'=>'Loại phòng đã tồn tại']);
+				return redirect()->back()->withErrors($errorAdd)->withInput();		
+			}
+			else{
+				$count = DB::table('type_room')->count();
+				$mahomestay = $request->input ('id-homestay');
+				$style = $request -> input('styletyr');
+				$name =  $request->input('name-room');
+				$descript = $request -> input('desc-room');
+				$quantity  = $request -> input ('quantity-room');
+				$status = $request -> input('status-room');
+				$img = $request -> input('img-room');
+				DB::table('type_room')->insertGetId(['homestay_id' => (int)substr($mahomestay,3),'id' => ($count+1),'style' => $style,'name' => $name,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=>$img]);
+				$errorAdd = new MessageBag(['errorBS'=>'Thêm thành công!']);
+				return redirect('/list-type-room');
+			
+			}
+		}
+	}
+
+	public function getCheckDeleteRoom($id){
+		$type_room = DB::table('type_room')->select()->get();
+		DB::table('type_room')->where('id','=',$id) -> delete();
+		return redirect()->back()-> withInput();
+	}
+
+	public function getEditRoom(){
+	 	return view('pages.admin_edit_room_homestay');
+	}
+>>>>>>> master
 
 	public function getListStyleHomestay(){
 		$list = DB::table('style_homestay')->select()->paginate(5);
@@ -180,11 +243,15 @@ class AdminController extends Controller
 		public function getAddPost(){
 		return view('pages.admin_add_post');
 	}
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 	
 	public function getListPost(){
 		return view('pages.admin_list_post');
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	public function getEditPost(){
@@ -193,6 +260,8 @@ class AdminController extends Controller
 
 } 
 =======
+=======
+>>>>>>> master
 	public function getEditPost(){
 		return view('pages.admin_edit_post');
 	}

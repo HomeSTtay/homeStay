@@ -16,7 +16,7 @@ class CheckChangePass
      */
     public function handle($request, Closure $next)
     {   
-        if(Session::has('click') )
+        if(Session::has('click'))
         {
             return redirect('/error');
         }

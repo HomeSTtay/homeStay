@@ -104,7 +104,9 @@ Route::get('/edit-post','AdminController@getEditPost');
 
 //User
 
-Route::get('/list-user','AdminController@getListUser');
+Route::get('/list-user','Admin_userController@getListUser');
+
+Route::get('/delete-user/id={id}','Admin_userController@getDeleteUser');
 
 
 

@@ -32,10 +32,7 @@ class AdminController extends Controller
 		return view('pages.admin_edit_homestay');
 	}
 
-	public function getListUser(){
-		return view('pages.admin_list_user');
-	}
-
+	
 
 
 

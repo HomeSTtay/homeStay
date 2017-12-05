@@ -120,25 +120,21 @@ class TestLogin extends Controller
 
     }
 
-    public function getChangePass(){
-         
-            return view('pages.change_pass_cont');
-              
-       
+    public function getChangePass($email,$r1){
+            return view('pages.change_pass_cont')->with('r1',$r1);
+           
 
     }
     public function postChangePass(Request $request,$email){
-
+       
         $pass = md5($request->input('pass'));
         $re_pass = md5($request->input('re-pass'));
-        
 
         $ss = (Session::get('email'));
-        Session::put('pass_changed',1);
+        
     
         if($pass == $re_pass){
             $update = DB::update('update users set password = ? where email = ? ',[$pass,$ss]);
-          
             return redirect('/logIn');
        
 
@@ -155,10 +151,11 @@ class TestLogin extends Controller
 
          $m = DB::table('users')->where(['email'=> $email])->first();
          $name = $m->lastname;
-
-        
+         $r = rand();
+         Session::put('r',$r);
+          $r1 = Session::get('r',$r); 
          if($email == $m->email){
-                        Mail::send('pages.temp_mail_change_pass', array('email'=>$email), function($message) use ($email,$name){   
+                        Mail::send('pages.temp_mail_change_pass', array('email'=>$email,'r1'=>$r1), function($message) use ($email,$name){   
         $message->to($email,$name)->subject('Thay đổi mật khẩu');
         
                  });

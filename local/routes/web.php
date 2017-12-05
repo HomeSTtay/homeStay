@@ -41,7 +41,7 @@ Route::post('/send-mail', 'TestLogin@postSendMail');
 
 //Change pass:
 Route::group(['middleware' => 'CheckChangePass'], function () {
-    Route::get('/form-change-pass/{email}','MyFirstController@getChangePass');
+    Route::get('/form-change-pass/{email}/{r1}','MyFirstController@getChangePass');
 });
 
 

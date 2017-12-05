@@ -15,13 +15,17 @@ class CheckChangePass
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
-        if(Session::has('pass_changed') )
+    {   
+        if(Session::has('click') )
         {
             return redirect('/error');
         }
+
         else{
+             Session::put('click',1);  
+             Session::forget('ok');  
             return $next($request);
+            
         }
 
     }

@@ -30,15 +30,18 @@ class MyFirstController extends Controller
 
 	}
 	public function getChangePass(){
+		
 		return view('pages.change_pass');
 	}
 	public function getMail(){
-		if(Session::has('pass_changed')){
-			Session::forget('pass_changed');
+		if(Session::has('click')){
+			Session::forget('click');	
 		}
-		
+				
 		$thongbao="";
 		return view('pages.mail_change_pass')->with('thongbao',$thongbao);
+		
+
 	}
 }
 

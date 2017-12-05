@@ -40,8 +40,10 @@ Route::get('/form-send-mail','MyFirstController@getMail');
 Route::post('/send-mail', 'TestLogin@postSendMail');
 
 //Change pass:
+Route::group(['middleware' => 'CheckChangePass'], function () {
+    Route::get('/form-change-pass/{email}','MyFirstController@getChangePass');
+});
 
-Route::get('/form-change-pass/{email}/{r}','MyFirstController@getChangePass');
 
 Route::post('/change-pass/{email}','TestLogin@postChangePass');
 
@@ -78,19 +80,19 @@ Route::get('/add-homestay','AdminController@getAddHomestay');
 Route::get('/edit-homestay','AdminController@getEditHomestay');
 
 //Room
-Route::get('/list-type-room','AdminController@getListRoom');
+Route::get('/list-type-room','Admin_typeroomController@getListRoom');
 
-Route::get('/add-type-room','AdminController@getAddRoom');
+Route::get('/add-type-room','Admin_typeroomController@getAddRoom');
 
-Route::post ('add-type-room','AdminController@postCheckAddRoom');
+Route::post ('add-type-room','Admin_typeroomController@postCheckAddRoom');
 
-Route::get('/edit-type-room/id={id}','AdminController@getEditRoom');
+Route::get('/edit-type-room/id={id}','Admin_typeroomController@getEditRoom');
 
-Route::get('/view-type-room/id={id}','AdminController@getViewTypeRoom');
+Route::get('/view-type-room/id={id}','Admin_typeroomController@getViewTypeRoom');
 
-Route::post ('edit-type-room','AdminController@postCheckEditRoom');
+Route::post ('edit-type-room','Admin_typeroomController@postCheckEditRoom');
 
-Route::get ('delete-type-room/id={id}','AdminController@getCheckDeleteRoom');
+Route::get ('delete-type-room/id={id}','Admin_typeroomController@getCheckDeleteRoom');
 
 //Post
 

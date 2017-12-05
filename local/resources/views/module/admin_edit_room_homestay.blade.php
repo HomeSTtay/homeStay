@@ -82,10 +82,10 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-6">
-                        <button type="submit" class="btn btn-info btn-add-room" style="float:right;" id='submit'>Sửa</button>
+                        <button type="submit" class="btn btn-info btn-edit-room" style="float:right;" id='submit'>Sửa</button>
                          </div>
                          <div class="col-sm-4">
-                        <button type="reset" class="btn btn-danger ">Hủy</button>
+                         <a  href="{{url("/")}}/list-type-room"><button class="btn btn-danger" type="button">Hủy</i></button></a> 
                          </div>
                          </div> 
                     </div> 

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Session;
 
 /**
 * 
@@ -32,6 +33,10 @@ class MyFirstController extends Controller
 		return view('pages.change_pass');
 	}
 	public function getMail(){
+		if(Session::has('pass_changed')){
+			Session::forget('pass_changed');
+		}
+		
 		$thongbao="";
 		return view('pages.mail_change_pass')->with('thongbao',$thongbao);
 	}

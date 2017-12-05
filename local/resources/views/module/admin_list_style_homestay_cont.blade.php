@@ -34,7 +34,7 @@
           </tr>
         </thead>
         <tbody> 
-        @foreach($list as $l)
+               @foreach($list as $l)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
             <td>ST0{{$l->id}}</td>
@@ -44,7 +44,7 @@
               <a href="" class="active" ui-toggle-class="">
              <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
              <a href="{{url("/")}}/delete-style/{{$l->id}}" > <i class="fa fa-times text-danger text" title="Xóa"></i></a>
-              <a href="{{url("/")}}/edit-style-homestay"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
+              <a href="{{url("/")}}/form-edit-style-homestay/{{$l->id}}"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
               </a>
             </td>
           </tr>

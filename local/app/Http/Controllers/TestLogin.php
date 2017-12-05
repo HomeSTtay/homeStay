@@ -100,7 +100,7 @@ class TestLogin extends Controller
         $user->email = $request->email;
         $user->password = md5($request->password);
         $user->typeuser_id = 1;
-        $user->status = "";
+        $user->status = 1;
         $user->save();
              
      Mail::send('pages.mail', array('lastname'=>$request->lastname), function($message) use ($email, $name){

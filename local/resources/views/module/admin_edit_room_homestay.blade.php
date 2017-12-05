@@ -6,7 +6,7 @@
             <div class="panel-body">
                 <form  action="{{url('edit-type-room')}}" class="form-horizontal bucket-form" method="post">
                     <div class="form-group" >
-                        <label class="col-sm-2 control-label" style="display: none">Tên loại phòng</label>
+                        <label class="col-sm-2 control-label" style="display: none">Mã loại phòng</label>
                         <div class="col-sm-10" style="display: none">
                             <input type="text" class="form-control name-room" id="name-room" name="id-room" value="{{$edittyperoom->id}}" >
                             @if($errors->has('name-room'))

@@ -6,9 +6,9 @@
             <div class="panel-body">
                 <form action="{{url("/")}}/edit-style-homestay" class="form-horizontal bucket-form" method="post">
                 <div class="form-group">
-                        <label class="col-sm-2 control-label">Mã style</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control id-style-homestay" id="id-style-homestay" name="id-style-homestay" disabled="" value = "{{$style->id}}"  >
+                        <label class="col-sm-2 control-label" style="display: none">Mã style</label>
+                        <div class="col-sm-10" style="display: none">
+                            <input type="text" class="form-control id-style-homestay" id="id-style-homestay" name="id-style-homestay"  value = "{{$style->id}}"  >
                         </div>
                     </div>
                     <div class="form-group">

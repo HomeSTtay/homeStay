@@ -82,9 +82,13 @@ Route::get('/list-type-room','AdminController@getListRoom');
 
 Route::get('/add-type-room','AdminController@getAddRoom');
 
-Route::get('/edit-type-room','AdminController@getEditRoom');
-
 Route::post ('add-type-room','AdminController@postCheckAddRoom');
+
+Route::get('/edit-type-room/id={id}','AdminController@getEditRoom');
+
+Route::get('/view-type-room/id={id}','AdminController@getViewTypeRoom');
+
+Route::post ('edit-type-room','AdminController@postCheckEditRoom');
 
 Route::get ('delete-type-room/id={id}','AdminController@getCheckDeleteRoom');
 

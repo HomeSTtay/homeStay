@@ -27,29 +27,32 @@
                 <input type="checkbox" id="checkall">
               </label>
             </th>
-            <th>Tên người dùng</th>
+            <th>Họ</th>
+            <th>Tên</th>
             <th>Email</th>
-            <th>Số điện thoại</th>
-            <th>Ngày tạo</th>
             <th>Phân quyền</th>
+            <th>Ngày tạo</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
         <tbody> 
+          @foreach($list_user as $u)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
-            <td><span class="text-ellipsis">Trịnh Thu Phương Minh</span></td>
-            <td><span class="text-ellipsis">minhm9986@gmail.com</span></td>
-            <td><span class="text-ellipsis">0971961602</span></td>
-            <td><span class="text-ellipsis">2017</span></td>
-            <td><span class="text-ellipsis">1</span></td>
-            <td>
-              <a href="" class="active" ui-toggle-class="">
-              <i class="fa fa-times text-danger text" title="Xóa"></i>
+            <td><span class="text-ellipsis">{{$u->firstname}}</span></td>
+            <td><span class="text-ellipsis">{{$u->lastname}}</span></td>
+             <td><span class="text-ellipsis">{{$u->email}}</span></td>
+            <td><span class="text-ellipsis">{{$u->typeuser_id}}</span></td>
+             <td><span class="text-ellipsis">{{$u->created_at}}</span></td>
+      
+            <td style="width: 80px;">
+              
+              <a href="{{url("/")}}/delete-user/id={{$u->id}}"><i class="fa fa-times text-danger text" title="Xóa"></i></a>
               <i class="fa fa-edit text-info text" title="Chỉnh sửa"></i>
               </a>
             </td>
           </tr>
+          @endforeach
           
          
           

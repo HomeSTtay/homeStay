@@ -34,14 +34,16 @@ Route::get('/detail', 'MyFirstController@getDetail');
 
 //Mail
 
-Route::get('/form-send-mail/','MyFirstController@getMail');
+Route::get('/form-send-mail','MyFirstController@getMail');
 
 
 Route::post('/send-mail', 'TestLogin@postSendMail');
 
 //Change pass:
+Route::group(['middleware' => 'CheckChangePass'], function () {
+    Route::get('/form-change-pass/{email}/{r1}','MyFirstController@getChangePass');
+});
 
-Route::get('/form-change-pass/{email}','MyFirstController@getChangePass');
 
 Route::post('/change-pass/{email}','TestLogin@postChangePass');
 
@@ -58,17 +60,17 @@ Route::get('/admin','AdminController@getAdminIndex');
 
 //Style homestay: 
 
-Route::get('/list-style-homestay','AdminController@getListStyleHomestay');
+Route::get('/list-style-homestay','Admin_stylehomestayController@getListStyleHomestay');
 
-Route::post('/add-style-homestay','AdminController@postAddStyleHomestay');
+Route::post('/add-style-homestay','Admin_stylehomestayController@postAddStyleHomestay');
 
-Route::get('/form-add-style-homestay','AdminController@getAddStyleHomestay');
+Route::get('/form-add-style-homestay','Admin_stylehomestayController@getAddStyleHomestay');
 
-Route::post('/edit-style-homestay','AdminController@postEditStyleHomestay');
+Route::post('/edit-style-homestay','Admin_stylehomestayController@postEditStyleHomestay');
 
-Route::get('/form-edit-style-homestay/{id}','AdminController@getEditStyleHomestay');
+Route::get('/form-edit-style-homestay/{id}','Admin_stylehomestayController@getEditStyleHomestay');
 
-Route::get('/delete-style/{id}','AdminController@getDeleteStyleHomestay');
+Route::get('/delete-style/{id}','Admin_stylehomestayController@getDeleteStyleHomestay');
 
 // Homestay:
 Route::get('/list-homestay','AdminController@getListHomestay');
@@ -78,15 +80,19 @@ Route::get('/add-homestay','AdminController@getAddHomestay');
 Route::get('/edit-homestay','AdminController@getEditHomestay');
 
 //Room
-Route::get('/list-type-room','AdminController@getListRoom');
+Route::get('/list-type-room','Admin_typeroomController@getListRoom');
 
-Route::get('/add-type-room','AdminController@getAddRoom');
+Route::get('/add-type-room','Admin_typeroomController@getAddRoom');
 
-Route::get('/edit-type-room','AdminController@getEditRoom');
+Route::post ('add-type-room','Admin_typeroomController@postCheckAddRoom');
 
-Route::post ('add-type-room','AdminController@postCheckAddRoom');
+Route::get('/edit-type-room/id={id}','Admin_typeroomController@getEditRoom');
 
-Route::get ('delete-type-room/id={id}','AdminController@getCheckDeleteRoom');
+Route::get('/view-type-room/id={id}','Admin_typeroomController@getViewTypeRoom');
+
+Route::post ('edit-type-room','Admin_typeroomController@postCheckEditRoom');
+
+Route::get ('delete-type-room/id={id}','Admin_typeroomController@getCheckDeleteRoom');
 
 //Post
 
@@ -98,7 +104,9 @@ Route::get('/edit-post','AdminController@getEditPost');
 
 //User
 
-Route::get('/list-user','AdminController@getListUser');
+Route::get('/list-user','Admin_userController@getListUser');
+
+Route::get('/delete-user/id={id}','Admin_userController@getDeleteUser');
 
 
 

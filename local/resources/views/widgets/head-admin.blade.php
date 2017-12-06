@@ -28,3 +28,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--Show Chart-->
 <script src="{{asset('js/morris.js')}}"></script>
 <script src="{{asset('js/raphael-min.js')}}"></script>
+<style>
+.control-p{
+    margin-top: 8px;
+}
+</style>

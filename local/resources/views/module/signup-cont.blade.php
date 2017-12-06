@@ -30,7 +30,7 @@
 									<p style="color:white;">{{$errors->first('password')}}</p>
 									@endif
 									
-									<input type="password" name="password" value="{{ old('password')}}" class="password" placeholder="Nhập lại mật khẩu *" >
+									<input type="password" name="confirmpassword" value="{{ old('password')}}" class="password" placeholder="Nhập lại mật khẩu *" >
 									@if($errors->has('password'))
 									<p style="color:white;">{{$errors->first('password')}}</p>
 									@endif
@@ -42,6 +42,7 @@
 								<h3>Đã có tài khoản<span>?</span></h3>
 								<h4><a href="{{url("/")}}/logIn">Đăng nhập</a></h4>
 								</div>
+								
 								<div class="clear"></div>
 						</div>	
 							

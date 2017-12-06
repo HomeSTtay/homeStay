@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Input;
+use Illuminate\Database\Query\Builder;
 
 /**
 * 
@@ -31,6 +32,7 @@ class AdminController extends Controller
 		return view('pages.admin_edit_homestay');
 	}
 
+<<<<<<< HEAD
 	public function getListUser(){
 		return view('pages.admin_list_user');
 	}
@@ -120,23 +122,10 @@ class AdminController extends Controller
 		return redirect('/list-style-homestay');
 	}
 	
+=======
+>>>>>>> master
 	
 
-	// Edit Style Homestay
-	public function getEditStyleHomestay($id){
-		$style = DB::table('style_homestay')->where(['id'=>$id])->first();
-		Session::put('st.id',$id);
-		return view('pages.admin_edit_style_homestay')->with('style',$style);
-	}
-
-	public function postEditStyleHomestay(Request $request){
-		$id = Session::get('st.id');
-		$name_style = $request->input('name-style-homestay');
-		$descript = $request->input('desc_style');
-		$edit = DB::update('update style_homestay set name = ? , description = ? where id = ? ', [$name_style, $descript,$id]);
-		return redirect('/list-style-homestay');
-
-	}
 
 
 	public function getAddPost(){

@@ -12,7 +12,8 @@ use Mail;
 use Validator;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Session;
-
+use Illiminate\Http\Response;
+use Symfony\HttpFoundation\Cookie;
 
 class TestLogin extends Controller
 {
@@ -100,13 +101,13 @@ class TestLogin extends Controller
         $user->email = $request->email;
         $user->password = md5($request->password);
         $user->typeuser_id = 1;
-        $user->status = "";
+        $user->viewstatus_id = 1;
         $user->save();
              
      Mail::send('pages.mail', array('lastname'=>$request->lastname), function($message) use ($email, $name){
 
-        $message->to($email,$name)->subject('Chúc mừng đăng kí thành công');
-    });
+        $message->to($email,$name)->subject('Đăng kí thành công');
+    }); 
      Session::put('user.name',$name);
      Session::put('user.email',$email);
      Session::put('user.pass',$pass);
@@ -118,22 +119,24 @@ class TestLogin extends Controller
     	}
 
     }
-    public function getChangePass(){
-        return view('pages.change_pass_cont');
+
+    public function getChangePass($email,$r1){
+            return view('pages.change_pass_cont')->with('r1',$r1);
+           
 
     }
     public function postChangePass(Request $request,$email){
-        $pass = $request->input('pass');
-        $re_pass = $request->input('re-pass');
+       
+        $pass = md5($request->input('pass'));
+        $re_pass = md5($request->input('re-pass'));
+
+        $ss = (Session::get('email'));
         
-
-        $ss = (Session::get('user.email'));
-
-
+    
         if($pass == $re_pass){
             $update = DB::update('update users set password = ? where email = ? ',[$pass,$ss]);
-            print_r($ss);   
             return redirect('/logIn');
+       
 
         }
         else{
@@ -148,22 +151,23 @@ class TestLogin extends Controller
 
          $m = DB::table('users')->where(['email'=> $email])->first();
          $name = $m->lastname;
-
-
-             if($email == $m->email){
-                        Mail::send('pages.temp_mail_change_pass', array('email'=>$request->email), function($message) use ($email,$name){   
+         $r = rand();
+         Session::put('r',$r);
+          $r1 = Session::get('r',$r); 
+         if($email == $m->email){
+                        Mail::send('pages.temp_mail_change_pass', array('email'=>$email,'r1'=>$r1), function($message) use ($email,$name){   
         $message->to($email,$name)->subject('Thay đổi mật khẩu');
-    
-    });
+        
+                 });
 
-        Session::put('user.email',$email);
-         
-        $ses = Session::get('user');
-
+        Session::put('email',$email);
+        $ses = Session::get('email');
+                 
                 $thongbao ='Bạn vui lòng kiểm tra mail để thay đổi mật khẩu';   
-             }else{
+        }
+             else{
                  $thongbao ="Mail không đúng, bạn vui lòng kiểm tra và nhập lại";
-             }
+        }
          
      
         return view('pages.mail_change_pass')->with('thongbao',$thongbao)->with('email',$email)->with($ses);
@@ -172,7 +176,8 @@ class TestLogin extends Controller
 
     public function getLogout(){
          Session::forget('user');
-        return redirect('/logIn');
+        return redirect('/');
 
     }
+    
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Session;
 
 /**
 * 
@@ -29,11 +30,18 @@ class MyFirstController extends Controller
 
 	}
 	public function getChangePass(){
+		
 		return view('pages.change_pass');
 	}
 	public function getMail(){
+		if(Session::has('click')){
+			Session::forget('click');	
+		}
+				
 		$thongbao="";
 		return view('pages.mail_change_pass')->with('thongbao',$thongbao);
+		
+
 	}
 }
 

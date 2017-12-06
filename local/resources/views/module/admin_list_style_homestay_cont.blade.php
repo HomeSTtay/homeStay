@@ -37,7 +37,7 @@
         @foreach($list as $l)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
-            <td>ST0{{$l->id}}</td>
+            <td>{{$l->id}}</td>
             <td>{{$l->name}}</td>
             <td><span class="text-ellipsis">{{$l->description}}</span></td>
             <td>

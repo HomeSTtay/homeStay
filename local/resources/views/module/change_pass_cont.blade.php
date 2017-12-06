@@ -1,6 +1,6 @@
 <div class="typing-br" data-vide-bg="videos/typing">
 	 <div class="w3-agile-signup-top typing-br-o">
-	 <h1 class="title-m">Thay đổi mật khẩu</h1>
+	 <h1 class="title-m">Thay đổi mật khẩu </h1>
 		<div class="main">
                 <div class="login-top left">
 			       

@@ -79,6 +79,8 @@ Route::get('/add-homestay','AdminController@getAddHomestay');
 
 Route::get('/edit-homestay','AdminController@getEditHomestay');
 
+Route::get('/delete-homestay/{id}','AdminController@getDeleteHomestay');
+
 //Room
 Route::get('/list-type-room','Admin_typeroomController@getListRoom');
 

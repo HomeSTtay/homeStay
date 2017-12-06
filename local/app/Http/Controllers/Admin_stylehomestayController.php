@@ -39,7 +39,7 @@ class Admin_stylehomestayController extends Controller
         $now = getdate(); 
         $currentDate = $now["mday"] . $now["mon"] . $now["year"]; 
 
-        $style = DB::table('style_homestay')->where('name',$name_style)->where('description',$descript)->first();
+        $style = DB::table('style_homestay')->where('name_style',$name_style)->where('description',$descript)->first();
 
         if(count($style) == 0 ){
         DB::insert('insert into style_homestay values(?,?,1,?)',['SH'.$currentDate.($count+1),$name_style,$descript]);
@@ -75,7 +75,7 @@ class Admin_stylehomestayController extends Controller
 
         
 
-        $edit = DB::update('update style_homestay set name = ? , description = ? where id = ? ', [$name_style, $descript,$id]);
+        $edit = DB::update('update style_homestay set name_style = ? , description = ? where id = ? ', [$name_style, $descript,$id]);
 
         return redirect('/list-style-homestay');
 

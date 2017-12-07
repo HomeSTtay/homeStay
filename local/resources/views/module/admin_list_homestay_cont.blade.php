@@ -27,7 +27,7 @@
                 <input type="checkbox" id="checkall">
               </label>
             </th>
-            <th>Mã homestay</th>
+            <th>Mã </th>
             <th>Tên homestay</th>
             <th>Phong cách</th>
             <th>Địa điểm</th>
@@ -49,7 +49,7 @@
             <td><span class="text-ellipsis">{{$h->rank}}</span></td>
             <td>
               <a href="" class="active" ui-toggle-class="">
-              <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
+               <a href="{{url("/")}}/detail-homestay/{{$h->id}}"> <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i></a>
                <a href="{{url("/")}}/delete-homestay/{{$h->id}}"> <i class="fa fa-times text-danger text" title="Xóa"></i>
                </a>
                <a href="{{url("/")}}/edit-homestay"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>

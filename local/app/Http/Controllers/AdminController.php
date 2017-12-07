@@ -56,20 +56,33 @@ class AdminController extends Controller
 
 		DB::table('home_stay')->insertGetId(['id' => 'HS'.$currentDate.($count+1),'name' => $name, 'location' => $location,'style_id' => $style,'viewstatus_id' => 1,'status_id'=> 'STHS'.$currentDate.($count+1),'picture'=>'HS'.$currentDate.($count+1),'rank'=>$rank,'description' =>$desc]);
 
-			
-			foreach ($img as $key => $value) {
-				if($value!= ""){
-					$img->move('upload',$value);
-						 DB::table('picture')-> insertGetId(['id' => 'HS'.$currentDate.($count+1), 'name'=> $value, 'link' => '../images/'.$value,'viewstatus_id'=>1]);
-				}
+
+		foreach ($img as $key => $value) {
+			if($value!= ""){
 				
+				DB::table('picture')-> insertGetId(['id' => 'HS'.$currentDate.($count+1), 'name'=> $value, 'link' => '../images/'.$value,'viewstatus_id'=>1]);
+			}
+
 		}
-			
+
 		
 		
 		return redirect('/list-homestay');
 	}
 
+	public function getDetailHomestay($id){
+		$homestay=DB::table('home_stay')->where('id',$id)->first();
+
+		$style = DB::table('style_homestay')->where('id',$homestay->style_id)->first();
+
+		$picture = DB::table('picture')->where('id',$id)->get();
+
+		$statuss = DB::table('statuss')->where('id','ST'.$id)->first();
+
+		$post = DB::table('post')->where('home_id',$id)->count();
+		 return view('pages.admin_detail_homestay')->with('homestay',$homestay)->with('picture',$picture)->with('statuss',$statuss)->with('post',$post)->with('style',$style);
+
+	}
 
 
 	
@@ -93,7 +106,7 @@ class AdminController extends Controller
 	}
 	
 }
-	
+
 
 
 

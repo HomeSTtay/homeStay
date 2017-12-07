@@ -22,27 +22,22 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox" id="checkall">
-              </label>
-            </th>
+           
             <th title="Mã loại phòng">Mã LP</th>
             <th title="Tên loại phòng">Tên LP</th>
             <th title="Loại phòng thuộc homestay">Tên homestay</th>
             <th title="Phong cách của homestay">Phong cách</th>
             <th title="Mô tả loại phòng">Mô tả</th>
-            <th title="Số lượng phòng của loại phòng">Số lượng phòng</th>
+            <th title="Số lượng phòng của loại phòng">SL</th>
             <th title="Hiện tại còn hay hết phòng">Trạng thái</th>
-            
-            
+            <th>Hành động</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
         <tbody> 
           @foreach($type_room as $tyr)
           <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
+          
             <td>{{$tyr->id}}</td>
             <td>{{$tyr->name}}</td>
             <td>{{$tyr->homestay_name}}</td>

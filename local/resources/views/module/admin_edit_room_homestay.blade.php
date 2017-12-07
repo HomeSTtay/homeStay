@@ -27,6 +27,7 @@
                         <label class="col-sm-2 control-label">Tên homestay</label>
                         <div class="col-sm-10">
                              <select  name="homestay-name" class="form-control m-bot15 style">
+                                <option value="{{$edittyperoom -> homestay_name}}">{{$edittyperoom -> homestay_name}}</option>
                                  @foreach ($homestay as $hts)
                                 <option value="{{$hts -> name}}">{{$hts -> name}}</option>
                                 @endforeach
@@ -36,11 +37,11 @@
                     <div class="form-group">
                          <label class="col-sm-2 control-label">Phong cách</label>
                          <div class="col-sm-10">
-                        <select  name="styletyr"class="form-control m-bot15 style">
-                                <option value="{{$edittyperoom->style}}">{{$edittyperoom->style}}</option>
-                                <option value="Cổ điển">Cổ điển</option>
-                                <option value="Hiện đại">Hiện đại</option>
-                                <option value="Vintage">Vintage</option>
+                        <select  name="styletyr"class="form-control m-bot15 style"">
+                             <option value="{{$edittyperoom -> style}}">{{$edittyperoom -> style}}</option>
+                                 @foreach ($style as $ty)
+                                <option value="{{$ty->name_style}}">{{$ty->name_style}}</option>
+                                @endforeach
                         </select>
                          </div> 
                     </div>  
@@ -76,7 +77,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Hình ảnh</label>
                         <div class="col-sm-10">
-                            <input type="file" class="img-room" id="img-room" name="img-room" value="{{$edittyperoom->picture}}">  </input>
+                            <input type="file" class="img-room" id="img-room" name="img-room[]" multiple>  </input>
                             <i> <h6>* Ghi chú: Nhấn giữ Ctrl để chọn nhiều mục</h6> </i>
                         </div>
                     </div>
@@ -85,7 +86,7 @@
                         <button type="submit" class="btn btn-info btn-add-room" style="float:right;" id='submit'>Sửa</button>
                          </div>
                          <div class="col-sm-4">
-                        <button type="reset" class="btn btn-danger ">Hủy</button>
+                        <a  href="{{url("/")}}/list-type-room"><button type="reset" class="btn btn-danger ">Hủy</button></a>
                          </div>
                          </div> 
                     </div> 

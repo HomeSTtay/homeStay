@@ -43,7 +43,8 @@ class AdminController extends Controller
 	}
 	public function getAddRoom(){
 		$homestay = DB::table('home_stay')->where('viewstatus_id','=',1)->select()->get();
-		return view('pages.admin_add_room_homestay')->with('homestay',$homestay);
+		$style = DB::table('style_homestay')->where('viewstatus_id','=',1)->select()->get();
+		return view('pages.admin_add_room_homestay')->with('homestay',$homestay)->with('style',$style);
 	}
 
 	public function postCheckAddRoom(Request $request){
@@ -52,25 +53,16 @@ class AdminController extends Controller
 			'name-room'=>'required',
 			'desc-room' => 'required',
 			'quantity-room' => 'required',
+		
 		];
 		$messages_tyr=
 		[
 			'name-room.required'=>'Vui lòng nhập tên loại phòng!',
 			'desc-room.required' => 'Vui lòng mô tả loại phòng!',
 			'quantity-room.required'=> 'Vui lòng nhập số lượng phòng!'
+
 		];
-		$validation = Validator::make($request->all(),$rules_tyr,$messages_tyr);
-		if($validation->fails()){
-			return redirect()->back()->withErrors($validation)->withInput();
-		}
-		else{
-			$tyr = DB::table('type_room')->where("name",$request->get('name-room'))->count();
-			if($tyr==1){
-				DB::table('type_room')->where("name",$request->get('name-room'))-> update(['viewstatus_id' => 1]);
-				return redirect('/list-type-room');
-			}
-			else{
-				$count = DB::table('type_room')->count();
+		$count = DB::table('type_room')->count();
 				$mahomestay = $request->input ('homestay-name');
 				$style = $request -> input('styletyr');
 				$name =  $request->input('name-room');
@@ -78,18 +70,29 @@ class AdminController extends Controller
 				$quantity  = $request -> input ('quantity-room');
 				$status = $request -> input('status-room');
 				$img= $request -> input('img-room');
-				
 				$now = getdate(); 
-				$currentDate = $now["mday"] . $now["mon"] . $now["year"]; 
-				DB::table('type_room')->insertGetId(['id' => 'HR'.$currentDate.($count+1),'name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=>'HR'.$currentDate.($count+1)]);
+				$hour = date("h");
+				$minute = date("i");
+				$giay = date("s");
+				$currentDate = ($hour+7) . $minute . $giay.$now["mday"] . $now["mon"]; 
+				$id = $currentDate;
 
-				
+		$validation = Validator::make($request->all(),$rules_tyr,$messages_tyr);
+		if($validation->fails()){
+			return redirect()->back()->withErrors($validation)->withInput();
+		}
+		else{
+			$tyr = DB::table('type_room')->where("name",$request->get('name-room'))-> where ('homestay_name',$request->get('homestay-name'))-> where('viewstatus_id', 0)->count();
+			if($tyr==1){
+				DB::table('type_room')->where("name",$request->get('name-room'))-> where ('homestay_name',$request->get('homestay-name'))-> where('viewstatus_id', 0)-> update(['id' => $id,'name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=> $id]);;
+				return redirect('/list-type-room');
+			}
+			else{
+				DB::table('type_room')->insertGetId(['id' => $id,'name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=> $id]);
+
 					foreach ($img as $key => $value) {
-						# code...
-					
-					DB::table('picture')-> insertGetId(['id' => 'HR'.$currentDate.($count+1), 'name'=> $value, 'link' => '../images/'.$value,'viewstatus_id'=>1]);
-				}
-				// Duyệt forr mảng Pictura ra. Add picture phía trên thành mã typerooom, add hình ảnh vào bảng Picture vs mã hình ảnh là mã typrroool. 
+						DB::table('picture')-> insertGetId(['id' => $id, 'name'=> $value, 'link' => '../images/'.$value,'viewstatus_id'=>1]);
+					}
 				$errorAdd = new MessageBag(['errorBS'=>'Thêm thành công!']);
 				return redirect('/list-type-room');
 			}
@@ -105,7 +108,8 @@ class AdminController extends Controller
 	public function getEditRoom($id){
 		$homestay = DB::table('home_stay')->select()->get();
 		$edittyperoom = DB::table('type_room')->where('id','=',$id) -> first();
-	 	return view('pages.admin_edit_room_homestay')-> with('edittyperoom',$edittyperoom)-> with('homestay', $homestay);
+		$style = DB::table('style_homestay')->where('viewstatus_id','=',1)->select()->get();
+	 	return view('pages.admin_edit_room_homestay')-> with('edittyperoom',$edittyperoom)-> with('homestay', $homestay)->with('style',$style);
 	}
 
 	public function postCheckEditRoom(Request $request){
@@ -114,12 +118,14 @@ class AdminController extends Controller
 			'name-room'=>'required',
 			'desc-room' => 'required',
 			'quantity-room' => 'required',
+		
 		];
 		$messages_tyr=
 		[
 			'name-room.required'=>'Vui lòng nhập tên loại phòng!',
 			'desc-room.required' => 'Vui lòng mô tả loại phòng!',
-			'quantity-room.required'=> 'Vui lòng nhập sốádasdadsa lượng phòng!'
+			'quantity-room.required'=> 'Vui lòng nhập số lượng phòng!'
+			
 		];
 		$validation = Validator::make($request->all(),$rules_tyr,$messages_tyr);
 		if($validation->fails()){
@@ -135,9 +141,12 @@ class AdminController extends Controller
 				$quantity  = $request -> input ('quantity-room');
 				$status = $request -> input('status-room');
 				$img = $request -> input('img-room');
-				$now = getdate(); 
-				$currentDate = $now["mday"] . $now["mon"] . $now["year"]; 
-				DB::table('type_room')->where ('id','=',$id) ->update(['name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=>$img]);
+
+				DB::table('type_room')->where ('id','=',$id) ->update(['name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=>$id]);
+				DB::table('picture')->where('id','=',$id)->delete();
+				foreach ($img as $key => $value) {
+					DB::table('picture')-> insertGetId(['id' => $id, 'name'=> $value, 'link' => '../images/'.$value,'viewstatus_id'=>1]);
+				}
 				$errorAdd = new MessageBag(['errorBS'=>'Sửa thành công!']);
 				return redirect('/list-type-room');
 			}
@@ -145,7 +154,7 @@ class AdminController extends Controller
 
 	public function getViewTypeRoom($id){
 		$homestay = DB::table('home_stay')->select()->get();
-		$picture = DB::table ('picture') -> where('id',$id)  -> select() -> get();
+		$picture = DB::table ('picture') -> where('id',$id)-> where('viewstatus_id','=',1)  -> select() -> get();
 		$viewtyperoom = DB::table('type_room')->where('id','=',$id) -> first();
 	 	return view('pages.admin_view_type_room')-> with('viewtyperoom',$viewtyperoom)-> with('homestay', $homestay)-> with('picture',$picture);
 	}

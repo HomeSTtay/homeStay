@@ -31,14 +31,43 @@ class AdminController extends Controller
 		return redirect()->back()->withInput();
 	}
 
+	// hiển thị trang thêm homestay
 	public function getAddHomestay(){
 		$list_style= DB::table('style_homestay')->get();
 		return view('pages.admin_add_homestay')->with('list_style',$list_style);
 	}
 
-	public function postAddHomestay(){
 
-		return view('pages.admin_add_homestay');
+	// xử lí thêm homestay
+	public function postAddHomestay(Request $request){
+		//`id`, `name`, `location`, `style_id`, `viewstatus_id`, `status_id`, `picture`, `rank`, `description`SELECT * FROM `home_stay` WHERE 1	
+		$count = DB::table('home_stay')->count();
+		$name = $request->input('name-homestay');
+		$location = $request->input('loc-homestay');
+		$style = $request->input('style-homestay');
+		$img = $request->input('img-homestay');
+		$rank = $request->input('rank');
+		$desc = $request->input('desc-homestay');
+		$now = getdate(); 
+
+		$currentDate = $now["mday"] . $now["mon"] . $now["year"]; 
+
+		DB::table('statuss')->insertGetId(['id'=>'STHS'.$currentDate.($count+1), 'view'=>0,'like'=>0,'share'=>0,'vote'=>0]);
+
+		DB::table('home_stay')->insertGetId(['id' => 'HS'.$currentDate.($count+1),'name' => $name, 'location' => $location,'style_id' => $style,'viewstatus_id' => 1,'status_id'=> 'STHS'.$currentDate.($count+1),'picture'=>'HS'.$currentDate.($count+1),'rank'=>$rank,'description' =>$desc]);
+
+			
+			foreach ($img as $key => $value) {
+				if($value!= ""){
+					$img->move('upload',$value);
+						 DB::table('picture')-> insertGetId(['id' => 'HS'.$currentDate.($count+1), 'name'=> $value, 'link' => '../images/'.$value,'viewstatus_id'=>1]);
+				}
+				
+		}
+			
+		
+		
+		return redirect('/list-homestay');
 	}
 
 

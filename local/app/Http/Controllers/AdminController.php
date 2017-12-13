@@ -32,7 +32,6 @@ class AdminController extends Controller
 		return view('pages.admin_edit_homestay');
 	}
 
-<<<<<<< HEAD
 	public function getListUser(){
 		return view('pages.admin_list_user');
 	}
@@ -122,8 +121,6 @@ class AdminController extends Controller
 		return redirect('/list-style-homestay');
 	}
 	
-=======
->>>>>>> master
 	
 
 

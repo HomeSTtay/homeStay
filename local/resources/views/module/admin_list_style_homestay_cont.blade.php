@@ -38,7 +38,7 @@
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
             <td>{{$l->id}}</td>
-            <td>{{$l->name}}</td>
+            <td>{{$l->name_style}}</td>
             <td><span class="text-ellipsis">{{$l->description}}</span></td>
             <td>
               <a href="" class="active" ui-toggle-class="">

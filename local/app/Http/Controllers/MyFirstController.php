@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
+use DB;
 
 /**
 * 
@@ -11,7 +12,8 @@ class MyFirstController extends Controller
 	
 	public function getIndex(){
 
-		return view('pages.index');
+		$top10 = DB::table('home_stay')->select()->get(10);
+		return view('pages.index')->with('top10',$top10);
 
 	}
 	public function getSignup(){

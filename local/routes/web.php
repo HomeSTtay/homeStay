@@ -30,8 +30,6 @@ Route::get('/logOut','TestLogin@getLogout');
 
 Route::get('/detail','MyFirstController@getDetail');
 
-Route::get('/detail', 'MyFirstController@getDetail');
-
 //Mail
 
 Route::get('/form-send-mail','MyFirstController@getMail');
@@ -104,9 +102,15 @@ Route::get ('delete-type-room/id={id}','Admin_typeroomController@getCheckDeleteR
 
 Route::get('/add-post','AdminController@getAddPost');
 
+Route::post('add-post','AdminController@postAddPost');
+
 Route::get('/list-post','AdminController@getListPost');
 
-Route::get('/edit-post','AdminController@getEditPost');
+Route::get('edit-post/{id}','AdminController@getEditPost');
+
+Route::post('/edit-post','AdminController@postEditPost');
+
+Route::get('/delete-post/{id}','AdminController@getDeletePost');
 
 //User
 

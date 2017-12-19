@@ -4,28 +4,29 @@
                 Thêm bài viết
             </header>
             <div class="panel-body">
-                <form class="form-horizontal bucket-form" method="post">
-                <div class="form-group">
+                <form action="{{ url('add-post') }}" class="form-horizontal bucket-form" method="post" >
+                {{ csrf_field() }}
+                {{--  <div class="form-group">
                         <label class="col-sm-2 control-label">Mã bài viết</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control id-homestay" id="id-homestay" name="id-homestay" disabled="" value="P01">
+                            <input type="text" class="form-control id-homestay" id="id-post" name="id-post" disabled="" value="{{$}}">
                         </div>
-                    </div>
+                    </div>  --}}
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Mã homestay</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control id-homestay" id="name-homestay" name="name-homestay">
+                            <input type="text" class="form-control id-homestay" id="id-homestay" name="id-homestay">
                         </div>
                     </div>
                     
                       <div class="form-group">
                          <label class="col-sm-2 control-label">Loại phòng</label>
                          <div class="col-sm-10">
-                        <select multiple   class="form-control m-bot15 type-room">
+                        <select multiple  name="select-homestay"  class="form-control m-bot15 type-room">
+                                <option value="Vintage">Modern</option>
                                 <option value="Vintage">Vintage</option>
-                                <option value="Vintage">Vintage</option>
-                                <option value="Vintage">Vintage</option>
-                                <option value="Vintage">Vintage</option>
+                                <option value="Vintage">Special</option>
+                                <option value="Vintage">Vip</option>
                                 <option value="Vintage">Vintage</option>
                                 <option value="Vintage">Vintage</option>
                                 

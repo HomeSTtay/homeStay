@@ -33,7 +33,7 @@ class AdminController extends Controller
 
 	// hiển thị trang thêm homestay
 	public function getAddHomestay(){
-		$list_style= DB::table('style_homestay')->get();
+		$list_style= DB::table('style_homestay')->where('viewstatus_id',1)->get();
 		return view('pages.admin_add_homestay')->with('list_style',$list_style);
 	}
 

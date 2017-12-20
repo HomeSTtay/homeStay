@@ -28,9 +28,10 @@
                          <label class="col-sm-2 control-label">Phong cách</label>
                          <div class="col-sm-10">
                         <select  name="styletyr"class="form-control m-bot15 style">
-                                <option value="Cổ điển">Cổ điển</option>
-                                <option value="Hiện đại">Hiện đại</option>
-                                <option value="Vintage">Vintage</option>
+                            @foreach($style as $s)
+                                <option value="{{$s->name_style}}">{{$s->name_style}}</option>
+                         
+                             @endforeach   
                         </select>
                          </div> 
                     </div>  

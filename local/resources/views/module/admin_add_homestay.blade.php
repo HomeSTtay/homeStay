@@ -9,7 +9,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Tên homestay *</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control name-homestay" id="name-homestay" name="name-homestay">
+                            <input type="text" class="form-control name-homestay" id="name-homestay" name="name-homestay" required="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -25,7 +25,7 @@
                      <div class="form-group">
                         <label class="col-sm-2 control-label">Địa điểm *</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control loc-homestay" id="loc-homestay" name="loc-homestay">
+                            <input type="text" class="form-control loc-homestay" id="loc-homestay" name="loc-homestay" required="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -50,7 +50,7 @@
                         <label class="col-sm-2 control-label">Hình ảnh</label>
                         <div class="col-sm-10">
                             <input type="file" class="img-homestay" id="img-homestay" name="img-homestay[]" multiple></input>
-                            <i> <h6>* Ghi chú: Nhấn giữ Ctrl để chọn nhiều mục</h6> </i>
+                            <i> <h6> Ghi chú: Nhấn giữ Ctrl để chọn nhiều mục</h6> </i>
                         </div>
                     </div>
                      <div class="form-group">

@@ -24,8 +24,9 @@ class Admin_typeroomController extends Controller
 
 	}
 	public function getAddRoom(){
+		$style = DB::table('style_homestay')->where('viewstatus_id',1)->get();
 		$homestay = DB::table('home_stay')->where('viewstatus_id','=',1)->select()->get();
-		return view('pages.admin_add_room_homestay')->with('homestay',$homestay);
+		return view('pages.admin_add_room_homestay')->with('homestay',$homestay)->with('style',$style);
 	}
 
 	public function postCheckAddRoom(Request $request){

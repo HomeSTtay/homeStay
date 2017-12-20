@@ -9,9 +9,7 @@
           <input type="text" class="input-sm form-control" placeholder="Search">
           <span class="input-group-btn">
             <button class="btn btn-sm btn-default"  type="button"><i class ="fa fa-search"></i></button>
-          </span>
-
-         
+          </span>   
         </div>
         <span class="input-group-btn">
            <a  href="{{url("/")}}/add-post"><button class="btn btn-info" type="button" ><i class ="fa fa-plus">  Thêm bài viết</i></button></a> 
@@ -38,27 +36,28 @@
           </tr>
         </thead>
         <tbody> 
+        @foreach($list_post as $li)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
-            <td>P01</td>
-            <td>Home stay ABCD</td>
-             <td><span class="text-ellipsis">Đẹp, chất chơi người dơi</span></td>
-            <td><span class="text-ellipsis"></span></td>
-            <td><span class="text-ellipsis">200</span></td>
-            <td><span class="text-ellipsis">20</span></td>
+            <td>{{$li->id}}</td>
+            <td>{{$li->home_id}}</td>
+             <td><span class="text-ellipsis">{{$li->content}}</span></td>
+            <td><span class="text-ellipsis"></span>{{$li->picture}}</td>
+            <td><span class="text-ellipsis">{{$li->like}}</span></td>
+            <td><span class="text-ellipsis">{{$li->view}}</span></td>
             <td>
               <a href="" class="active" ui-toggle-class="">
               <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i>
-              <i class="fa fa-times text-danger text" title="Xóa"></i>
-            <a href="{{url("/")}}/edit-post"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
+              <a href="{{url("/")}}/delete-post/{{$li->id}}"><i class="fa fa-times text-danger text" title="Xóa"></i></a>
+            <a href="{{url("/")}}/edit-post/{{$li->id}}"><i class="fa fa-edit text-info text" title="Chỉnh sửa"></i></a>
               </a>
             </td>
           </tr>
-          
-         
+         @endforeach          
           
         </tbody>
       </table>
+      {{$list_post->links()}}
     </div>
     <footer class="panel-footer">
       <div class="row">

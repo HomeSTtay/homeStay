@@ -91,7 +91,6 @@ class AdminController extends Controller
 		return view('pages.admin_edit_homestay');
 	}
 
-
 }
 
 

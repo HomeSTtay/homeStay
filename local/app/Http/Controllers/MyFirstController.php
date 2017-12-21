@@ -11,9 +11,10 @@ class MyFirstController extends Controller
 {
 	
 	public function getIndex(){
-
-		$top10 = DB::table('home_stay')->select()->get(10);
-		return view('pages.index')->with('top10',$top10);
+		$statuss = DB::table('statuss')->select()->get();
+		$pic = DB::table('picture')->where('viewstatus_id',1)->select()->get();
+		$top10 = DB::table('home_stay')->where('viewstatus_id',1)->select()->get(10);
+		return view('pages.index')->with('top10',$top10)->with('pic',$pic)->with('statuss',$statuss);
 
 	}
 	public function getSignup(){

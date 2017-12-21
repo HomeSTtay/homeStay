@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-4">
     <div class="hovereffect">
-    <a href="#"> <img class="img-responsive" src="{{asset('images/hs4.jpg')}}" alt="">
+    <a href="#"> <img class="img-responsive" src="{{asset('images/hs3.jpg')}}" alt="">
             <h2>Miền Nam</h2></a>
     </div>  
     </div>

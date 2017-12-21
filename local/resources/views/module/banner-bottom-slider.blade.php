@@ -9,17 +9,30 @@
 					@foreach($top10 as $t)
 					<li>
 						<div class="banner-bottom-slider-right1">
-							<img src="{{asset('images')}}/{{$t->picture}}" alt=" " class="img-responsive" />
+					
+						
+						@foreach($pic as $p)
+						
+						@if($t->picture == $p->id && $p->viewstatus_id==3)
+							<img src="{{asset('images')}}/{{$p->name}}" alt=" " class="img-responsive" />
+						@endif	
+						
+						@endforeach	
+						
 							<ul class= "name_hs" >
 							<li><a href="#">{{$t->name}}</a></li>
 							</ul>
+							@foreach($statuss as $s)
+							@if('ST'.$t->id == $s->id)
 							<ul>
-							<li><a href="#"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 8</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 90</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 8</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> 8</a></li>
-</ul>
-					
+							
+							<li><a href="#"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> {{$s->like}}</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{$s->vote}}</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> {{$s->view}}</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> {{$s->share}}</a></li>
+							</ul>
+							@endif
+							@endforeach
 						</div>
 					</li>
 					@endforeach

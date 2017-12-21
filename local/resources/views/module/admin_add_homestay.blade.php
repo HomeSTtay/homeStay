@@ -46,8 +46,15 @@
                         <textarea name="desc-homestay" class="ckeditor desc-homestay form-control"></textarea>
                          </div>     
                      </div>    
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Hình đại diện* </label>
+                        <div class="col-sm-10">
+                            <input type="file" class="img-thum" id="img-thum" name="img-thum" ></input>
+                            
+                        </div>
+                    </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Hình ảnh</label>
+                        <label class="col-sm-2 control-label">Hình ảnh khác</label>
                         <div class="col-sm-10">
                             <input type="file" class="img-homestay" id="img-homestay" name="img-homestay[]" multiple></input>
                             <i> <h6> Ghi chú: Nhấn giữ Ctrl để chọn nhiều mục</h6> </i>

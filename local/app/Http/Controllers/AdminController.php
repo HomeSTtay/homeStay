@@ -45,6 +45,7 @@ class AdminController extends Controller
 		$name = $request->input('name-homestay');
 		$location = $request->input('loc-homestay');
 		$style = $request->input('style-homestay');
+		$img_thum = $request->input('img-thum');
 		$img = $request->input('img-homestay');
 		$rank = $request->input('rank');
 		$desc = $request->input('desc-homestay');
@@ -55,7 +56,8 @@ class AdminController extends Controller
 		DB::table('statuss')->insertGetId(['id'=>'STHS'.$currentDate.($count+1), 'view'=>0,'like'=>0,'share'=>0,'vote'=>0]);
 
 		DB::table('home_stay')->insertGetId(['id' => 'HS'.$currentDate.($count+1),'name' => $name, 'location' => $location,'style_id' => $style,'viewstatus_id' => 1,'status_id'=> 'STHS'.$currentDate.($count+1),'picture'=>'HS'.$currentDate.($count+1),'rank'=>$rank,'description' =>$desc]);
-
+		
+		DB::table('picture')-> insertGetId(['id' => 'HS'.$currentDate.($count+1), 'name'=> $img_thum, 'link' => '../images/'.$img_thum,'viewstatus_id'=>3]);
 
 		foreach ($img as $key => $value) {
 			if($value!= ""){

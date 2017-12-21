@@ -13,7 +13,7 @@
 						
 						@foreach($pic as $p)
 						
-						@if($t->picture == $p->id && $p->viewstatus_id==3)
+						@if($t->picture == $p->id and $p->viewstatus_id==3)
 							<img src="{{asset('images')}}/{{$p->name}}" alt=" " class="img-responsive" />
 						@endif	
 						

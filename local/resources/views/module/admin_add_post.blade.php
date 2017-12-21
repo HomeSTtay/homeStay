@@ -13,26 +13,17 @@
                         </div>
                     </div>  --}}
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Mã homestay</label>
+                        <label class="col-sm-2 control-label">Homestay</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control id-homestay" id="id-homestay" name="id-homestay">
+                        <select   name="id-homestay"  class="form-control m-bot15 type-room">
+                        @foreach($list_hs as $l)
+                     
+                                <option value="{{$l->id}}">{{$l->name}}</option>
+                         @endforeach       
+                        </select>
                         </div>
                     </div>
-                    
-                      <div class="form-group">
-                         <label class="col-sm-2 control-label">Loại phòng</label>
-                         <div class="col-sm-10">
-                        <select multiple  name="select-homestay"  class="form-control m-bot15 type-room">
-                                <option value="Vintage">Modern</option>
-                                <option value="Vintage">Vintage</option>
-                                <option value="Vintage">Special</option>
-                                <option value="Vintage">Vip</option>
-                                <option value="Vintage">Vintage</option>
-                                <option value="Vintage">Vintage</option>
-                                
-                        </select>
-                         </div> 
-                     </div>  
+                
                       <div class="form-group">
                         <label class="col-sm-2 control-label">Mô tả</label>
                         <div class="col-sm-10">
@@ -42,7 +33,7 @@
                       <div class="form-group">
                         <label class="col-sm-2 control-label">Hình ảnh</label>
                         <div class="col-sm-10">
-                            <input type="file" class=" img-post" id="img-post" name="img-post">
+                            <input type="file" class=" img-post" id="img-post" name="img-post[]">
                         </div>
                     </div>
                     <div class="form-group">
@@ -53,7 +44,7 @@
                       
                     </div>
 
-                          <i>* Ghi chú: Đôi với loại phòng, hình ảnh, video, nhấn giữ Ctrl để chọn nhiều mục</i>
+                          <i>* Ghi chú: Đôi với  hình ảnh, video, nhấn giữ Ctrl để chọn nhiều mục</i>
                      <div class="form-group">
                         <div class="col-sm-6">
                         <button type="submit" class="btn btn-info btn-add-p" style="float:right;">Thêm</button>

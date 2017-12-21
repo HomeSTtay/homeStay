@@ -27,10 +27,9 @@
             </th>
             <th>Mã bài viết</th>
             <th>Tên homestay</th>
-            <th>Mô tả</th>
-            <th>Hình ảnh</th>
-            <th>Lượt thích</th>
-            <th>Lượt xem</th>
+            <th>Lượt share</th>
+            <th>Lượt like</th>
+            <th>Lượt view</th>
             
             <th style="width:30px;"></th>
           </tr>
@@ -41,8 +40,7 @@
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
             <td>{{$li->id}}</td>
             <td>{{$li->home_id}}</td>
-             <td><span class="text-ellipsis">{{$li->content}}</span></td>
-            <td><span class="text-ellipsis"></span>{{$li->picture}}</td>
+            <td><span class="text-ellipsis"></span>{{$li->share}}</td>
             <td><span class="text-ellipsis">{{$li->like}}</span></td>
             <td><span class="text-ellipsis">{{$li->view}}</span></td>
             <td>
@@ -59,20 +57,7 @@
       </table>
       {{$list_post->links()}}
     </div>
-    <footer class="panel-footer">
-      <div class="row">
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    
   </div>
 </div>
 

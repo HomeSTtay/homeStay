@@ -100,17 +100,17 @@ Route::get ('delete-type-room/id={id}','Admin_typeroomController@getCheckDeleteR
 
 //Post
 
-Route::get('/add-post','AdminController@getAddPost');
+Route::get('/add-post','Admin_postController@getAddPost');
 
-Route::post('add-post','AdminController@postAddPost');
+Route::post('add-post','Admin_postController@postAddPost');
 
-Route::get('/list-post','AdminController@getListPost');
+Route::get('/list-post','Admin_postController@getListPost');
 
-Route::get('edit-post/{id}','AdminController@getEditPost');
+Route::get('edit-post/{id}','Admin_postController@getEditPost');
 
-Route::post('/edit-post','AdminController@postEditPost');
+Route::post('/edit-post','Admin_postController@postEditPost');
 
-Route::get('/delete-post/{id}','AdminController@getDeletePost');
+Route::get('/delete-post/{id}','Admin_postController@getDeletePost');
 
 //User
 

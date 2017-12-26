@@ -101,13 +101,7 @@ class AdminController extends Controller
 		return view('pages.admin_list_room_homestay')->with('type_room',$type_room);
 	}
 	public function getAddRoom(){
-<<<<<<< HEAD
 		return view('pages.admin_add_room_homestay');
-=======
-		$homestay = DB::table('home_stay')->where('viewstatus_id','=',1)->select()->get();
-		$style = DB::table('style_homestay')->where('viewstatus_id','=',1)->select()->get();
-		return view('pages.admin_add_room_homestay')->with('homestay',$homestay)->with('style',$style);
->>>>>>> LuanNguyen
 	}
 
 	public function postCheckAddRoom(Request $request){
@@ -147,7 +141,6 @@ class AdminController extends Controller
 		else{
 			$tyr = DB::table('type_room')->where("name",$request->get('name-room'))-> where ('homestay_name',$request->get('homestay-name'))-> where('viewstatus_id', 0)->count();
 			if($tyr==1){
-<<<<<<< HEAD
 				$errorAdd = new MessageBag(['errorBS'=>'Loại phòng đã tồn tại']);
 				return redirect()->back()->withErrors($errorAdd)->withInput();		
 			}
@@ -161,17 +154,6 @@ class AdminController extends Controller
 				$status = $request -> input('status-room');
 				$img = $request -> input('img-room');
 				DB::table('type_room')->insertGetId(['homestay_id' => (int)substr($mahomestay,3),'id' => ($count+1),'style' => $style,'name' => $name,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=>$img]);
-=======
-				DB::table('type_room')->where("name",$request->get('name-room'))-> where ('homestay_name',$request->get('homestay-name'))-> where('viewstatus_id', 0)-> update(['id' => $id,'name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=> $id]);;
-				return redirect('/list-type-room');
-			}
-			else{
-				DB::table('type_room')->insertGetId(['id' => $id,'name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=> $id]);
-
-					foreach ($img as $key => $value) {
-						DB::table('picture')-> insertGetId(['id' => $id, 'name'=> $value, 'link' => '../images/'.$value,'viewstatus_id'=>1]);
-					}
->>>>>>> LuanNguyen
 				$errorAdd = new MessageBag(['errorBS'=>'Thêm thành công!']);
 				return redirect('/list-type-room');
 			
@@ -185,66 +167,9 @@ class AdminController extends Controller
 		return redirect()->back()-> withInput();
 	}
 
-<<<<<<< HEAD
 	public function getEditRoom(){
 	 	return view('pages.admin_edit_room_homestay');
 	}
-=======
-	public function getEditRoom($id){
-		$homestay = DB::table('home_stay')->select()->get();
-		$edittyperoom = DB::table('type_room')->where('id','=',$id) -> first();
-		$style = DB::table('style_homestay')->where('viewstatus_id','=',1)->select()->get();
-	 	return view('pages.admin_edit_room_homestay')-> with('edittyperoom',$edittyperoom)-> with('homestay', $homestay)->with('style',$style);
-	}
-
-	public function postCheckEditRoom(Request $request){
-		$rules_tyr=
-		[
-			'name-room'=>'required',
-			'desc-room' => 'required',
-			'quantity-room' => 'required',
-		
-		];
-		$messages_tyr=
-		[
-			'name-room.required'=>'Vui lòng nhập tên loại phòng!',
-			'desc-room.required' => 'Vui lòng mô tả loại phòng!',
-			'quantity-room.required'=> 'Vui lòng nhập số lượng phòng!'
-			
-		];
-		$validation = Validator::make($request->all(),$rules_tyr,$messages_tyr);
-		if($validation->fails()){
-			return redirect()->back()->withErrors($validation)->withInput();
-		}
-			else{
-				$count = DB::table('type_room')->count();
-				$id = $request -> input ('id-room');
-				$mahomestay = $request->input ('homestay-name');
-				$style = $request -> input('styletyr');
-				$name =  $request->input('name-room');
-				$descript = $request -> input('desc-room');
-				$quantity  = $request -> input ('quantity-room');
-				$status = $request -> input('status-room');
-				$img = $request -> input('img-room');
-
-				DB::table('type_room')->where ('id','=',$id) ->update(['name' => $name, 'homestay_name' => $mahomestay,'style' => $style,'viewstatus_id' => 1,'description' =>$descript,'quantity' => $quantity, 'status' => $status, 'picture'=>$id]);
-				DB::table('picture')->where('id','=',$id)->delete();
-				foreach ($img as $key => $value) {
-					DB::table('picture')-> insertGetId(['id' => $id, 'name'=> $value, 'link' => '../images/'.$value,'viewstatus_id'=>1]);
-				}
-				$errorAdd = new MessageBag(['errorBS'=>'Sửa thành công!']);
-				return redirect('/list-type-room');
-			}
-		}
-
-	public function getViewTypeRoom($id){
-		$homestay = DB::table('home_stay')->select()->get();
-		$picture = DB::table ('picture') -> where('id',$id)-> where('viewstatus_id','=',1)  -> select() -> get();
-		$viewtyperoom = DB::table('type_room')->where('id','=',$id) -> first();
-	 	return view('pages.admin_view_type_room')-> with('viewtyperoom',$viewtyperoom)-> with('homestay', $homestay)-> with('picture',$picture);
-	}
-	
->>>>>>> LuanNguyen
 	// List Style Homestay
 	public function getListStyleHomestay(){
 		$list = DB::table('style_homestay')->select()->paginate(5);

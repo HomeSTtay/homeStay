@@ -45,9 +45,26 @@
                         <label class="col-sm-2 control-label">Hình ảnh</label>
                         <div class="col-sm-10">
                           @foreach ($picture as $pic)
-                            <img src="../images/{{$pic->name}}" width="100px" height="100px"></td>
+                            <img src="../images/{{$pic->name}}" class="img-typeroom" width="100px" height="100px"></td>\
+
                             @endforeach
                         </div>
+                         <style type="text/css" media="screen">
+                                .img-typeroom{
+                                    margin-right: 30px;
+                                -webkit-transition: all .3s ease-out;
+                                -moz-transition: all .3s ease-out;
+                                -o-transition: all .3s ease-out;
+                                transition: all .3s ease-out;
+                            }
+                            .img-typeroom:hover {
+                            -moz-transform: scale(4);
+                            -webkit-transform: scale(4);
+                            -o-transform: scale(4);
+                            -ms-transform: scale(4);
+                            transform: scale(4);
+                            }
+                        </style>    
                     </div>
                      <div class="form-group">
                         <label class="col-sm-2 control-label"></label>

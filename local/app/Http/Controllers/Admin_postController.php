@@ -69,20 +69,25 @@ class Admin_postController extends Controller
 	}
 
 	public function getEditPost($id){
-		$edit = DB::table('post')->where(['id'=>$id])->first();
-		return view('pages.admin_edit_post')->with('edit', $edit);
+		$list_hs = DB::table('home_stay')->get();
+		$edit = DB::table('post')->where('id', $id)->first();
+		return view('pages.admin_edit_post')->with('list_hs', $list_hs)->with('edit', $edit);
+		
+		// return view('pages.admin_edit_post')->with('$edit', $edit);
+		
 	}
 	
 	public function postEditPost(Request $request){
 		$id = $request->input('id-post');
 		$id_homestay = $request->input('id-homestay');
-		$select_hometay = $request->input('select-homestay');
 		$desc = $request->input('desc-post');
 		$img_post = $request->input('img-post');
 		$video_post = $request->input('video-post');
-		
-		$edit = DB::update('update post set home_id=?, typeroom=?, content=?, picture=?, video=? where id=?',
-		 [$id_homestay, $select_hometay, $desc, $img_post, $video_post, $id]);
+		// print_r($desc);
+		// print_r($id);
+		$edit_post = DB::update('update post set home_id=?, content=?, picture=?, video=? where id=?',
+		 [$id_homestay, $desc, $img_post, $video_post, $id]);
+		//  echo($edit_post);
 		return redirect('/list-post');
 	}
 }

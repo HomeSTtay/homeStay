@@ -29,7 +29,11 @@ class MyFirstController extends Controller
 	}
 	public function getDetail(){
 
-		return view('pages.detail');
+		$statuss = DB::table('statuss')->select()->get();
+		$pic = DB::table('picture')->where('viewstatus_id','<>',0)->select()->get();
+		$top10 = DB::table('home_stay')->where('viewstatus_id',1)->select()->get(10);
+		return view('pages.detail')->with('top10',$top10)->with('pic',$pic)->with('statuss',$statuss);
+
 
 	}
 	public function getChangePass(){

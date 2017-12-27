@@ -45,8 +45,18 @@ Route::group(['middleware' => 'CheckChangePass'], function () {
 
 Route::post('/change-pass/{email}','TestLogin@postChangePass');
 
-Auth::routes();
+//List Homestay theo miền
+Route::get('/danh-sach-homestay-mien-bac','MyFirstController@getListHomestayNorthern');
 
+Route::get('/danh-sach-homestay-mien-trung','MyFirstController@getListHomestayCentral');
+
+Route::get('/danh-sach-homestay-mien-nam','MyFirstController@getListHomestaySouth');
+
+//Chi tiết homestay:
+
+Route::get('/chi-tiet-homestay-{name}','MyFirstController@getDetailHomestay');
+
+Auth::routes();
 
 
  

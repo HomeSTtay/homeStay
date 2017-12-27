@@ -34,7 +34,7 @@
 							@endif
 							@endforeach
 						</div>
-					</li>
+					</li>	
 					@endforeach
 				</ul>
 					<script type="text/javascript">

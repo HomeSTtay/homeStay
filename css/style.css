@@ -698,6 +698,11 @@ p.exercise{
 	color:#999;
 	font-size:14px;
 }
+.banner-bottom-slider-right1 .img-responsive{
+	width: 100%;
+	height : 160px !important;
+}
+
 .banner-bottom-slider-right1 ul{
 	padding:.7em .5em; 
 	background:#3598DC;
@@ -3404,8 +3409,8 @@ h2.typoh2{
 
 } */
 .hovereffect {
-	width: 80%;
-	height: 100%;
+	width: 100%;
+	min-height: 233px;
 	overflow: hidden;
 	position: relative;
 	cursor: default;
@@ -3415,6 +3420,7 @@ h2.typoh2{
   .hovereffect img {
 	position: relative;
 	width: 100%;
+	height : 233px;
   }
   
   .hovereffect h2 {
@@ -3435,8 +3441,6 @@ h2.typoh2{
   
   .banner-bottom-slider{
 	height: 400px !important;
-	background: #9BD5FF !important;
-	background-color: rgba(0, 0, 0, 0.6);
 	
 }
 .banner-bottom-slider-right1 ul {
@@ -3448,3 +3452,165 @@ h2.typoh2{
 .name-hs{
 	margin-top : 5px !important;
 }
+.ctn_all{
+	background:url(../images/19.jpg) 0px 0px no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	min-height : 130px;
+}
+
+/* list_homestay */
+.hovereffect1 {
+	margin-top: 20px;
+	width: 100%;
+	margin-bottom: 20px;
+	height : 350px;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	text-align:center;
+	cursor:default;
+	}
+	
+	.hovereffect1 .overlay1 {
+	width:100%;
+	height:100%;
+	position:absolute;
+	overflow:hidden;
+	top:0;
+	left:0;
+	opacity:0;
+	-webkit-transition:all .4s ease-in-out;
+	transition:all .4s ease-in-out
+	}
+	
+	.hovereffect1 img {
+	width: 100%;
+	height: 100%;
+	display:block;
+	position:relative;
+	-webkit-transition:all .4s linear;
+	transition:all .4s linear;
+	}
+	
+	.hovereffect1 h2 {
+	text-transform:uppercase;
+	color:rgb(12, 12, 12);
+	text-align:center;
+	position:relative;
+	font-size:17px;
+	font-weight: bold;
+	font-family: 'Tahoma' !important;
+	-webkit-transform:translatey(-100px);
+	-ms-transform:translatey(-100px);
+	transform:translatey(-100px);
+	-webkit-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+	padding:10px;
+	background: rgb(212, 211, 211);
+	opacity: 0.8;
+	}
+	
+	.hovereffect1 a.info1 {
+	text-decoration:none;
+	font-family: 'Tahoma' !important;
+	display:inline-block;
+	color:rgb(17, 17, 17);
+	border:1px solid #fff;
+	background-color:transparent;
+	opacity:0;
+	filter:alpha(opacity=0);
+	-webkit-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+	margin-top : 250px;
+	padding:7px 14px;
+	}
+	
+	.hovereffect1 a.info1:hover {
+	box-shadow:0 0 5px #fff;
+	}
+	
+	.hovereffect1:hover img {
+	-ms-transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+	transform:scale(1.2);
+	}
+	
+	.hovereffect1:hover .overlay1 {
+	opacity:1;
+	filter:alpha(opacity=100);
+	}
+	
+	.hovereffect1:hover h2,.hovereffect1:hover a.info1 {
+	opacity:1;
+	filter:alpha(opacity=100);
+	-ms-transform:translatey(0);
+	-webkit-transform:translatey(0);
+	transform:translatey(0);
+	background: rgb(212, 211, 211);
+	opacity: 0.8;
+	}
+	
+	.hovereffect1:hover a.info1 {
+	-webkit-transition-delay:.2s;
+	transition-delay:.2s;
+	}
+
+	.pagination{
+		margin-left: 600px !important;
+	}
+	.nav-tabs li a{
+		font-family: 'Tahoma' !important;
+	}
+
+	.detail_hs{
+	margin-top: 50px;
+
+	}
+	.detail_hs h1{
+		padding-left: 450px;
+		font-weight: bold;
+
+
+
+	}
+	.detail_hs .content{
+		margin-top: 20px;
+		margin-bottom: 30px;
+		width: 1000px;
+		margin-left: 100px;
+
+
+	}
+	.detail_hs .content img{
+		margin-left: 130px;
+		width: 700px;
+
+	}
+	.detail_hs h4{
+		padding-top: 50px;
+		font-family: 'Tahoma' !important;
+		font-style: italic;
+		text-align: center;
+
+	}
+	.detail_hs .content p{
+		padding-top: 10px;
+		font-family: 'Tahoma' !important;
+		font-size: 16px;
+	}
+	.lancan{
+		width: 1000px;
+	}
+	.lancan .hovereffect1{
+		height: 250px;
+
+	}
+	.container .nav-tabs li a{
+		background: #03a9f4;
+		color: white;
+		font-weight: bold;
+	}

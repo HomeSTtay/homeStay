@@ -64,8 +64,10 @@ Auth::routes();
 
 /* Admin */
  
-Route::get('/admin','AdminController@getAdminIndex');
-
+// Route::get('/admin','AdminController@getAdminIndex');
+Route::group(['middleware' => 'CheckAdmin'], function () {
+    Route::get('/admin','AdminController@getAdminIndex');
+});
 //Style homestay: 
 
 Route::get('/list-style-homestay','Admin_stylehomestayController@getListStyleHomestay');

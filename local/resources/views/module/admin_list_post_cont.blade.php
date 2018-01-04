@@ -39,7 +39,7 @@
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name='name[]' id='check_all'><i></i></label></td>
             <td>{{$li->id}}</td>
-            <td>{{$li->home_id}}</td>
+            <td>{{$li->name}}</td>
             <td><span class="text-ellipsis"></span>{{$li->share}}</td>
             <td><span class="text-ellipsis">{{$li->like}}</span></td>
             <td><span class="text-ellipsis">{{$li->view}}</span></td>

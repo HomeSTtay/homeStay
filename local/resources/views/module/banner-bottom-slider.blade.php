@@ -20,14 +20,14 @@
 						@endforeach	
 						
 							<ul class= "name_hs" >
-							<li><a href="#">{{$t->name}}</a></li>
+							<li><a href="{{url('/')}}/chi-tiet-homestay-{{$t->name}}">{{$t->name}}</a></li>
 							</ul>
 							@foreach($statuss as $s)
 							@if('ST'.$t->id == $s->id)
 							<ul>
 							
-							<li><a href="#"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> {{$s->like}}</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{$s->vote}}</a></li>
+							<li><span class="glyphicon glyphicon-thumbs-up like-hs" aria-hidden="true" ></span> {{$s->like}}</li>
+								<li><span class="glyphicon glyphicon-user" aria-hidden="true" ></span> {{$s->vote}}</li>
 								<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> {{$s->view}}</a></li>
 								<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> {{$s->share}}</a></li>
 							</ul>
@@ -37,6 +37,24 @@
 					</li>	
 					@endforeach
 				</ul>
+				<style>
+.like {
+  
+    color: red;
+}
+.dislike {
+  
+    color: white !important;
+}
+</style>
+				<script>
+			$(document).ready(function(){
+					$(".like-hs").click(function(){						
+					$(".like-hs").addClass("like");
+					}); 
+				});
+				</script>
+		
 					<script type="text/javascript">
 						$(window).load(function() {
 						$("#flexiselDemo1").flexisel({

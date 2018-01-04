@@ -59,7 +59,7 @@ class Admin_postController extends Controller
 	//list post
 	public function getListPost(){
 		$list_post = DB::table('post')->where('post.viewstatus_id',1)->join('home_stay', 'home_stay.id', '=', 'post.home_id')->join('statuss','statuss.id', '=', 'post.status_id')->select('post.id', 'post.home_id',
-		 'post.viewstatus_id', 'post.content', 'statuss.share', 'statuss.like', 'statuss.view')->paginate(5);
+		 'post.viewstatus_id', 'post.content', 'statuss.share', 'statuss.like', 'statuss.view','home_stay.name')->paginate(5);
 		return view('pages.admin_list_post')->with('list_post', $list_post);
 	}
 

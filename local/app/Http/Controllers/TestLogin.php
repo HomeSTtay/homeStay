@@ -43,7 +43,7 @@ class TestLogin extends Controller
         $checkLogin = DB::table('users')->where(['email'=>$email, 'password'=>$password])->first();
 
         if(count($checkLogin) >0){
-       
+        Session::put('user.name',$checkLogin->lastname);
         Session::put('user.email',$email);
         Session::put('user.password',$password);
      // Tạo session 

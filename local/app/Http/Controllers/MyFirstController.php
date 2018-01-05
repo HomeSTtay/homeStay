@@ -27,12 +27,15 @@ class MyFirstController extends Controller
 		return view('pages.login');
 
 	}
-	public function getDetail(){
-
-		$statuss = DB::table('statuss')->select()->get();
+	public function getDetail($name){
+		
+		$hs = DB::table('home_stay')->where('name','=',$name)->select()->first();
+		$statuss = DB::table('statuss')->where('id','ST'.$hs->id)->select()->first();
 		$pic = DB::table('picture')->where('viewstatus_id','<>',0)->select()->get();
-		$top10 = DB::table('home_stay')->where('viewstatus_id',1)->select()->get(10);
-		return view('pages.detail')->with('top10',$top10)->with('pic',$pic)->with('statuss',$statuss);
+		$post = DB::table('post')->where('home_id',$hs->id)->select()->get();
+		$near = DB::table('home_stay')->where('area',$hs->area)->select()->get(5);
+		$creater = DB::table('users')->where('id',$hs->creater)->select()->first();
+		return view('pages.detail')->with('near',$near)->with('pic',$pic)->with('statuss',$statuss)->with('hs',$hs)->with('post',$post)->with('creater',$creater);
 
 
 	}
@@ -51,28 +54,25 @@ class MyFirstController extends Controller
 
 	}
 	public function getListHomestayNorthern(){
-		$rank = DB::table('home_stay')->where('rank','=','Bắc')->select('home_stay.rank')->first();
+		$area = DB::table('home_stay')->where('area','=','Bắc')->select('home_stay.area')->first();
 		$pic = DB::table('picture')->select()->get();
-		$list = DB::table('home_stay')->where('rank','=','Bắc')->select()->paginate(10);
-		return view('pages.danh_sach_homestay')->with('list',$list)->with('pic',$pic)->with('rank',$rank);
+		$list = DB::table('home_stay')->where('area','=','Bắc')->select()->paginate(10);
+		return view('pages.danh_sach_homestay')->with('list',$list)->with('pic',$pic)->with('area',$area);
 	}
 	public function getListHomestayCentral(){
-		$rank = DB::table('home_stay')->where('rank','=','Trung')->select('home_stay.rank')->first();
+		$area = DB::table('home_stay')->where('area','=','Trung')->select('home_stay.area')->first();
 		$pic = DB::table('picture')->select()->get();
-		$list = DB::table('home_stay')->where('rank','=','Trung')->select()->paginate(10);
-		return view('pages.danh_sach_homestay')->with('list',$list)->with('pic',$pic)->with('rank',$rank);
+		$list = DB::table('home_stay')->where('area','=','Trung')->select()->paginate(10);
+		return view('pages.danh_sach_homestay')->with('list',$list)->with('pic',$pic)->with('area',$area);
 	}
 	public function getListHomestaySouth(){
-		$rank = DB::table('home_stay')->where('rank','=','Nam')->select('home_stay.rank')->first();
+		$area = DB::table('home_stay')->where('area','=','Nam')->select('home_stay.area')->first();
 		$pic = DB::table('picture')->select()->get();
-		$list = DB::table('home_stay')->where('rank','=','Nam')->select()->paginate(10);
-		return view('pages.danh_sach_homestay')->with('list',$list)->with('pic',$pic)->with('rank',$rank);
+		$list = DB::table('home_stay')->where('area','=','Nam')->select()->paginate(10);
+		return view('pages.danh_sach_homestay')->with('list',$list)->with('pic',$pic)->with('area',$area);
 	}
 
-	public function getDetailHomestay($name){	
-		$hs = DB::table('home_stay')->where('name','=',$name)->select()->first();
-		return view('pages.chi_tiet_homestay')->with('hs',$hs);
-	}
+	
 }
 
 

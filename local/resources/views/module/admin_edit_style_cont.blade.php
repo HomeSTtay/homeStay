@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Tên style</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control name-style-homestay" id="name-style-homestay" name="name-style-homestay" value="{{$style->name}}"  >
+                        <input type="text" class="form-control name-style-homestay" id="name-style-homestay" name="name-style-homestay" value="{{$style->name_style}}"  >
                         </div>
                     </div>  
                      <div class="form-group">

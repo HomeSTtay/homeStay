@@ -1,7 +1,7 @@
 <div class="col-lg-12">
         <section class="panel">
             <header class="panel-heading">
-                Thêm homestay
+                Thêm homestay 
             </header>
             <div class="panel-body">
                 <form action="{{url('add-homestay')}}" class="form-horizontal bucket-form" method="post">
@@ -31,7 +31,7 @@
                     <div class="form-group">
                          <label class="col-sm-2 control-label">Khu vực</label>
                          <div class="col-sm-10">
-                        <select class="form-control m-bot15 rank" name="rank">
+                        <select class="form-control m-bot15 area" name="area">
                          
                                 <option value="Bắc">Bắc</option>
                                 <option value="Trung">Trung</option>

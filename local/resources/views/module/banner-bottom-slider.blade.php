@@ -20,7 +20,7 @@
 						@endforeach	
 						
 							<ul class= "name_hs" >
-							<li><a href="{{url('/')}}/chi-tiet-homestay-{{$t->name}}">{{$t->name}}</a></li>
+							<li><a href="{{url('/')}}/detail-{{$t->name}}">{{$t->name}}</a></li>
 							</ul>
 							@foreach($statuss as $s)
 							@if('ST'.$t->id == $s->id)

@@ -46,7 +46,7 @@
             <td>{{$h->name}}</td>
              <td><span class="text-ellipsis">{{$h->name_style}}</span></td>
             <td><span class="text-ellipsis">{{$h->location}}</span></td>
-            <td><span class="text-ellipsis">{{$h->rank}}</span></td>
+            <td><span class="text-ellipsis">{{$h->area}}</span></td>
             <td>
               <a href="" class="active" ui-toggle-class="">
                <a href="{{url("/")}}/detail-homestay/{{$h->id}}"> <i class="fa fa-arrow-right text-success text-active" title="Xem chi tiết"></i></a>

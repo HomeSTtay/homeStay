@@ -26,9 +26,12 @@ Route::post('/registertest', 'TestLogin@postRegister');
 Route::get('/logOut','TestLogin@getLogout');
 
 
-//Detail
 
-Route::get('/detail','MyFirstController@getDetail');
+//Chi tiết homestay:
+
+//Route::get('/chi-tiet-homestay-{name}','MyFirstController@getDetailHomestay');
+
+Route::get('/detail-{name}','MyFirstController@getDetail');
 
 //Mail
 
@@ -52,9 +55,7 @@ Route::get('/danh-sach-homestay-mien-trung','MyFirstController@getListHomestayCe
 
 Route::get('/danh-sach-homestay-mien-nam','MyFirstController@getListHomestaySouth');
 
-//Chi tiết homestay:
 
-Route::get('/chi-tiet-homestay-{name}','MyFirstController@getDetailHomestay');
 
 Auth::routes();
 

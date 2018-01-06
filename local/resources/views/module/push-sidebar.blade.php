@@ -1,6 +1,6 @@
 <!-- #push_sidebar -->
 				<div class="top-nav">
-					<span class="menu"><img src="images/menu.png" alt=""/></span>
+					<span class="menu header-left animated wow bounceInRight" data-wow-delay="800ms"><img src="images/menu.png" alt=""/></span>
 					<ul class="nav1">
 						<li class="active"><a href="{{url("/")}}/">Trang chủ</a></li>
 						<li><a href="{{url("/")}}/">Danh sách homestay</a></li>

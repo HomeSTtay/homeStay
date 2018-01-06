@@ -43,6 +43,8 @@ class TestLogin extends Controller
         $checkLogin = DB::table('users')->where(['email'=>$email, 'password'=>$password])->first();
 
         if(count($checkLogin) >0){
+
+        Session::put('user.id_user',$checkLogin->id);
         Session::put('user.name',$checkLogin->lastname);
         Session::put('user.email',$email);
         Session::put('user.password',$password);
@@ -100,17 +102,20 @@ class TestLogin extends Controller
         $user->lastname = $request->lastname;
         $user->email = $request->email;
         $user->password = md5($request->password);
-        $user->typeuser_id = 1;
+        $user->typeuser_id =3;
         $user->viewstatus_id = 1;
         $user->save();
              
      Mail::send('pages.mail', array('lastname'=>$request->lastname), function($message) use ($email, $name){
 
         $message->to($email,$name)->subject('Đăng kí thành công');
-    }); 
+    });
+     $u=DB::table('users')->where('email',$email)->first();
+     Session::put('user.id_user',$u->id);
      Session::put('user.name',$name);
      Session::put('user.email',$email);
      Session::put('user.pass',$pass);
+
      // Tạo session năm
         $ss = Session::get('user'); 
 

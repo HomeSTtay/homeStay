@@ -2,7 +2,7 @@
 <div class="panel with-nav-tabs panel-default">
                 <div class="panel-heading">
                         <ul class="nav nav-tabs">
-                            @foreach($rank as $r)
+                            @foreach($area as $r)
                             <li><a data-toggle="tab">Danh sách homestay ở miền {{$r}} </a></li>
                              @endforeach
                         </ul>
@@ -19,7 +19,7 @@
          @endforeach   
             <h2>{{$l->name}}</h2>
             <div class="overlay1">
-                <a class="info1" href="{{asset('/')}}chi-tiet-homestay-{{$l->name}}">Xem chi tiết</a>
+                <a class="info1" href="{{asset('/')}}detail-{{$l->name}}">Xem chi tiết</a>
             </div>
 
         </div>

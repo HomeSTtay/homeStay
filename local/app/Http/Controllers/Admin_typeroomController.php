@@ -86,9 +86,11 @@ class Admin_typeroomController extends Controller
 	}
 
 	public function getEditRoom($id){
+		$style = DB::table('style_homestay')->where('viewstatus_id',1)->get();
 		$homestay = DB::table('home_stay')->select()->get();
 		$edittyperoom = DB::table('type_room')->where('id','=',$id) -> first();
-	 	return view('pages.admin_edit_room_homestay')-> with('edittyperoom',$edittyperoom)-> with('homestay', $homestay);
+		 return view('pages.admin_edit_room_homestay')-> with('edittyperoom',$edittyperoom)-> with('homestay',
+		  $homestay)->with('style', $style);
 	}
 
 	public function postCheckEditRoom(Request $request){

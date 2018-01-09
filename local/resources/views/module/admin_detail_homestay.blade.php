@@ -15,13 +15,18 @@
                      <div class="form-group">
                         <label class="col-sm-2 control-label">Phong cách</label>
                         <div class="col-sm-10">
+                       
                         <p  class="control-p" >{{$style->name_style}} </p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Miêu tả</label>
                         <div class="col-sm-10">
-                        <p  class="control-p" > {{$homestay->description}} </p>
+                       <?php  $str=   explode('-',  $homestay->description);?>
+                           @foreach($str as $key=>$value)
+                          <p  class='control-p'>{{$value}}</p>  
+                             @endforeach
+                      
                         </div>
                     </div>
                      <div class="form-group">
@@ -33,7 +38,19 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Khu vực</label>
                         <div class="col-sm-10">
-                        <p  class="control-p" >Miền {{$homestay->rank}} </p>
+                        <p  class="control-p" >Miền {{$homestay->area}} </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Thời gian tạo</label>
+                        <div class="col-sm-10">
+                        <p  class="control-p" > {{$homestay->create_date}} </p>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Người tạo</label>
+                        <div class="col-sm-10">
+                        <p  class="control-p" > {{$creater->firstname." ". $creater->lastname}} </p>
                         </div>
                     </div>
                     <div class="form-group" >

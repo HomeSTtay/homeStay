@@ -196,13 +196,15 @@
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="images/2a.png">
-                <span class="username">John Doe</span>
+                
+                <span class="username">{{Session::get('user.name')}}</span>
+             
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Thông tin cá nhân</a></li>
                 <li><a href="#"><i class="fa fa-cog"></i> Cài đặt</a></li>
-                <li><a href="{{url("/")}}/logIn"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
+                <li><a href="{{url("/")}}/logOut"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->

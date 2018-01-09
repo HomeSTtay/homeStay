@@ -9,25 +9,52 @@
 					@foreach($top10 as $t)
 					<li>
 						<div class="banner-bottom-slider-right1">
-							@foreach($pic as $p)
-							@if($p->id == $t->picture)
+					
+						
+						@foreach($pic as $p)
+						
+						@if($t->picture == $p->id and $p->viewstatus_id==3)
 							<img src="{{asset('images')}}/{{$p->name}}" alt=" " class="img-responsive" />
+						@endif	
+						
+						@endforeach	
+						
+							<ul class= "name_hs" >
+							<li><a href="{{url('/')}}/detail-{{$t->name}}">{{$t->name}}</a></li>
+							</ul>
+							@foreach($statuss as $s)
+							@if('ST'.$t->id == $s->id)
+							<ul>
+							
+							<li><span class="glyphicon glyphicon-thumbs-up like-hs" aria-hidden="true" ></span> {{$s->like}}</li>
+								<li><span class="glyphicon glyphicon-user" aria-hidden="true" ></span> {{$s->vote}}</li>
+								<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> {{$s->view}}</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> {{$s->share}}</a></li>
+							</ul>
 							@endif
 							@endforeach
-							<ul class= "name_hs" >
-							<li><a href="#">{{$t->name}}</a></li>
-							</ul>
-							<ul>
-							<li><a href="#"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 8</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 90</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 8</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> 8</a></li>
-							</ul>
-					
 						</div>
-					</li>
+					</li>	
 					@endforeach
 				</ul>
+				<style>
+.like {
+  
+    color: red;
+}
+.dislike {
+  
+    color: white !important;
+}
+</style>
+				<script>
+			$(document).ready(function(){
+					$(".like-hs").click(function(){						
+					$(".like-hs").addClass("like");
+					}); 
+				});
+				</script>
+		
 					<script type="text/javascript">
 						$(window).load(function() {
 						$("#flexiselDemo1").flexisel({

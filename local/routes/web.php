@@ -26,11 +26,12 @@ Route::post('/registertest', 'TestLogin@postRegister');
 Route::get('/logOut','TestLogin@getLogout');
 
 
-//Detail
 
-Route::get('/detail','MyFirstController@getDetail');
+//Chi tiết homestay:
 
-Route::get('/detail', 'MyFirstController@getDetail');
+//Route::get('/chi-tiet-homestay-{name}','MyFirstController@getDetailHomestay');
+
+Route::get('/detail-{name}','MyFirstController@getDetail');
 
 //Mail
 
@@ -54,9 +55,7 @@ Route::get('/danh-sach-homestay-mien-trung','MyFirstController@getListHomestayCe
 
 Route::get('/danh-sach-homestay-mien-nam','MyFirstController@getListHomestaySouth');
 
-//Chi tiết homestay:
 
-Route::get('/chi-tiet-homestay-{name}','MyFirstController@getDetailHomestay');
 
 Auth::routes();
 
@@ -66,8 +65,10 @@ Auth::routes();
 
 /* Admin */
  
-Route::get('/admin','AdminController@getAdminIndex');
-
+// Route::get('/admin','AdminController@getAdminIndex');
+Route::group(['middleware' => 'CheckAdmin'], function () {
+    Route::get('/admin','AdminController@getAdminIndex');
+});
 //Style homestay: 
 
 Route::get('/list-style-homestay','Admin_stylehomestayController@getListStyleHomestay');
@@ -112,11 +113,17 @@ Route::get ('delete-type-room/id={id}','Admin_typeroomController@getCheckDeleteR
 
 //Post
 
-Route::get('/add-post','AdminController@getAddPost');
+Route::get('/add-post','Admin_postController@getAddPost');
 
-Route::get('/list-post','AdminController@getListPost');
+Route::post('add-post','Admin_postController@postAddPost');
 
-Route::get('/edit-post','AdminController@getEditPost');
+Route::get('/list-post','Admin_postController@getListPost');
+
+Route::get('edit-post/{id}','Admin_postController@getEditPost');
+
+Route::post('/edit-post','Admin_postController@postEditPost');
+
+Route::get('/delete-post/{id}','Admin_postController@getDeletePost');
 
 //User
 

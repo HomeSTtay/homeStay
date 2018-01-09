@@ -38,7 +38,7 @@
                          <label class="col-sm-2 control-label">Phong cách</label>
                          <div class="col-sm-10">
                         <select  name="styletyr"class="form-control m-bot15 style"">
-                             <option value="{{$edittyperoom -> style}}">{{$edittyperoom -> style}}</option>
+                             <option value="{{$edittyperoom->style}}">{{$edittyperoom->style}}</option>
                                  @foreach ($style as $ty)
                                 <option value="{{$ty->name_style}}">{{$ty->name_style}}</option>
                                 @endforeach
@@ -86,11 +86,8 @@
                         <button type="submit" class="btn btn-info btn-edit-room" style="float:right;" id='submit'>Sửa</button>
                          </div>
                          <div class="col-sm-4">
-<<<<<<< HEAD
                          <a  href="{{url("/")}}/list-type-room"><button class="btn btn-danger" type="button">Hủy</i></button></a> 
-=======
                         <a  href="{{url("/")}}/list-type-room"><button type="reset" class="btn btn-danger ">Hủy</button></a>
->>>>>>> LuanNguyen
                          </div>
                          </div> 
                     </div> 

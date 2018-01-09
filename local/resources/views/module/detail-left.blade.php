@@ -1,78 +1,56 @@
 <div class="col-md-4 single-right">
-				<div class="blog-right1">
+	<div class="blog-right1">
+
+
+		<div class="related-posts animated wow slideInLeft" data-wow-delay=".5s">
+			<h3>Bài đăng về homestay</h3>
+			@forelse($post as $p)
+			<div class="related-post">
+				<div class="related-post-left">
+						
+						@foreach($pic as $p)
+							@if($hs->picture == $p->id and $p->viewstatus_id==3)
+					<a href="#">
+						<img src="{{asset('images')}}/{{$p->name}}" alt="{{$p->name}}" class="img-responsive" />
+					</a>
+					@endif
 					
-					<div class="categories animated wow slideInLeft" data-wow-delay=".5s">
-						<h3>Categories</h3>
-						<ul>
-							<li><a href="#">Aliquam dapibus tincidunt</a></li>
-							<li><a href="#">Donec sollicitudin molestie</a></li>
-							<li><a href="#">Fusce feugiat malesuada odio</a></li>
-							<li><a href="#">Cum sociis natoque penatibus</a></li>
-							<li><a href="#">Magnis dis parturient montes</a></li>
-							<li><a href="#">Donec sollicitudin molestie</a></li>
-						</ul>
+					@endforeach
+					
+				</div>
+				<div class="related-post-right">
+					<h4><a href="single.html">Donec sollicitudin</a></h4>
+					<p>Aliquam dapibus tincidunt metus. 
+						<span>Praesent justo dolor, lobortis.</span>
+					</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			@empty
+
+					<i class='control-p'> chưa có bài đăng nào</i>
+					<br>
+			@endforelse
+			<h3>Homestay cùng khu vực</h3>
+			
+			
+				@foreach($near as $hn)
+				<div class="col-md-12">
+				<div class="hovereffect1">
+					@foreach($pic as $p)
+							@if($hn->picture == $p->id and $p->viewstatus_id==3)
+					<img class="img-responsive1" src="{{asset('images')}}/{{$p->name}}" alt="{{$p->name}}">
+					@endif
+					@endforeach 
+					<h2>{{$hn->name}}</h2>
+					<div class="overlay1">
+						<a class="info1" href="{{asset('/')}}detail-{{$hn->name}}">Xem chi tiết</a>
 					</div>
-					<div class="categories categories-mid animated wow slideInLeft" data-wow-delay=".5s">
-						<h3>Archives</h3>
-						<ul>
-							<li><a href="#">May 20,2009</a></li>
-							<li><a href="#">July 31,2010</a></li>
-							<li><a href="#">January 20,2012</a></li>
-							<li><a href="#">November 2,2012</a></li>
-							<li><a href="#">December 25,2014</a></li>
-							<li><a href="#">January 14,2015</a></li>
-						</ul>
-					</div>
-					<div class="related-posts animated wow slideInLeft" data-wow-delay=".5s">
-						<h3>Các homestay gần đây</h3>
-						<div class="related-post">
-							<div class="related-post-left">
-								<a href="single.html"><img src="images/3.jpg" alt=" " class="img-responsive" /></a>
-							</div>
-							<div class="related-post-right">
-								<h4><a href="single.html">Donec sollicitudin</a></h4>
-								<p>Aliquam dapibus tincidunt metus. 
-									<span>Praesent justo dolor, lobortis.</span>
-								</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="related-post">
-							<div class="related-post-left">
-								<a href="single.html"><img src="images/4.jpg" alt=" " class="img-responsive" /></a>
-							</div>
-							<div class="related-post-right">
-								<h4><a href="single.html">Donec sollicitudin</a></h4>
-								<p>Aliquam dapibus tincidunt metus. 
-									<span>Praesent justo dolor, lobortis.</span>
-								</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="related-post">
-							<div class="related-post-left">
-								<a href="single.html"><img src="images/5.jpg" alt=" " class="img-responsive" /></a>
-							</div>
-							<div class="related-post-right">
-								<h4><a href="single.html">Donec sollicitudin</a></h4>
-								<p>Aliquam dapibus tincidunt metus. 
-									<span>Praesent justo dolor, lobortis.</span>
-								</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="related-post">
-							<div class="related-post-left">
-								<a href="single.html"><img src="images/6.jpg" alt=" " class="img-responsive" /></a>
-							</div>
-							<div class="related-post-right">
-								<h4><a href="single.html">Donec sollicitudin</a></h4>
-								<p>Aliquam dapibus tincidunt metus. 
-									<span>Praesent justo dolor, lobortis.</span>
-								</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
 					</div>
 				</div>
-			</div>
+				@endforeach
+			
+		</div>
+	</div>
+
+</div>

@@ -25,7 +25,10 @@ Route::post('/registertest', 'TestLogin@postRegister');
 
 Route::get('/logOut','TestLogin@getLogout');
 
+//Đăng nhập tk FB
+Route::get('/redirect', 'TestLogin@reDirect');
 
+Route::get('/callback', 'TestLogin@callBack');
 
 //Chi tiết homestay:
 
@@ -124,6 +127,8 @@ Route::get('edit-post/{id}','Admin_postController@getEditPost');
 Route::post('/edit-post','Admin_postController@postEditPost');
 
 Route::get('/delete-post/{id}','Admin_postController@getDeletePost');
+
+// Route::get('post/{id}/click', 'Admin_postController@clickPost');
 
 //User
 

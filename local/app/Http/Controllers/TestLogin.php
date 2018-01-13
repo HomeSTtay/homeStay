@@ -184,5 +184,11 @@ class TestLogin extends Controller
         return redirect('/');
 
     }
+    public function reDirect(){
+        return Socialite::driver('facebook')->redirect();
+    }
     
+    public function callBack(){
+       $user =  Socialite::driver('facebook')->user();
+    }
 }

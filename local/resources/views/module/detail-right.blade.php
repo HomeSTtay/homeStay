@@ -38,7 +38,8 @@
 
 		</div>
 	</div>
-
+  <div class="fb-comments" data-href="https://localhost/homeStay" 
+  data-width="700" data-numposts="10"></div>
 
 
 

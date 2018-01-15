@@ -3,6 +3,8 @@
  --><!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="fb:admins" content="100004576659389"/>
+{{--  <meta property="fb:admins" content="100023310101458"/>  --}}
 <meta name="keywords" content="Walk Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
@@ -36,14 +38,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});
 </script>
 <!-- start-smoth-scrolling -->
+
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '379239492535415',
+      appId      : '317068375470034',
+      cookie     : true,
       xfbml      : true,
       version    : 'v2.11'
     });
-    FB.AppEvents.logPageView();
+      
+    FB.AppEvents.logPageView();   
+      
   };
 
   (function(d, s, id){

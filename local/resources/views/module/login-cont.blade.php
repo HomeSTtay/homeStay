@@ -9,7 +9,7 @@
 				   </div>
 				   <!-- Facebook -->
 				   <div class="slide-social w3l">
-				   <a href="#">
+				   <a href="{{ url('/redirect') }}">
 					   
 					   <div class="facebook icon"> <i class="facebook"></i> </div>
 					   <div class="facebook slide">

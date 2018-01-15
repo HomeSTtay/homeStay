@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use Mail;
 use Validator;
+use Socialite;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Session;
 use Illiminate\Http\Response;
@@ -185,10 +186,14 @@ class TestLogin extends Controller
 
     }
     public function reDirect(){
+        
         return Socialite::driver('facebook')->redirect();
+      
     }
     
     public function callBack(){
-       $user =  Socialite::driver('facebook')->user();
+        $user =  Socialite::driver('facebook')->user();
+        Session::put('user.name', $user->name);
+        return redirect('/');
     }
 }

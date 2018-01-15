@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 use DB;
+use Socialite;
 
 /**
 * 
@@ -11,6 +12,7 @@ class MyFirstController extends Controller
 {
 	
 	public function getIndex(){
+		
 		$statuss = DB::table('statuss')->select()->get();
 		$pic = DB::table('picture')->where('viewstatus_id','<>',0)->select()->get();
 		$top10 = DB::table('home_stay')->where('viewstatus_id',1)->select()->get(10);
@@ -72,7 +74,11 @@ class MyFirstController extends Controller
 		return view('pages.danh_sach_homestay')->with('list',$list)->with('pic',$pic)->with('area',$area);
 	}
 
-	
+	// public function clickPost($id){
+	// 	$statuss = Statuss::findorfail($id); //find post = id
+	// 	$statuss->increment('view'); //tang gia tri cot view
+	// 	$statuss->update(); //luu cap nhat post
+	// } 
 }
 
 
